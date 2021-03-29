@@ -23,7 +23,12 @@ async function scrape(args){
     catch(err){
         logger.error(err);
     }
+    await mapCSV();
     return {msg:"All location scraped"};
+}
+async function mapCSV(){
+    files = await fs.readdir(__dirname+"/Data/RawData/cpcb");
+    logger.debug(files);
 }
 async function getLocation(location){
     // logger.debug(locName);

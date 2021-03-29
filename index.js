@@ -53,7 +53,7 @@ app.use(express.json());
 // app.use(express.urlencoded());
 
 app.get('/',function(req,res,next){
-    res.send('Hello World!')
+    res.sendFile(__dirname+'/client/root.html')
 });
 
 

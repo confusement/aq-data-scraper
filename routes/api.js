@@ -11,7 +11,7 @@ var browser = null;
 async function reloadBrowser(){
     if(!browser)
         browser = await puppeteer.launch({
-            headless: false ,
+            headless: true ,
             executablePath: '/usr/bin/chromium',
             // args: ['--start-maximized']
         });
