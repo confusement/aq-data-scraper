@@ -1,0 +1,55 @@
+prefixes:
+    aq: http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#
+    grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+mappings:
+    dat:
+        sources:
+            - ['source_0.csv~csv']
+        s: aq:$(value)
+        po:
+          - p: a
+            o: aq:ParticulateMatter10
+    
+          - p: a
+            o: aq:ParticulateMatter10
+            condition:
+                function: equal
+                parameters:
+                    - [str1, $(parameter)]
+                    - [str2, "pm10"]
+          - p: a
+            o: aq:ParticulateMatter2.5
+            condition:
+                function: equal
+                parameters:
+                    - [str1, $(parameter)]
+                    - [str2, "pm25"]
+          - p: a
+            o: aq:SulphurDiOxide
+            condition:
+                function: equal
+                parameters:
+                    - [str1, $(parameter)]
+                    - [str2, "so2"]
+          - p: a
+            o: aq:CarbonMonoOxide
+            condition:
+                function: equal
+                parameters:
+                    - [str1, $(parameter)]
+                    - [str2, "co"]
+          - p: a
+            o: aq:NitrogenDiOxide
+            condition:
+                function: equal
+                parameters:
+                    - [str1, $(parameter)]
+                    - [str2, "no2"]
+          - p: a
+            o: aq:Ozone
+            condition:
+                function: equal
+                parameters:
+                    - [str1, $(parameter)]
+                    - [str2, "o3"]
+

@@ -102,3 +102,9 @@ dist
 
 # TernJS port file
 .tern-port
+
+#CSV Files and Ontology RDF files
+sources/Data/
+
+#jar
+.jar

@@ -6,7 +6,7 @@
             "City":"Delhi",
             "StationName":"Narela, Delhi - DPCC",
             "StationCode":"site_1426",
-            "RdfStation":"narela"
+            "IRI":"narela"
         },
         {
             "url":"https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22%3A%22Delhi%22%2C%22city%22%3A%22Delhi%22%2C%22station%22%3A%22site_1428%22%7D",
@@ -14,7 +14,7 @@
             "City":"Delhi",
             "StationName":"Okhla Phase-2, Delhi - DPCC",
             "StationCode":"site_1428",
-            "RdfStation":"okhla"
+            "IRI":"okhla"
         }
     ]
 }

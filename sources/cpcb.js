@@ -3,6 +3,7 @@ const logger = log4js.getLogger("cpcb-scraper");
 const util = require('util');
 const fs = require('fs').promises;
 const path = require('path');
+const exec = util.promisify(require('child_process').exec);
 
 var browserInstance = {}
 
@@ -17,25 +18,50 @@ function sleep(ms) {
 async function scrape(args){
     try{
         for(i in config.locations){
-            await getLocation(config.locations[i]);
+            await getCSV(config.locations[i]);
         }
     }
     catch(err){
         logger.error(err);
     }
-    await mapCSV();
+    // await mapCSV();
     return {msg:"All location scraped"};
 }
-async function mapCSV(){
-    files = await fs.readdir(__dirname+"/Data/RawData/cpcb");
-    logger.debug(files);
+async function mapCSV(args){
+    // sed -i 's/$(_locname)/source_0.csv/g' ./mappings/cpcb.yml
+    try{
+        files = await fs.readdir(__dirname+"/Data/RawData/cpcb");
+        for(i in files){
+            logger.debug(files[i]);
+            const { stdout1, stderr1 } = await exec('cp '+__dirname+"/../mappings/cpcb.yml "+ __dirname+"/../mappings/"+files[i]+".yml");
+            if (stderr1) {
+                logger.debug(`error: ${stderr}`);
+            }
+            let LocationIRI = files[i].split("_")[0];
+            const { stdout2, stderr2 } = await exec("sed -i 's/_locname/"+LocationIRI+"/g' "+ __dirname+"/../mappings/"+files[i]+".yml");
+            if (stderr2) {
+                logger.debug(`error: ${stderr}`);
+            }
+            const { stdout3, stderr3 } = await exec("sed -i 's/_filename/"+files[i]+"/g' "+ __dirname+"/../mappings/"+files[i]+".yml");
+            if (stderr3) {
+                logger.debug(`error: ${stderr}`);
+            }
+        }
+    }
+    catch(err){
+        logger.error(err);
+    }
+    return {
+        msg:"OK"
+    }
 }
-async function getLocation(location){
+async function getCSV(location){
     // logger.debug(locName);
+    let page;
     try {
         // console.log(browserInstance)
-        const page = await browserInstance.newPage();
-        await page.goto(location.url,{ waitUntil: 'domcontentloaded' });
+        page = await browserInstance.newPage();
+        await page.goto(location.url,{ waitUntil: 'domcontentloaded' , timeout:60000});
         await  page.waitForSelector('multi-select',{timeout:60000})
 
 
@@ -71,7 +97,8 @@ async function getLocation(location){
         let value = await page.evaluate(el => el.innerText, element);
 
         let = tableString = value.replaceAll("\t",",");
-        filename = location.RdfStation + Date.now()
+
+        filename = location.IRI + "_" + Date.now()
         
         await fs.writeFile(__dirname+"/Data/RawData/cpcb/"+filename+".csv",tableString)
         
@@ -92,9 +119,23 @@ async function getLocation(location){
     }
     catch(err){
         logger.error(err);
+        page.close();
+        await retry(location,2);
     }
 }
+async function retry(location, retryCount) {
+    logger.debug("retry no. "+retryCount.toString());
+    try {
+      return await getCSV(location);
+    } catch (error) {
+      if (retryCount <= 0) {
+        throw error;
+      }
+      return await retry(location, retryCount - 1);
+    }
+  }
 module.exports = {
     'scrape': scrape,
-    'setBrowserInstance':setBrowserInstance
+    'setBrowserInstance':setBrowserInstance,
+    'mapCSV':mapCSV
 }

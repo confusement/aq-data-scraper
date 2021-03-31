@@ -4,12 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start":"nodemon index.js",
+    "start": "nodemon index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@rmlio/yarrrml-parser": "^1.2.2",
     "chromium": "^3.0.2",
     "express": "^4.17.1",
     "log4js": "^6.3.0",

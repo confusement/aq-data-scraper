@@ -1,0 +1,12 @@
+prefixes:
+    aq: http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#
+    grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+mappings:
+    dat:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:pm10_filename__locname
+        po:
+          - p: a
+            o: aq:ParticulateMatter10
