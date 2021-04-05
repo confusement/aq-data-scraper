@@ -6,3 +6,5 @@
 - clone
 - npm install
 - open root url for api instructions
+### Clint API
+- Use postman collection in /docs to quickly test api
