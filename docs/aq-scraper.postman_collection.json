@@ -1,0 +1,114 @@
+{
+	"info": {
+		"_postman_id": "2954c288-a734-41ea-ba37-6422cc9efc0d",
+		"name": "aq-scraper",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "scrape",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5000/api/scrape?source=cpcb&location=all",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5000",
+					"path": [
+						"api",
+						"scrape"
+					],
+					"query": [
+						{
+							"key": "source",
+							"value": "cpcb"
+						},
+						{
+							"key": "location",
+							"value": "all"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "mapCSV",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/scrape?source=cpcb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"scrape"
+					],
+					"query": [
+						{
+							"key": "source",
+							"value": "cpcb"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "list All systems",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/systems",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"systems"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Send commands to systems",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": null
+			},
+			"response": []
+		},
+		{
+			"name": "Check Performance",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:5001/api/performance",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "5001",
+					"path": [
+						"api",
+						"performance"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

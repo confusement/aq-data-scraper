@@ -4,18 +4,25 @@ const util = require('util');
 const fs = require('fs').promises;
 const path = require('path');
 const exec = util.promisify(require('child_process').exec);
+const puppeteer = require('puppeteer');
 
-var browserInstance = {}
-
+var browserInstance = null;
+async function reloadBrowser(){
+    if(!browserInstance)
+        browserInstance = await puppeteer.launch({
+            headless: false ,
+            executablePath: '/usr/bin/chromium',
+            // args: ['--start-maximized']
+        });
+}
 const config = require(__dirname+'/config/cpcb.json')
 
-function setBrowserInstance(browser){
-    browserInstance=browser;
-}
 function sleep(ms) {
     return new Promise(resolve => setTimeout(resolve, ms));
   }
 async function scrape(args){
+    // Create new browser if not already running
+    await reloadBrowser();
     try{
         for(i in config.locations){
             await getCSV(config.locations[i]);
@@ -136,6 +143,5 @@ async function retry(location, retryCount) {
   }
 module.exports = {
     'scrape': scrape,
-    'setBrowserInstance':setBrowserInstance,
     'mapCSV':mapCSV
 }
