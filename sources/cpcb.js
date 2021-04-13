@@ -22,17 +22,23 @@ function sleep(ms) {
   }
 async function scrape(args){
     // Create new browser if not already running
+    let totalLocations = 0;
+    let retryCount = 0;
     await reloadBrowser();
     try{
         for(i in config.locations){
-            await getCSV(config.locations[i]);
+            retryCount += await getCSV(config.locations[i]);
+            totalLocations++;
         }
     }
     catch(err){
         logger.error(err);
     }
     // await mapCSV();
-    return {msg:"All location scraped"};
+    return {
+        msg:"All location scraped",
+        retryCount:retryCount
+    };
 }
 async function mapCSV(args){
     // sed -i 's/$(_locname)/source_0.csv/g' ./mappings/cpcb.yml
@@ -64,6 +70,7 @@ async function mapCSV(args){
 }
 async function getCSV(location){
     // logger.debug(locName);
+    let retryCount = 0;
     let page;
     try {
         // console.log(browserInstance)
@@ -127,8 +134,10 @@ async function getCSV(location){
     catch(err){
         logger.error(err);
         page.close();
-        await retry(location,2);
+        await retry(location,5);
+        retryCount++;
     }
+    return retryCount;
 }
 async function retry(location, retryCount) {
     logger.debug("retry no. "+retryCount.toString());
@@ -136,7 +145,7 @@ async function retry(location, retryCount) {
       return await getCSV(location);
     } catch (error) {
       if (retryCount <= 0) {
-        throw error;
+        logger.error("Retries exhausted for location: ",location.StationName," : source cpcb");
       }
       return await retry(location, retryCount - 1);
     }

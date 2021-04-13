@@ -8,7 +8,6 @@ var log4js = require('log4js');
 var app=express();
 var serv=require('http').Server(app);
 
-
 //Enable other routes
 var apiRouter = require('./routes/api');
 app.use('/api',apiRouter);
@@ -57,11 +56,14 @@ app.get('/',function(req,res,next){
 });
 
 
-
 app.set('root',__dirname);
 
 serv.listen(port);
 
 console.log("it's started on http://localhost:"+port);
+
+//Start scraping jobs
+const scheduler = require('./scheduler')
+scheduler.initJobs();
 
 module.exports=app;

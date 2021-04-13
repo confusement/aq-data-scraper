@@ -1,4 +1,14 @@
 {
+    "schedule":{
+        "recurrenceRule":{
+            "minute":null,
+            "second":30,
+            "hour":null,
+            "date":null,
+            "month":null
+        },
+        "logFile":"/logs/cpcb.log"
+    },
     "locations":[
         {
             "url":"https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1426%22%7D",
