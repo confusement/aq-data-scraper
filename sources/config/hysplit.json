@@ -1,0 +1,28 @@
+{
+  "locations": [
+    {
+      "StationName": "ITO, Delhi - CPCB",
+      "latitude": "28.628624",
+      "longitude": "77.241060",
+      "IRI": "ito"
+    },
+    {
+      "StationName": "Chandni Chowk, Delhi - IITM",
+      "latitude": "28.656756",
+      "longitude": "77.227234",
+      "IRI": "chandniChowk"
+    },
+    {
+      "StationName": "Sri Aurobindo Marg, Delhi - DPCC",
+      "latitude": "28.531346",
+      "longitude": "77.190156",
+      "IRI": "sriAurobindoMarg"
+    },
+    {
+      "StationName": "Mandir Marg, Delhi - DPCC",
+      "latitude": "28.636429",
+      "longitude": "77.201067",
+      "IRI": "mandirMarg"
+    }
+  ]
+}
