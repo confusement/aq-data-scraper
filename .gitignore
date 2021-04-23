@@ -108,3 +108,7 @@ sources/Data/
 
 #jar
 .jar
+
+lib/chrome-linux
+
+lib/chrome-win

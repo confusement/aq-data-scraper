@@ -1,0 +1,2422 @@
+@prefix : <http://mapping.example.com/> .
+@prefix aq: <http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#> .
+@prefix d2rq: <http://www.wiwiss.fu-berlin.de/suhl/bizer/D2RQ/0.1#> .
+@prefix dc: <http://purl.org/dc/terms/> .
+@prefix fnml: <http://semweb.mmlab.be/ns/fnml#> .
+@prefix fno: <https://w3id.org/function/ontology#> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix grel: <http://users.ugent.be/~bjdmeest/function/grel.ttl#> .
+@prefix ql: <http://semweb.mmlab.be/ns/ql#> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix rml: <http://semweb.mmlab.be/ns/rml#> .
+@prefix rr: <http://www.w3.org/ns/r2rml#> .
+@prefix void: <http://rdfs.org/ns/void#> .
+
+aq:gp_narela17-Apr-2021%20-%2001%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "35.45" .
+
+aq:gp_narela17-Apr-2021%20-%2002%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "39.05" .
+
+aq:gp_narela17-Apr-2021%20-%2003%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "43.4" .
+
+aq:gp_narela17-Apr-2021%20-%2004%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "37.48" .
+
+aq:gp_narela17-Apr-2021%20-%2005%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "33.55" .
+
+aq:gp_narela17-Apr-2021%20-%2006%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "36.92" .
+
+aq:gp_narela17-Apr-2021%20-%2007%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "33.67" .
+
+aq:gp_narela17-Apr-2021%20-%2008%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "35.83" .
+
+aq:gp_narela17-Apr-2021%20-%2009%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "37.85" .
+
+aq:gp_narela17-Apr-2021%20-%2010%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "37.92" .
+
+aq:gp_narela17-Apr-2021%20-%2011%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "39.62" .
+
+aq:gp_narela17-Apr-2021%20-%2012%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "42.15" .
+
+aq:gp_narela17-Apr-2021%20-%2013%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "43.27" .
+
+aq:gp_narela17-Apr-2021%20-%2014%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "43.38" .
+
+aq:gp_narela17-Apr-2021%20-%2015%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "42.92" .
+
+aq:gp_narela17-Apr-2021%20-%2016%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "42.8" .
+
+aq:gp_narela17-Apr-2021%20-%2017%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "43.08" .
+
+aq:gp_narela17-Apr-2021%20-%2018%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "43.1" .
+
+aq:gp_narela17-Apr-2021%20-%2019%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "41.8" .
+
+aq:gp_narela17-Apr-2021%20-%2020%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "40.65" .
+
+aq:gp_narela17-Apr-2021%20-%2021%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "39.98" .
+
+aq:gp_narela17-Apr-2021%20-%2022%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "41.83" .
+
+aq:gp_narela17-Apr-2021%20-%2023%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "43.67" .
+
+aq:gp_narela18-Apr-2021%20-%2000%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "44.88" .
+
+aq:gp_narela18-Apr-2021%20-%2001%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "42.5" .
+
+aq:gp_narela18-Apr-2021%20-%2002%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "47.15" .
+
+aq:gp_narela18-Apr-2021%20-%2003%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "48.1" .
+
+aq:gp_narela18-Apr-2021%20-%2004%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "42.42" .
+
+aq:gp_narela18-Apr-2021%20-%2005%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "41.95" .
+
+aq:gp_narela18-Apr-2021%20-%2006%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "38.83" .
+
+aq:gp_narela18-Apr-2021%20-%2007%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "41.25" .
+
+aq:gp_narela18-Apr-2021%20-%2008%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "45.6" .
+
+aq:gp_narela18-Apr-2021%20-%2009%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "44.17" .
+
+aq:gp_narela18-Apr-2021%20-%2010%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "44.6" .
+
+aq:gp_narela18-Apr-2021%20-%2011%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "42.83" .
+
+aq:gp_narela18-Apr-2021%20-%2012%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "42.25" .
+
+aq:gp_narela18-Apr-2021%20-%2013%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "40.3" .
+
+aq:gp_narela18-Apr-2021%20-%2014%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "39.32" .
+
+aq:gp_narela18-Apr-2021%20-%2015%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "39.05" .
+
+aq:gp_narela18-Apr-2021%20-%2016%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "38.9" .
+
+aq:gp_narela18-Apr-2021%20-%2017%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "35.33" .
+
+aq:gp_narela18-Apr-2021%20-%2018%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "34.82" .
+
+aq:gp_narela18-Apr-2021%20-%2019%3A00 a aq:GaseousPollutant;
+  aq:ammoniaConcentration "37.33" .
+
+aq:hc_narela17-Apr-2021%20-%2001%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2002%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2003%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2004%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2005%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2006%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2007%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2008%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2009%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2010%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2011%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2012%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2013%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2014%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2015%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2016%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2017%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2018%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2019%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2020%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2021%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2022%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela17-Apr-2021%20-%2023%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2000%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2001%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2002%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2003%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2004%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2005%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2006%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2007%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2008%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2009%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2010%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2011%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2012%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2013%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2014%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2015%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2016%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2017%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2018%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:hc_narela18-Apr-2021%20-%2019%3A00 a aq:Hydrocarbon;
+  aq:benzeneConcentration "";
+  aq:tolueneConcentration "0.0" .
+
+aq:mc_narela17-Apr-2021%20-%2001%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "983.67";
+  aq:precipitation "983.67";
+  aq:relativeHumidity "60.83";
+  aq:solarRadiation "36.85" .
+
+aq:mc_narela17-Apr-2021%20-%2002%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "982.88";
+  aq:precipitation "982.88";
+  aq:relativeHumidity "58.6";
+  aq:solarRadiation "42.38" .
+
+aq:mc_narela17-Apr-2021%20-%2003%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "982.45";
+  aq:precipitation "982.45";
+  aq:relativeHumidity "57.23";
+  aq:solarRadiation "41.0" .
+
+aq:mc_narela17-Apr-2021%20-%2004%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "982.88";
+  aq:precipitation "982.88";
+  aq:relativeHumidity "60.05";
+  aq:solarRadiation "43.88" .
+
+aq:mc_narela17-Apr-2021%20-%2005%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "983.3";
+  aq:precipitation "983.3";
+  aq:relativeHumidity "63.22";
+  aq:solarRadiation "44.65" .
+
+aq:mc_narela17-Apr-2021%20-%2006%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "983.97";
+  aq:precipitation "983.97";
+  aq:relativeHumidity "70.78";
+  aq:solarRadiation "43.92" .
+
+aq:mc_narela17-Apr-2021%20-%2007%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "984.77";
+  aq:precipitation "984.77";
+  aq:relativeHumidity "69.17";
+  aq:solarRadiation "62.05" .
+
+aq:mc_narela17-Apr-2021%20-%2008%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "985.8";
+  aq:precipitation "985.8";
+  aq:relativeHumidity "64.35";
+  aq:solarRadiation "114.95" .
+
+aq:mc_narela17-Apr-2021%20-%2009%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "986.68";
+  aq:precipitation "986.68";
+  aq:relativeHumidity "59.75";
+  aq:solarRadiation "234.65" .
+
+aq:mc_narela17-Apr-2021%20-%2010%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "986.75";
+  aq:precipitation "986.75";
+  aq:relativeHumidity "48.15";
+  aq:solarRadiation "433.0" .
+
+aq:mc_narela17-Apr-2021%20-%2011%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "986.77";
+  aq:precipitation "986.77";
+  aq:relativeHumidity "42.98";
+  aq:solarRadiation "576.62" .
+
+aq:mc_narela17-Apr-2021%20-%2012%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "986.62";
+  aq:precipitation "986.62";
+  aq:relativeHumidity "36.6";
+  aq:solarRadiation "846.03" .
+
+aq:mc_narela17-Apr-2021%20-%2013%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "986.28";
+  aq:precipitation "986.28";
+  aq:relativeHumidity "36.05";
+  aq:solarRadiation "874.4" .
+
+aq:mc_narela17-Apr-2021%20-%2014%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "985.52";
+  aq:precipitation "985.52";
+  aq:relativeHumidity "34.8";
+  aq:solarRadiation "827.17" .
+
+aq:mc_narela17-Apr-2021%20-%2015%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "984.78";
+  aq:precipitation "984.78";
+  aq:relativeHumidity "33.42";
+  aq:solarRadiation "719.45" .
+
+aq:mc_narela17-Apr-2021%20-%2016%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "984.05";
+  aq:precipitation "984.05";
+  aq:relativeHumidity "33.3";
+  aq:solarRadiation "538.03" .
+
+aq:mc_narela17-Apr-2021%20-%2017%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "983.75";
+  aq:precipitation "983.75";
+  aq:relativeHumidity "32.58";
+  aq:solarRadiation "356.25" .
+
+aq:mc_narela17-Apr-2021%20-%2018%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "983.88";
+  aq:precipitation "983.88";
+  aq:relativeHumidity "33.65";
+  aq:solarRadiation "139.5" .
+
+aq:mc_narela17-Apr-2021%20-%2019%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "984.45";
+  aq:precipitation "984.45";
+  aq:relativeHumidity "36.88";
+  aq:solarRadiation "59.07" .
+
+aq:mc_narela17-Apr-2021%20-%2020%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "985.25";
+  aq:precipitation "985.25";
+  aq:relativeHumidity "41.0";
+  aq:solarRadiation "48.12" .
+
+aq:mc_narela17-Apr-2021%20-%2021%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "986.23";
+  aq:precipitation "986.23";
+  aq:relativeHumidity "43.0";
+  aq:solarRadiation "49.02" .
+
+aq:mc_narela17-Apr-2021%20-%2022%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "986.88";
+  aq:precipitation "986.88";
+  aq:relativeHumidity "42.08";
+  aq:solarRadiation "47.92" .
+
+aq:mc_narela17-Apr-2021%20-%2023%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "987.17";
+  aq:precipitation "987.17";
+  aq:relativeHumidity "43.05";
+  aq:solarRadiation "48.0" .
+
+aq:mc_narela18-Apr-2021%20-%2000%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "987.8";
+  aq:precipitation "987.8";
+  aq:relativeHumidity "46.12";
+  aq:solarRadiation "48.95" .
+
+aq:mc_narela18-Apr-2021%20-%2001%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "987.67";
+  aq:precipitation "987.67";
+  aq:relativeHumidity "51.0";
+  aq:solarRadiation "49.45" .
+
+aq:mc_narela18-Apr-2021%20-%2002%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "987.42";
+  aq:precipitation "987.42";
+  aq:relativeHumidity "53.33";
+  aq:solarRadiation "50.0" .
+
+aq:mc_narela18-Apr-2021%20-%2003%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "987.12";
+  aq:precipitation "987.12";
+  aq:relativeHumidity "52.67";
+  aq:solarRadiation "50.08" .
+
+aq:mc_narela18-Apr-2021%20-%2004%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "986.97";
+  aq:precipitation "986.97";
+  aq:relativeHumidity "51.72";
+  aq:solarRadiation "50.02" .
+
+aq:mc_narela18-Apr-2021%20-%2005%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "987.33";
+  aq:precipitation "987.33";
+  aq:relativeHumidity "52.1";
+  aq:solarRadiation "50.22" .
+
+aq:mc_narela18-Apr-2021%20-%2006%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "987.58";
+  aq:precipitation "987.58";
+  aq:relativeHumidity "57.17";
+  aq:solarRadiation "50.7" .
+
+aq:mc_narela18-Apr-2021%20-%2007%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "988.2";
+  aq:precipitation "988.2";
+  aq:relativeHumidity "61.45";
+  aq:solarRadiation "69.7" .
+
+aq:mc_narela18-Apr-2021%20-%2008%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "989.15";
+  aq:precipitation "989.15";
+  aq:relativeHumidity "53.62";
+  aq:solarRadiation "116.25" .
+
+aq:mc_narela18-Apr-2021%20-%2009%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "989.68";
+  aq:precipitation "989.68";
+  aq:relativeHumidity "45.55";
+  aq:solarRadiation "178.43" .
+
+aq:mc_narela18-Apr-2021%20-%2010%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "990.05";
+  aq:precipitation "990.05";
+  aq:relativeHumidity "39.73";
+  aq:solarRadiation "524.52" .
+
+aq:mc_narela18-Apr-2021%20-%2011%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "989.6";
+  aq:precipitation "989.6";
+  aq:relativeHumidity "34.65";
+  aq:solarRadiation "533.88" .
+
+aq:mc_narela18-Apr-2021%20-%2012%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "989.08";
+  aq:precipitation "989.08";
+  aq:relativeHumidity "33.35";
+  aq:solarRadiation "787.45" .
+
+aq:mc_narela18-Apr-2021%20-%2013%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "988.33";
+  aq:precipitation "988.33";
+  aq:relativeHumidity "31.5";
+  aq:solarRadiation "815.88" .
+
+aq:mc_narela18-Apr-2021%20-%2014%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "987.33";
+  aq:precipitation "987.33";
+  aq:relativeHumidity "29.95";
+  aq:solarRadiation "757.83" .
+
+aq:mc_narela18-Apr-2021%20-%2015%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "986.28";
+  aq:precipitation "986.28";
+  aq:relativeHumidity "29.33";
+  aq:solarRadiation "628.73" .
+
+aq:mc_narela18-Apr-2021%20-%2016%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "985.35";
+  aq:precipitation "985.35";
+  aq:relativeHumidity "29.55";
+  aq:solarRadiation "480.45" .
+
+aq:mc_narela18-Apr-2021%20-%2017%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "984.55";
+  aq:precipitation "984.55";
+  aq:relativeHumidity "29.55";
+  aq:solarRadiation "271.32" .
+
+aq:mc_narela18-Apr-2021%20-%2018%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "984.18";
+  aq:precipitation "984.18";
+  aq:relativeHumidity "31.35";
+  aq:solarRadiation "126.6" .
+
+aq:mc_narela18-Apr-2021%20-%2019%3A00 a aq:MeteorologicalCharacterstic;
+  aq:ambientTemperature "";
+  aq:bPressure "984.27";
+  aq:precipitation "984.27";
+  aq:relativeHumidity "34.05";
+  aq:solarRadiation "61.08" .
+
+aq:ooc_narela17-Apr-2021%20-%2001%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.73" .
+
+aq:ooc_narela17-Apr-2021%20-%2002%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.88" .
+
+aq:ooc_narela17-Apr-2021%20-%2003%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.5" .
+
+aq:ooc_narela17-Apr-2021%20-%2004%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.23" .
+
+aq:ooc_narela17-Apr-2021%20-%2005%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.4" .
+
+aq:ooc_narela17-Apr-2021%20-%2006%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.35" .
+
+aq:ooc_narela17-Apr-2021%20-%2007%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.3" .
+
+aq:ooc_narela17-Apr-2021%20-%2008%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.35" .
+
+aq:ooc_narela17-Apr-2021%20-%2009%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.35" .
+
+aq:ooc_narela17-Apr-2021%20-%2010%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.5" .
+
+aq:ooc_narela17-Apr-2021%20-%2011%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.43" .
+
+aq:ooc_narela17-Apr-2021%20-%2012%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.35" .
+
+aq:ooc_narela17-Apr-2021%20-%2013%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.43" .
+
+aq:ooc_narela17-Apr-2021%20-%2014%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.47" .
+
+aq:ooc_narela17-Apr-2021%20-%2015%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.47" .
+
+aq:ooc_narela17-Apr-2021%20-%2016%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.3" .
+
+aq:ooc_narela17-Apr-2021%20-%2017%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.28" .
+
+aq:ooc_narela17-Apr-2021%20-%2018%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.18" .
+
+aq:ooc_narela17-Apr-2021%20-%2019%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.3" .
+
+aq:ooc_narela17-Apr-2021%20-%2020%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.3" .
+
+aq:ooc_narela17-Apr-2021%20-%2021%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.55" .
+
+aq:ooc_narela17-Apr-2021%20-%2022%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.5" .
+
+aq:ooc_narela17-Apr-2021%20-%2023%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.42" .
+
+aq:ooc_narela18-Apr-2021%20-%2000%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.65" .
+
+aq:ooc_narela18-Apr-2021%20-%2001%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.6" .
+
+aq:ooc_narela18-Apr-2021%20-%2002%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.72" .
+
+aq:ooc_narela18-Apr-2021%20-%2003%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.7" .
+
+aq:ooc_narela18-Apr-2021%20-%2004%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.78" .
+
+aq:ooc_narela18-Apr-2021%20-%2005%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.83" .
+
+aq:ooc_narela18-Apr-2021%20-%2006%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "1.02" .
+
+aq:ooc_narela18-Apr-2021%20-%2007%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.85" .
+
+aq:ooc_narela18-Apr-2021%20-%2008%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "1.05" .
+
+aq:ooc_narela18-Apr-2021%20-%2009%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.95" .
+
+aq:ooc_narela18-Apr-2021%20-%2010%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.55" .
+
+aq:ooc_narela18-Apr-2021%20-%2011%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.1" .
+
+aq:ooc_narela18-Apr-2021%20-%2012%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.12" .
+
+aq:ooc_narela18-Apr-2021%20-%2013%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.15" .
+
+aq:ooc_narela18-Apr-2021%20-%2014%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.12" .
+
+aq:ooc_narela18-Apr-2021%20-%2015%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.15" .
+
+aq:ooc_narela18-Apr-2021%20-%2016%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.23" .
+
+aq:ooc_narela18-Apr-2021%20-%2017%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.23" .
+
+aq:ooc_narela18-Apr-2021%20-%2018%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.25" .
+
+aq:ooc_narela18-Apr-2021%20-%2019%3A00 a aq:OxideOfCarbon;
+  aq:carbonMonoOxideConcentration "0.2" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2001%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 01:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 01:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 01:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 01:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 01:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 01:00";
+  aq:observedOn "17-Apr-2021 - 01:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2002%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 02:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 02:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 02:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 02:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 02:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 02:00";
+  aq:observedOn "17-Apr-2021 - 02:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2003%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 03:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 03:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 03:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 03:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 03:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 03:00";
+  aq:observedOn "17-Apr-2021 - 03:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2004%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 04:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 04:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 04:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 04:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 04:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 04:00";
+  aq:observedOn "17-Apr-2021 - 04:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2005%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 05:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 05:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 05:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 05:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 05:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 05:00";
+  aq:observedOn "17-Apr-2021 - 05:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2006%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 06:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 06:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 06:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 06:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 06:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 06:00";
+  aq:observedOn "17-Apr-2021 - 06:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2007%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 07:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 07:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 07:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 07:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 07:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 07:00";
+  aq:observedOn "17-Apr-2021 - 07:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2008%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 08:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 08:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 08:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 08:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 08:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 08:00";
+  aq:observedOn "17-Apr-2021 - 08:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2009%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 09:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 09:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 09:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 09:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 09:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 09:00";
+  aq:observedOn "17-Apr-2021 - 09:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2010%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 10:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 10:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 10:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 10:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 10:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 10:00";
+  aq:observedOn "17-Apr-2021 - 10:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2011%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 11:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 11:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 11:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 11:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 11:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 11:00";
+  aq:observedOn "17-Apr-2021 - 11:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2012%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 12:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 12:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 12:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 12:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 12:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 12:00";
+  aq:observedOn "17-Apr-2021 - 12:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2013%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 13:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 13:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 13:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 13:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 13:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 13:00";
+  aq:observedOn "17-Apr-2021 - 13:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2014%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 14:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 14:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 14:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 14:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 14:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 14:00";
+  aq:observedOn "17-Apr-2021 - 14:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2015%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 15:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 15:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 15:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 15:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 15:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 15:00";
+  aq:observedOn "17-Apr-2021 - 15:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2016%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 16:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 16:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 16:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 16:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 16:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 16:00";
+  aq:observedOn "17-Apr-2021 - 16:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2017%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 17:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 17:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 17:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 17:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 17:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 17:00";
+  aq:observedOn "17-Apr-2021 - 17:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2018%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 18:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 18:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 18:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 18:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 18:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 18:00";
+  aq:observedOn "17-Apr-2021 - 18:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2019%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 19:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 19:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 19:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 19:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 19:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 19:00";
+  aq:observedOn "17-Apr-2021 - 19:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2020%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 20:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 20:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 20:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 20:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 20:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 20:00";
+  aq:observedOn "17-Apr-2021 - 20:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2021%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 21:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 21:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 21:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 21:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 21:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 21:00";
+  aq:observedOn "17-Apr-2021 - 21:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2022%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 22:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 22:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 22:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 22:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 22:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 22:00";
+  aq:observedOn "17-Apr-2021 - 22:00" .
+
+aq:ooc_obs_narela17-Apr-2021%20-%2023%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela17-Apr-2021 - 23:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela17-Apr-2021 - 23:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela17-Apr-2021 - 23:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela17-Apr-2021 - 23:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela17-Apr-2021 - 23:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela17-Apr-2021 - 23:00";
+  aq:observedOn "17-Apr-2021 - 23:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2000%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 00:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 00:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 00:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 00:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 00:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 00:00";
+  aq:observedOn "18-Apr-2021 - 00:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2001%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 01:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 01:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 01:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 01:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 01:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 01:00";
+  aq:observedOn "18-Apr-2021 - 01:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2002%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 02:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 02:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 02:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 02:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 02:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 02:00";
+  aq:observedOn "18-Apr-2021 - 02:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2003%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 03:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 03:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 03:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 03:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 03:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 03:00";
+  aq:observedOn "18-Apr-2021 - 03:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2004%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 04:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 04:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 04:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 04:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 04:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 04:00";
+  aq:observedOn "18-Apr-2021 - 04:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2005%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 05:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 05:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 05:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 05:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 05:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 05:00";
+  aq:observedOn "18-Apr-2021 - 05:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2006%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 06:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 06:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 06:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 06:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 06:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 06:00";
+  aq:observedOn "18-Apr-2021 - 06:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2007%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 07:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 07:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 07:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 07:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 07:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 07:00";
+  aq:observedOn "18-Apr-2021 - 07:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2008%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 08:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 08:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 08:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 08:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 08:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 08:00";
+  aq:observedOn "18-Apr-2021 - 08:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2009%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 09:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 09:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 09:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 09:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 09:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 09:00";
+  aq:observedOn "18-Apr-2021 - 09:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2010%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 10:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 10:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 10:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 10:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 10:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 10:00";
+  aq:observedOn "18-Apr-2021 - 10:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2011%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 11:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 11:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 11:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 11:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 11:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 11:00";
+  aq:observedOn "18-Apr-2021 - 11:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2012%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 12:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 12:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 12:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 12:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 12:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 12:00";
+  aq:observedOn "18-Apr-2021 - 12:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2013%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 13:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 13:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 13:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 13:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 13:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 13:00";
+  aq:observedOn "18-Apr-2021 - 13:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2014%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 14:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 14:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 14:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 14:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 14:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 14:00";
+  aq:observedOn "18-Apr-2021 - 14:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2015%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 15:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 15:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 15:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 15:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 15:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 15:00";
+  aq:observedOn "18-Apr-2021 - 15:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2016%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 16:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 16:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 16:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 16:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 16:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 16:00";
+  aq:observedOn "18-Apr-2021 - 16:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2017%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 17:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 17:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 17:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 17:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 17:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 17:00";
+  aq:observedOn "18-Apr-2021 - 17:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2018%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 18:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 18:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 18:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 18:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 18:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 18:00";
+  aq:observedOn "18-Apr-2021 - 18:00" .
+
+aq:ooc_obs_narela18-Apr-2021%20-%2019%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#gp_narela18-Apr-2021 - 19:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#hc_narela18-Apr-2021 - 19:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#ooc_narela18-Apr-2021 - 19:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oos_narela18-Apr-2021 - 19:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#sp_narela18-Apr-2021 - 19:00",
+    "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#wc_narela18-Apr-2021 - 19:00";
+  aq:observedOn "18-Apr-2021 - 19:00" .
+
+aq:oon_narela17-Apr-2021%20-%2001%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "24.77";
+  aq:nitrogenMonoOxideConcentration "5.6";
+  aq:nitrogentOxideConcentration "17.72" .
+
+aq:oon_narela17-Apr-2021%20-%2002%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "20.73";
+  aq:nitrogenMonoOxideConcentration "3.38";
+  aq:nitrogentOxideConcentration "13.77" .
+
+aq:oon_narela17-Apr-2021%20-%2003%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "27.4";
+  aq:nitrogenMonoOxideConcentration "4.9";
+  aq:nitrogentOxideConcentration "18.6" .
+
+aq:oon_narela17-Apr-2021%20-%2004%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "18.95";
+  aq:nitrogenMonoOxideConcentration "4.03";
+  aq:nitrogentOxideConcentration "13.35" .
+
+aq:oon_narela17-Apr-2021%20-%2005%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "34.88";
+  aq:nitrogenMonoOxideConcentration "21.77";
+  aq:nitrogentOxideConcentration "36.33" .
+
+aq:oon_narela17-Apr-2021%20-%2006%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "43.53";
+  aq:nitrogenMonoOxideConcentration "31.7";
+  aq:nitrogentOxideConcentration "49.0" .
+
+aq:oon_narela17-Apr-2021%20-%2007%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "37.23";
+  aq:nitrogenMonoOxideConcentration "37.32";
+  aq:nitrogentOxideConcentration "50.23" .
+
+aq:oon_narela17-Apr-2021%20-%2008%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "30.5";
+  aq:nitrogenMonoOxideConcentration "17.23";
+  aq:nitrogentOxideConcentration "30.27" .
+
+aq:oon_narela17-Apr-2021%20-%2009%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "20.72";
+  aq:nitrogenMonoOxideConcentration "8.43";
+  aq:nitrogentOxideConcentration "17.9" .
+
+aq:oon_narela17-Apr-2021%20-%2010%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "12.77";
+  aq:nitrogenMonoOxideConcentration "5.22";
+  aq:nitrogentOxideConcentration "11.03" .
+
+aq:oon_narela17-Apr-2021%20-%2011%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "10.18";
+  aq:nitrogenMonoOxideConcentration "5.15";
+  aq:nitrogentOxideConcentration "9.6" .
+
+aq:oon_narela17-Apr-2021%20-%2012%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "5.07";
+  aq:nitrogenMonoOxideConcentration "4.25";
+  aq:nitrogentOxideConcentration "6.17" .
+
+aq:oon_narela17-Apr-2021%20-%2013%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "5.5";
+  aq:nitrogenMonoOxideConcentration "3.17";
+  aq:nitrogentOxideConcentration "5.5" .
+
+aq:oon_narela17-Apr-2021%20-%2014%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "4.42";
+  aq:nitrogenMonoOxideConcentration "3.88";
+  aq:nitrogentOxideConcentration "5.5" .
+
+aq:oon_narela17-Apr-2021%20-%2015%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "3.0";
+  aq:nitrogenMonoOxideConcentration "3.35";
+  aq:nitrogentOxideConcentration "4.32" .
+
+aq:oon_narela17-Apr-2021%20-%2016%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "3.0";
+  aq:nitrogenMonoOxideConcentration "3.75";
+  aq:nitrogentOxideConcentration "4.65" .
+
+aq:oon_narela17-Apr-2021%20-%2017%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "2.3";
+  aq:nitrogenMonoOxideConcentration "3.1";
+  aq:nitrogentOxideConcentration "3.75" .
+
+aq:oon_narela17-Apr-2021%20-%2018%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "2.3";
+  aq:nitrogenMonoOxideConcentration "2.9";
+  aq:nitrogentOxideConcentration "3.62" .
+
+aq:oon_narela17-Apr-2021%20-%2019%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "4.85";
+  aq:nitrogenMonoOxideConcentration "3.62";
+  aq:nitrogentOxideConcentration "5.55" .
+
+aq:oon_narela17-Apr-2021%20-%2020%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "15.15";
+  aq:nitrogenMonoOxideConcentration "4.4";
+  aq:nitrogentOxideConcentration "11.6" .
+
+aq:oon_narela17-Apr-2021%20-%2021%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "22.25";
+  aq:nitrogenMonoOxideConcentration "3.55";
+  aq:nitrogentOxideConcentration "14.78" .
+
+aq:oon_narela17-Apr-2021%20-%2022%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "21.95";
+  aq:nitrogenMonoOxideConcentration "2.42";
+  aq:nitrogentOxideConcentration "13.65" .
+
+aq:oon_narela17-Apr-2021%20-%2023%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "24.27";
+  aq:nitrogenMonoOxideConcentration "2.55";
+  aq:nitrogentOxideConcentration "14.97" .
+
+aq:oon_narela18-Apr-2021%20-%2000%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "43.55";
+  aq:nitrogenMonoOxideConcentration "8.07";
+  aq:nitrogentOxideConcentration "29.75" .
+
+aq:oon_narela18-Apr-2021%20-%2001%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "61.6";
+  aq:nitrogenMonoOxideConcentration "24.0";
+  aq:nitrogentOxideConcentration "52.35" .
+
+aq:oon_narela18-Apr-2021%20-%2002%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "51.05";
+  aq:nitrogenMonoOxideConcentration "30.75";
+  aq:nitrogentOxideConcentration "52.28" .
+
+aq:oon_narela18-Apr-2021%20-%2003%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "31.9";
+  aq:nitrogenMonoOxideConcentration "8.4";
+  aq:nitrogentOxideConcentration "23.8" .
+
+aq:oon_narela18-Apr-2021%20-%2004%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "25.98";
+  aq:nitrogenMonoOxideConcentration "5.0";
+  aq:nitrogentOxideConcentration "17.88" .
+
+aq:oon_narela18-Apr-2021%20-%2005%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "25.25";
+  aq:nitrogenMonoOxideConcentration "4.05";
+  aq:nitrogentOxideConcentration "16.75" .
+
+aq:oon_narela18-Apr-2021%20-%2006%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "47.3";
+  aq:nitrogenMonoOxideConcentration "46.5";
+  aq:nitrogentOxideConcentration "63.05" .
+
+aq:oon_narela18-Apr-2021%20-%2007%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "50.15";
+  aq:nitrogenMonoOxideConcentration "51.67";
+  aq:nitrogentOxideConcentration "68.83" .
+
+aq:oon_narela18-Apr-2021%20-%2008%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "56.3";
+  aq:nitrogenMonoOxideConcentration "30.95";
+  aq:nitrogentOxideConcentration "55.15" .
+
+aq:oon_narela18-Apr-2021%20-%2009%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "28.1";
+  aq:nitrogenMonoOxideConcentration "6.3";
+  aq:nitrogentOxideConcentration "20.1" .
+
+aq:oon_narela18-Apr-2021%20-%2010%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "21.82";
+  aq:nitrogenMonoOxideConcentration "4.28";
+  aq:nitrogentOxideConcentration "15.12" .
+
+aq:oon_narela18-Apr-2021%20-%2011%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "8.35";
+  aq:nitrogenMonoOxideConcentration "4.05";
+  aq:nitrogentOxideConcentration "7.75" .
+
+aq:oon_narela18-Apr-2021%20-%2012%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "7.58";
+  aq:nitrogenMonoOxideConcentration "2.85";
+  aq:nitrogentOxideConcentration "6.38" .
+
+aq:oon_narela18-Apr-2021%20-%2013%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "6.4";
+  aq:nitrogenMonoOxideConcentration "3.83";
+  aq:nitrogentOxideConcentration "6.53" .
+
+aq:oon_narela18-Apr-2021%20-%2014%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "3.35";
+  aq:nitrogenMonoOxideConcentration "4.08";
+  aq:nitrogentOxideConcentration "5.1" .
+
+aq:oon_narela18-Apr-2021%20-%2015%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "3.4";
+  aq:nitrogenMonoOxideConcentration "3.48";
+  aq:nitrogentOxideConcentration "4.65" .
+
+aq:oon_narela18-Apr-2021%20-%2016%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "3.38";
+  aq:nitrogenMonoOxideConcentration "3.8";
+  aq:nitrogentOxideConcentration "4.92" .
+
+aq:oon_narela18-Apr-2021%20-%2017%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "3.05";
+  aq:nitrogenMonoOxideConcentration "3.62";
+  aq:nitrogentOxideConcentration "4.6" .
+
+aq:oon_narela18-Apr-2021%20-%2018%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "4.0";
+  aq:nitrogenMonoOxideConcentration "3.38";
+  aq:nitrogentOxideConcentration "4.9" .
+
+aq:oon_narela18-Apr-2021%20-%2019%3A00 a aq:OxideOfNitrogen;
+  aq:nitrogenDiOxideConcentration "10.85";
+  aq:nitrogenMonoOxideConcentration "2.58";
+  aq:nitrogentOxideConcentration "7.85" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2001%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 01:00";
+  aq:observedOn "17-Apr-2021 - 01:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2002%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 02:00";
+  aq:observedOn "17-Apr-2021 - 02:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2003%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 03:00";
+  aq:observedOn "17-Apr-2021 - 03:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2004%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 04:00";
+  aq:observedOn "17-Apr-2021 - 04:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2005%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 05:00";
+  aq:observedOn "17-Apr-2021 - 05:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2006%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 06:00";
+  aq:observedOn "17-Apr-2021 - 06:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2007%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 07:00";
+  aq:observedOn "17-Apr-2021 - 07:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2008%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 08:00";
+  aq:observedOn "17-Apr-2021 - 08:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2009%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 09:00";
+  aq:observedOn "17-Apr-2021 - 09:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2010%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 10:00";
+  aq:observedOn "17-Apr-2021 - 10:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2011%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 11:00";
+  aq:observedOn "17-Apr-2021 - 11:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2012%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 12:00";
+  aq:observedOn "17-Apr-2021 - 12:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2013%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 13:00";
+  aq:observedOn "17-Apr-2021 - 13:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2014%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 14:00";
+  aq:observedOn "17-Apr-2021 - 14:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2015%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 15:00";
+  aq:observedOn "17-Apr-2021 - 15:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2016%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 16:00";
+  aq:observedOn "17-Apr-2021 - 16:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2017%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 17:00";
+  aq:observedOn "17-Apr-2021 - 17:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2018%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 18:00";
+  aq:observedOn "17-Apr-2021 - 18:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2019%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 19:00";
+  aq:observedOn "17-Apr-2021 - 19:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2020%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 20:00";
+  aq:observedOn "17-Apr-2021 - 20:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2021%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 21:00";
+  aq:observedOn "17-Apr-2021 - 21:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2022%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 22:00";
+  aq:observedOn "17-Apr-2021 - 22:00" .
+
+aq:oon_obs_narela17-Apr-2021%20-%2023%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela17-Apr-2021 - 23:00";
+  aq:observedOn "17-Apr-2021 - 23:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2000%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 00:00";
+  aq:observedOn "18-Apr-2021 - 00:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2001%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 01:00";
+  aq:observedOn "18-Apr-2021 - 01:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2002%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 02:00";
+  aq:observedOn "18-Apr-2021 - 02:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2003%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 03:00";
+  aq:observedOn "18-Apr-2021 - 03:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2004%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 04:00";
+  aq:observedOn "18-Apr-2021 - 04:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2005%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 05:00";
+  aq:observedOn "18-Apr-2021 - 05:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2006%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 06:00";
+  aq:observedOn "18-Apr-2021 - 06:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2007%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 07:00";
+  aq:observedOn "18-Apr-2021 - 07:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2008%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 08:00";
+  aq:observedOn "18-Apr-2021 - 08:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2009%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 09:00";
+  aq:observedOn "18-Apr-2021 - 09:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2010%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 10:00";
+  aq:observedOn "18-Apr-2021 - 10:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2011%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 11:00";
+  aq:observedOn "18-Apr-2021 - 11:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2012%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 12:00";
+  aq:observedOn "18-Apr-2021 - 12:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2013%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 13:00";
+  aq:observedOn "18-Apr-2021 - 13:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2014%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 14:00";
+  aq:observedOn "18-Apr-2021 - 14:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2015%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 15:00";
+  aq:observedOn "18-Apr-2021 - 15:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2016%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 16:00";
+  aq:observedOn "18-Apr-2021 - 16:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2017%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 17:00";
+  aq:observedOn "18-Apr-2021 - 17:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2018%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 18:00";
+  aq:observedOn "18-Apr-2021 - 18:00" .
+
+aq:oon_obs_narela18-Apr-2021%20-%2019%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#oon_narela18-Apr-2021 - 19:00";
+  aq:observedOn "18-Apr-2021 - 19:00" .
+
+aq:oos_narela17-Apr-2021%20-%2001%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "12.32" .
+
+aq:oos_narela17-Apr-2021%20-%2002%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "14.25" .
+
+aq:oos_narela17-Apr-2021%20-%2003%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "" .
+
+aq:oos_narela17-Apr-2021%20-%2004%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "15.25" .
+
+aq:oos_narela17-Apr-2021%20-%2005%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "14.65" .
+
+aq:oos_narela17-Apr-2021%20-%2006%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "10.3" .
+
+aq:oos_narela17-Apr-2021%20-%2007%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "11.55" .
+
+aq:oos_narela17-Apr-2021%20-%2008%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "18.15" .
+
+aq:oos_narela17-Apr-2021%20-%2009%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "31.18" .
+
+aq:oos_narela17-Apr-2021%20-%2010%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "22.15" .
+
+aq:oos_narela17-Apr-2021%20-%2011%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "17.55" .
+
+aq:oos_narela17-Apr-2021%20-%2012%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "8.85" .
+
+aq:oos_narela17-Apr-2021%20-%2013%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "7.97" .
+
+aq:oos_narela17-Apr-2021%20-%2014%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "6.0" .
+
+aq:oos_narela17-Apr-2021%20-%2015%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "4.8" .
+
+aq:oos_narela17-Apr-2021%20-%2016%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "4.97" .
+
+aq:oos_narela17-Apr-2021%20-%2017%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "4.38" .
+
+aq:oos_narela17-Apr-2021%20-%2018%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "3.92" .
+
+aq:oos_narela17-Apr-2021%20-%2019%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "3.83" .
+
+aq:oos_narela17-Apr-2021%20-%2020%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "5.3" .
+
+aq:oos_narela17-Apr-2021%20-%2021%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "9.58" .
+
+aq:oos_narela17-Apr-2021%20-%2022%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "9.8" .
+
+aq:oos_narela17-Apr-2021%20-%2023%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "8.68" .
+
+aq:oos_narela18-Apr-2021%20-%2000%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "26.48" .
+
+aq:oos_narela18-Apr-2021%20-%2001%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "24.68" .
+
+aq:oos_narela18-Apr-2021%20-%2002%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "25.4" .
+
+aq:oos_narela18-Apr-2021%20-%2003%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "" .
+
+aq:oos_narela18-Apr-2021%20-%2004%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "46.4" .
+
+aq:oos_narela18-Apr-2021%20-%2005%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "55.9" .
+
+aq:oos_narela18-Apr-2021%20-%2006%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "35.05" .
+
+aq:oos_narela18-Apr-2021%20-%2007%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "22.77" .
+
+aq:oos_narela18-Apr-2021%20-%2008%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "45.12" .
+
+aq:oos_narela18-Apr-2021%20-%2009%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "83.45" .
+
+aq:oos_narela18-Apr-2021%20-%2010%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "49.8" .
+
+aq:oos_narela18-Apr-2021%20-%2011%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "24.38" .
+
+aq:oos_narela18-Apr-2021%20-%2012%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "20.23" .
+
+aq:oos_narela18-Apr-2021%20-%2013%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "15.78" .
+
+aq:oos_narela18-Apr-2021%20-%2014%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "11.53" .
+
+aq:oos_narela18-Apr-2021%20-%2015%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "11.05" .
+
+aq:oos_narela18-Apr-2021%20-%2016%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "8.75" .
+
+aq:oos_narela18-Apr-2021%20-%2017%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "7.5" .
+
+aq:oos_narela18-Apr-2021%20-%2018%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "6.4" .
+
+aq:oos_narela18-Apr-2021%20-%2019%3A00 a aq:OxideOfSulphur;
+  aq:sulphurDiOxideConcentration "8.45" .
+
+aq:pm_narela17-Apr-2021%20-%2001%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "130.0";
+  aq:particulateMatter2_5Concentration "35.75" .
+
+aq:pm_narela17-Apr-2021%20-%2002%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "121.0";
+  aq:particulateMatter2_5Concentration "43.5" .
+
+aq:pm_narela17-Apr-2021%20-%2003%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "110.75";
+  aq:particulateMatter2_5Concentration "43.25" .
+
+aq:pm_narela17-Apr-2021%20-%2004%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "108.5";
+  aq:particulateMatter2_5Concentration "47.0" .
+
+aq:pm_narela17-Apr-2021%20-%2005%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "115.25";
+  aq:particulateMatter2_5Concentration "49.75" .
+
+aq:pm_narela17-Apr-2021%20-%2006%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "125.5";
+  aq:particulateMatter2_5Concentration "61.75" .
+
+aq:pm_narela17-Apr-2021%20-%2007%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "134.25";
+  aq:particulateMatter2_5Concentration "68.5" .
+
+aq:pm_narela17-Apr-2021%20-%2008%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "144.5";
+  aq:particulateMatter2_5Concentration "68.0" .
+
+aq:pm_narela17-Apr-2021%20-%2009%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "195.25";
+  aq:particulateMatter2_5Concentration "114.0" .
+
+aq:pm_narela17-Apr-2021%20-%2010%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "227.75";
+  aq:particulateMatter2_5Concentration "124.0" .
+
+aq:pm_narela17-Apr-2021%20-%2011%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "318.75";
+  aq:particulateMatter2_5Concentration "93.0" .
+
+aq:pm_narela17-Apr-2021%20-%2012%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "356.5";
+  aq:particulateMatter2_5Concentration "89.5" .
+
+aq:pm_narela17-Apr-2021%20-%2013%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "202.75";
+  aq:particulateMatter2_5Concentration "58.75" .
+
+aq:pm_narela17-Apr-2021%20-%2014%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "210.75";
+  aq:particulateMatter2_5Concentration "44.5" .
+
+aq:pm_narela17-Apr-2021%20-%2015%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "73.0";
+  aq:particulateMatter2_5Concentration "21.5" .
+
+aq:pm_narela17-Apr-2021%20-%2016%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "136.0";
+  aq:particulateMatter2_5Concentration "26.25" .
+
+aq:pm_narela17-Apr-2021%20-%2017%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "217.25";
+  aq:particulateMatter2_5Concentration "37.25" .
+
+aq:pm_narela17-Apr-2021%20-%2018%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "79.5";
+  aq:particulateMatter2_5Concentration "11.25" .
+
+aq:pm_narela17-Apr-2021%20-%2019%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "72.75";
+  aq:particulateMatter2_5Concentration "5.75" .
+
+aq:pm_narela17-Apr-2021%20-%2020%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "89.5";
+  aq:particulateMatter2_5Concentration "16.25" .
+
+aq:pm_narela17-Apr-2021%20-%2021%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "124.0";
+  aq:particulateMatter2_5Concentration "30.0" .
+
+aq:pm_narela17-Apr-2021%20-%2022%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "195.75";
+  aq:particulateMatter2_5Concentration "53.0" .
+
+aq:pm_narela17-Apr-2021%20-%2023%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "238.0";
+  aq:particulateMatter2_5Concentration "56.0" .
+
+aq:pm_narela18-Apr-2021%20-%2000%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "231.0";
+  aq:particulateMatter2_5Concentration "57.75" .
+
+aq:pm_narela18-Apr-2021%20-%2001%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "305.0";
+  aq:particulateMatter2_5Concentration "87.5" .
+
+aq:pm_narela18-Apr-2021%20-%2002%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "284.5";
+  aq:particulateMatter2_5Concentration "79.5" .
+
+aq:pm_narela18-Apr-2021%20-%2003%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "256.25";
+  aq:particulateMatter2_5Concentration "79.75" .
+
+aq:pm_narela18-Apr-2021%20-%2004%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "251.75";
+  aq:particulateMatter2_5Concentration "93.25" .
+
+aq:pm_narela18-Apr-2021%20-%2005%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "259.25";
+  aq:particulateMatter2_5Concentration "119.75" .
+
+aq:pm_narela18-Apr-2021%20-%2006%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "249.75";
+  aq:particulateMatter2_5Concentration "122.0" .
+
+aq:pm_narela18-Apr-2021%20-%2007%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "252.75";
+  aq:particulateMatter2_5Concentration "110.0" .
+
+aq:pm_narela18-Apr-2021%20-%2008%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "273.75";
+  aq:particulateMatter2_5Concentration "116.5" .
+
+aq:pm_narela18-Apr-2021%20-%2009%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "352.25";
+  aq:particulateMatter2_5Concentration "168.25" .
+
+aq:pm_narela18-Apr-2021%20-%2010%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "320.75";
+  aq:particulateMatter2_5Concentration "167.25" .
+
+aq:pm_narela18-Apr-2021%20-%2011%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "240.75";
+  aq:particulateMatter2_5Concentration "101.5" .
+
+aq:pm_narela18-Apr-2021%20-%2012%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "155.25";
+  aq:particulateMatter2_5Concentration "52.75" .
+
+aq:pm_narela18-Apr-2021%20-%2013%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "145.75";
+  aq:particulateMatter2_5Concentration "43.0" .
+
+aq:pm_narela18-Apr-2021%20-%2014%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "116.75";
+  aq:particulateMatter2_5Concentration "32.75" .
+
+aq:pm_narela18-Apr-2021%20-%2015%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "100.5";
+  aq:particulateMatter2_5Concentration "28.75" .
+
+aq:pm_narela18-Apr-2021%20-%2016%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "114.5";
+  aq:particulateMatter2_5Concentration "26.75" .
+
+aq:pm_narela18-Apr-2021%20-%2017%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "112.25";
+  aq:particulateMatter2_5Concentration "22.0" .
+
+aq:pm_narela18-Apr-2021%20-%2018%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "143.25";
+  aq:particulateMatter2_5Concentration "21.25" .
+
+aq:pm_narela18-Apr-2021%20-%2019%3A00 a aq:ParticulateMatter;
+  aq:particulateMatter10Concentration "188.25";
+  aq:particulateMatter2_5Concentration "28.75" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2001%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 01:00";
+  aq:observedOn "17-Apr-2021 - 01:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2002%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 02:00";
+  aq:observedOn "17-Apr-2021 - 02:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2003%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 03:00";
+  aq:observedOn "17-Apr-2021 - 03:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2004%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 04:00";
+  aq:observedOn "17-Apr-2021 - 04:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2005%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 05:00";
+  aq:observedOn "17-Apr-2021 - 05:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2006%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 06:00";
+  aq:observedOn "17-Apr-2021 - 06:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2007%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 07:00";
+  aq:observedOn "17-Apr-2021 - 07:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2008%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 08:00";
+  aq:observedOn "17-Apr-2021 - 08:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2009%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 09:00";
+  aq:observedOn "17-Apr-2021 - 09:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2010%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 10:00";
+  aq:observedOn "17-Apr-2021 - 10:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2011%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 11:00";
+  aq:observedOn "17-Apr-2021 - 11:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2012%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 12:00";
+  aq:observedOn "17-Apr-2021 - 12:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2013%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 13:00";
+  aq:observedOn "17-Apr-2021 - 13:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2014%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 14:00";
+  aq:observedOn "17-Apr-2021 - 14:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2015%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 15:00";
+  aq:observedOn "17-Apr-2021 - 15:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2016%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 16:00";
+  aq:observedOn "17-Apr-2021 - 16:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2017%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 17:00";
+  aq:observedOn "17-Apr-2021 - 17:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2018%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 18:00";
+  aq:observedOn "17-Apr-2021 - 18:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2019%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 19:00";
+  aq:observedOn "17-Apr-2021 - 19:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2020%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 20:00";
+  aq:observedOn "17-Apr-2021 - 20:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2021%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 21:00";
+  aq:observedOn "17-Apr-2021 - 21:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2022%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 22:00";
+  aq:observedOn "17-Apr-2021 - 22:00" .
+
+aq:pm_obs_narela17-Apr-2021%20-%2023%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela17-Apr-2021 - 23:00";
+  aq:observedOn "17-Apr-2021 - 23:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2000%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 00:00";
+  aq:observedOn "18-Apr-2021 - 00:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2001%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 01:00";
+  aq:observedOn "18-Apr-2021 - 01:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2002%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 02:00";
+  aq:observedOn "18-Apr-2021 - 02:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2003%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 03:00";
+  aq:observedOn "18-Apr-2021 - 03:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2004%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 04:00";
+  aq:observedOn "18-Apr-2021 - 04:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2005%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 05:00";
+  aq:observedOn "18-Apr-2021 - 05:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2006%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 06:00";
+  aq:observedOn "18-Apr-2021 - 06:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2007%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 07:00";
+  aq:observedOn "18-Apr-2021 - 07:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2008%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 08:00";
+  aq:observedOn "18-Apr-2021 - 08:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2009%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 09:00";
+  aq:observedOn "18-Apr-2021 - 09:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2010%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 10:00";
+  aq:observedOn "18-Apr-2021 - 10:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2011%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 11:00";
+  aq:observedOn "18-Apr-2021 - 11:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2012%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 12:00";
+  aq:observedOn "18-Apr-2021 - 12:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2013%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 13:00";
+  aq:observedOn "18-Apr-2021 - 13:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2014%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 14:00";
+  aq:observedOn "18-Apr-2021 - 14:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2015%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 15:00";
+  aq:observedOn "18-Apr-2021 - 15:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2016%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 16:00";
+  aq:observedOn "18-Apr-2021 - 16:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2017%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 17:00";
+  aq:observedOn "18-Apr-2021 - 17:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2018%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 18:00";
+  aq:observedOn "18-Apr-2021 - 18:00" .
+
+aq:pm_obs_narela18-Apr-2021%20-%2019%3A00 a aq:Observation;
+  aq:Station "_station";
+  aq:measure "http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#pm_narela18-Apr-2021 - 19:00";
+  aq:observedOn "18-Apr-2021 - 19:00" .
+
+aq:sp_narela17-Apr-2021%20-%2001%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "15.67" .
+
+aq:sp_narela17-Apr-2021%20-%2002%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "18.0" .
+
+aq:sp_narela17-Apr-2021%20-%2003%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "19.58" .
+
+aq:sp_narela17-Apr-2021%20-%2004%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "20.62" .
+
+aq:sp_narela17-Apr-2021%20-%2005%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "11.68" .
+
+aq:sp_narela17-Apr-2021%20-%2006%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "2.38" .
+
+aq:sp_narela17-Apr-2021%20-%2007%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "4.08" .
+
+aq:sp_narela17-Apr-2021%20-%2008%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "10.5" .
+
+aq:sp_narela17-Apr-2021%20-%2009%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "19.45" .
+
+aq:sp_narela17-Apr-2021%20-%2010%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "31.67" .
+
+aq:sp_narela17-Apr-2021%20-%2011%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "42.95" .
+
+aq:sp_narela17-Apr-2021%20-%2012%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "66.2" .
+
+aq:sp_narela17-Apr-2021%20-%2013%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "79.75" .
+
+aq:sp_narela17-Apr-2021%20-%2014%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "85.22" .
+
+aq:sp_narela17-Apr-2021%20-%2015%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "88.1" .
+
+aq:sp_narela17-Apr-2021%20-%2016%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "92.18" .
+
+aq:sp_narela17-Apr-2021%20-%2017%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "90.3" .
+
+aq:sp_narela17-Apr-2021%20-%2018%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "87.5" .
+
+aq:sp_narela17-Apr-2021%20-%2019%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "76.3" .
+
+aq:sp_narela17-Apr-2021%20-%2020%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "62.25" .
+
+aq:sp_narela17-Apr-2021%20-%2021%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "52.75" .
+
+aq:sp_narela17-Apr-2021%20-%2022%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "50.03" .
+
+aq:sp_narela17-Apr-2021%20-%2023%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "48.85" .
+
+aq:sp_narela18-Apr-2021%20-%2000%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "28.95" .
+
+aq:sp_narela18-Apr-2021%20-%2001%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "6.53" .
+
+aq:sp_narela18-Apr-2021%20-%2002%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "12.7" .
+
+aq:sp_narela18-Apr-2021%20-%2003%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "9.18" .
+
+aq:sp_narela18-Apr-2021%20-%2004%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "19.3" .
+
+aq:sp_narela18-Apr-2021%20-%2005%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "21.02" .
+
+aq:sp_narela18-Apr-2021%20-%2006%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "4.1" .
+
+aq:sp_narela18-Apr-2021%20-%2007%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "4.88" .
+
+aq:sp_narela18-Apr-2021%20-%2008%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "13.07" .
+
+aq:sp_narela18-Apr-2021%20-%2009%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "47.45" .
+
+aq:sp_narela18-Apr-2021%20-%2010%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "90.28" .
+
+aq:sp_narela18-Apr-2021%20-%2011%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "102.12" .
+
+aq:sp_narela18-Apr-2021%20-%2012%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "114.32" .
+
+aq:sp_narela18-Apr-2021%20-%2013%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "114.12" .
+
+aq:sp_narela18-Apr-2021%20-%2014%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "107.4" .
+
+aq:sp_narela18-Apr-2021%20-%2015%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "104.28" .
+
+aq:sp_narela18-Apr-2021%20-%2016%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "109.47" .
+
+aq:sp_narela18-Apr-2021%20-%2017%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "105.97" .
+
+aq:sp_narela18-Apr-2021%20-%2018%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "105.28" .
+
+aq:sp_narela18-Apr-2021%20-%2019%3A00 a aq:SecondaryPollutant;
+  aq:ozoneConcentration "93.6" .
+
+aq:wc_narela17-Apr-2021%20-%2001%3A00 a aq:WindCharacterstic;
+  aq:windDirection "20.7";
+  aq:windSpeed "1.92" .
+
+aq:wc_narela17-Apr-2021%20-%2002%3A00 a aq:WindCharacterstic;
+  aq:windDirection "9.35";
+  aq:windSpeed "1.55" .
+
+aq:wc_narela17-Apr-2021%20-%2003%3A00 a aq:WindCharacterstic;
+  aq:windDirection "338.43";
+  aq:windSpeed "1.3" .
+
+aq:wc_narela17-Apr-2021%20-%2004%3A00 a aq:WindCharacterstic;
+  aq:windDirection "185.38";
+  aq:windSpeed "1.33" .
+
+aq:wc_narela17-Apr-2021%20-%2005%3A00 a aq:WindCharacterstic;
+  aq:windDirection "79.05";
+  aq:windSpeed "0.73" .
+
+aq:wc_narela17-Apr-2021%20-%2006%3A00 a aq:WindCharacterstic;
+  aq:windDirection "202.43";
+  aq:windSpeed "0.33" .
+
+aq:wc_narela17-Apr-2021%20-%2007%3A00 a aq:WindCharacterstic;
+  aq:windDirection "229.02";
+  aq:windSpeed "0.5" .
+
+aq:wc_narela17-Apr-2021%20-%2008%3A00 a aq:WindCharacterstic;
+  aq:windDirection "233.47";
+  aq:windSpeed "1.35" .
+
+aq:wc_narela17-Apr-2021%20-%2009%3A00 a aq:WindCharacterstic;
+  aq:windDirection "253.3";
+  aq:windSpeed "1.82" .
+
+aq:wc_narela17-Apr-2021%20-%2010%3A00 a aq:WindCharacterstic;
+  aq:windDirection "274.0";
+  aq:windSpeed "1.75" .
+
+aq:wc_narela17-Apr-2021%20-%2011%3A00 a aq:WindCharacterstic;
+  aq:windDirection "270.12";
+  aq:windSpeed "1.25" .
+
+aq:wc_narela17-Apr-2021%20-%2012%3A00 a aq:WindCharacterstic;
+  aq:windDirection "264.17";
+  aq:windSpeed "1.82" .
+
+aq:wc_narela17-Apr-2021%20-%2013%3A00 a aq:WindCharacterstic;
+  aq:windDirection "249.3";
+  aq:windSpeed "1.98" .
+
+aq:wc_narela17-Apr-2021%20-%2014%3A00 a aq:WindCharacterstic;
+  aq:windDirection "254.35";
+  aq:windSpeed "2.15" .
+
+aq:wc_narela17-Apr-2021%20-%2015%3A00 a aq:WindCharacterstic;
+  aq:windDirection "240.57";
+  aq:windSpeed "1.97" .
+
+aq:wc_narela17-Apr-2021%20-%2016%3A00 a aq:WindCharacterstic;
+  aq:windDirection "251.28";
+  aq:windSpeed "1.93" .
+
+aq:wc_narela17-Apr-2021%20-%2017%3A00 a aq:WindCharacterstic;
+  aq:windDirection "244.43";
+  aq:windSpeed "1.95" .
+
+aq:wc_narela17-Apr-2021%20-%2018%3A00 a aq:WindCharacterstic;
+  aq:windDirection "247.8";
+  aq:windSpeed "1.72" .
+
+aq:wc_narela17-Apr-2021%20-%2019%3A00 a aq:WindCharacterstic;
+  aq:windDirection "248.52";
+  aq:windSpeed "1.03" .
+
+aq:wc_narela17-Apr-2021%20-%2020%3A00 a aq:WindCharacterstic;
+  aq:windDirection "247.2";
+  aq:windSpeed "0.6" .
+
+aq:wc_narela17-Apr-2021%20-%2021%3A00 a aq:WindCharacterstic;
+  aq:windDirection "278.2";
+  aq:windSpeed "0.97" .
+
+aq:wc_narela17-Apr-2021%20-%2022%3A00 a aq:WindCharacterstic;
+  aq:windDirection "316.82";
+  aq:windSpeed "1.5" .
+
+aq:wc_narela17-Apr-2021%20-%2023%3A00 a aq:WindCharacterstic;
+  aq:windDirection "332.6";
+  aq:windSpeed "1.23" .
+
+aq:wc_narela18-Apr-2021%20-%2000%3A00 a aq:WindCharacterstic;
+  aq:windDirection "103.9";
+  aq:windSpeed "0.73" .
+
+aq:wc_narela18-Apr-2021%20-%2001%3A00 a aq:WindCharacterstic;
+  aq:windDirection "49.67";
+  aq:windSpeed "0.43" .
+
+aq:wc_narela18-Apr-2021%20-%2002%3A00 a aq:WindCharacterstic;
+  aq:windDirection "56.98";
+  aq:windSpeed "0.92" .
+
+aq:wc_narela18-Apr-2021%20-%2003%3A00 a aq:WindCharacterstic;
+  aq:windDirection "45.08";
+  aq:windSpeed "0.6" .
+
+aq:wc_narela18-Apr-2021%20-%2004%3A00 a aq:WindCharacterstic;
+  aq:windDirection "17.5";
+  aq:windSpeed "0.82" .
+
+aq:wc_narela18-Apr-2021%20-%2005%3A00 a aq:WindCharacterstic;
+  aq:windDirection "20.07";
+  aq:windSpeed "0.78" .
+
+aq:wc_narela18-Apr-2021%20-%2006%3A00 a aq:WindCharacterstic;
+  aq:windDirection "152.38";
+  aq:windSpeed "0.28" .
+
+aq:wc_narela18-Apr-2021%20-%2007%3A00 a aq:WindCharacterstic;
+  aq:windDirection "194.22";
+  aq:windSpeed "0.3" .
+
+aq:wc_narela18-Apr-2021%20-%2008%3A00 a aq:WindCharacterstic;
+  aq:windDirection "89.9";
+  aq:windSpeed "0.6" .
+
+aq:wc_narela18-Apr-2021%20-%2009%3A00 a aq:WindCharacterstic;
+  aq:windDirection "68.45";
+  aq:windSpeed "0.75" .
+
+aq:wc_narela18-Apr-2021%20-%2010%3A00 a aq:WindCharacterstic;
+  aq:windDirection "98.65";
+  aq:windSpeed "0.6" .
+
+aq:wc_narela18-Apr-2021%20-%2011%3A00 a aq:WindCharacterstic;
+  aq:windDirection "159.3";
+  aq:windSpeed "0.6" .
+
+aq:wc_narela18-Apr-2021%20-%2012%3A00 a aq:WindCharacterstic;
+  aq:windDirection "216.6";
+  aq:windSpeed "0.67" .
+
+aq:wc_narela18-Apr-2021%20-%2013%3A00 a aq:WindCharacterstic;
+  aq:windDirection "228.2";
+  aq:windSpeed "0.95" .
+
+aq:wc_narela18-Apr-2021%20-%2014%3A00 a aq:WindCharacterstic;
+  aq:windDirection "276.27";
+  aq:windSpeed "1.15" .
+
+aq:wc_narela18-Apr-2021%20-%2015%3A00 a aq:WindCharacterstic;
+  aq:windDirection "287.98";
+  aq:windSpeed "1.42" .
+
+aq:wc_narela18-Apr-2021%20-%2016%3A00 a aq:WindCharacterstic;
+  aq:windDirection "278.67";
+  aq:windSpeed "1.5" .
+
+aq:wc_narela18-Apr-2021%20-%2017%3A00 a aq:WindCharacterstic;
+  aq:windDirection "274.5";
+  aq:windSpeed "1.77" .
+
+aq:wc_narela18-Apr-2021%20-%2018%3A00 a aq:WindCharacterstic;
+  aq:windDirection "274.73";
+  aq:windSpeed "1.48" .
+
+aq:wc_narela18-Apr-2021%20-%2019%3A00 a aq:WindCharacterstic;
+  aq:windDirection "270.32";
+  aq:windSpeed "1.05" .

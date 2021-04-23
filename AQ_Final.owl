@@ -1,0 +1,864 @@
+<?xml version="1.0"?>
+<Ontology xmlns="http://www.w3.org/2002/07/owl#"
+     xml:base="http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11"
+     xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+     xmlns:xml="http://www.w3.org/XML/1998/namespace"
+     xmlns:xsd="http://www.w3.org/2001/XMLSchema#"
+     xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+     ontologyIRI="http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11">
+    <Prefix name="" IRI="http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11"/>
+    <Prefix name="owl" IRI="http://www.w3.org/2002/07/owl#"/>
+    <Prefix name="rdf" IRI="http://www.w3.org/1999/02/22-rdf-syntax-ns#"/>
+    <Prefix name="xml" IRI="http://www.w3.org/XML/1998/namespace"/>
+    <Prefix name="xsd" IRI="http://www.w3.org/2001/XMLSchema#"/>
+    <Prefix name="rdfs" IRI="http://www.w3.org/2000/01/rdf-schema#"/>
+    <Declaration>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Place"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Trajectory"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="http://webprotege.stanford.edu/AllPollutant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#City"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Demographic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#EndingFix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#GaseousPollutant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Hydrocarbon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#MeteorologicalCharacterstic"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Observation"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OxideOfCarbon"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OxideOfNitrogen"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#OxideOfSulphur"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#ParticulateMatter"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PowerPlant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrescribedStandards"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#PrimaryPollutant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#SecondaryPollutant"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#StartingFix"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#Station"/>
+    </Declaration>
+    <Declaration>
+        <Class IRI="#WindCharacterstic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#atPlace"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#endsAt"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasFix"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasSegment"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasTrajectory"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#nextFix"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#startsFrom"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#atStation"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasDemographic"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#hasPrescribedRange"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#inCity"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#measure"/>
+    </Declaration>
+    <Declaration>
+        <ObjectProperty IRI="#observedInCity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://webprotege.stanford.edu/R36kL58bPaz8I1125FfWam"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="http://webprotege.stanford.edu/R9r7YBc0BnZh5RNRV8SYRT2"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ambientTemperature"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ammoniaConcentration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#bPressure"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#benzeneConcentration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#carbonMonoOxideConcentration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#cityName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#latitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#longitude"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#lowerBound"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nitrogenDiOxideConcentration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nitrogenMonoOxideConcentration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#nitrogentOxideConcentration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#observedOn"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#ozoneConcentration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#particulateMatter10Concentration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#particulateMatter2_5Concentration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#powerPlantCapacity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#powerPlantName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#powerPlantType"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#precipitation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#relativeHumidity"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#solarRadiation"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#stationName"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#sulphurDiOxideConcentration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#tolueneConcentration"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#upperBound"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#windDirection"/>
+    </Declaration>
+    <Declaration>
+        <DataProperty IRI="#windSpeed"/>
+    </Declaration>
+    <EquivalentClasses>
+        <Class IRI="#EndingFix"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectInverseOf>
+                        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#startsFrom"/>
+                    </ObjectInverseOf>
+                    <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <EquivalentClasses>
+        <Class IRI="#StartingFix"/>
+        <ObjectIntersectionOf>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+            <ObjectComplementOf>
+                <ObjectSomeValuesFrom>
+                    <ObjectInverseOf>
+                        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#endsAt"/>
+                    </ObjectInverseOf>
+                    <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+                </ObjectSomeValuesFrom>
+            </ObjectComplementOf>
+        </ObjectIntersectionOf>
+    </EquivalentClasses>
+    <SubClassOf>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#atPlace"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Place"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasFix"/>
+            </ObjectInverseOf>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Trajectory"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#nextFix"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#endsAt"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#startsFrom"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+        <ObjectSomeValuesFrom>
+            <ObjectInverseOf>
+                <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasSegment"/>
+            </ObjectInverseOf>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Trajectory"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#endsAt"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#startsFrom"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Trajectory"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasSegment"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Trajectory"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasFix"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Trajectory"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasSegment"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#City"/>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Place"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#EndingFix"/>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#GaseousPollutant"/>
+        <Class IRI="#PrimaryPollutant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Hydrocarbon"/>
+        <Class IRI="#SecondaryPollutant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Observation"/>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="#atStation"/>
+            <Class IRI="#Station"/>
+        </ObjectSomeValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Observation"/>
+        <ObjectAllValuesFrom>
+            <ObjectProperty IRI="#measure"/>
+            <ObjectUnionOf>
+                <Class IRI="http://webprotege.stanford.edu/AllPollutant"/>
+                <Class IRI="#MeteorologicalCharacterstic"/>
+            </ObjectUnionOf>
+        </ObjectAllValuesFrom>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OxideOfCarbon"/>
+        <Class IRI="#GaseousPollutant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OxideOfNitrogen"/>
+        <Class IRI="#GaseousPollutant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#OxideOfSulphur"/>
+        <Class IRI="#GaseousPollutant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#ParticulateMatter"/>
+        <Class IRI="#PrimaryPollutant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#PrimaryPollutant"/>
+        <Class IRI="http://webprotege.stanford.edu/AllPollutant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#SecondaryPollutant"/>
+        <Class IRI="http://webprotege.stanford.edu/AllPollutant"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#StartingFix"/>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Station"/>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Place"/>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#Station"/>
+        <ObjectMaxCardinality cardinality="1">
+            <ObjectProperty IRI="#inCity"/>
+            <Class IRI="#City"/>
+        </ObjectMaxCardinality>
+    </SubClassOf>
+    <SubClassOf>
+        <Class IRI="#WindCharacterstic"/>
+        <Class IRI="#MeteorologicalCharacterstic"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#endsAt"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        </ObjectSomeValuesFrom>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasFix"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        </ObjectSomeValuesFrom>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Trajectory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasSegment"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+        </ObjectSomeValuesFrom>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Trajectory"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#nextFix"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        </ObjectSomeValuesFrom>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+    </SubClassOf>
+    <SubClassOf>
+        <ObjectSomeValuesFrom>
+            <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#startsFrom"/>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        </ObjectSomeValuesFrom>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+    </SubClassOf>
+    <DisjointClasses>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Place"/>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Segment"/>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Trajectory"/>
+        <Class IRI="http://webprotege.stanford.edu/AllPollutant"/>
+        <Class IRI="#Demographic"/>
+        <Class IRI="#MeteorologicalCharacterstic"/>
+        <Class IRI="#Observation"/>
+        <Class IRI="#PowerPlant"/>
+        <Class IRI="#PrescribedStandards"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="http://webprotege.stanford.edu/AllPollutant"/>
+        <Class IRI="#MeteorologicalCharacterstic"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#GaseousPollutant"/>
+        <Class IRI="#ParticulateMatter"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#OxideOfCarbon"/>
+        <Class IRI="#OxideOfNitrogen"/>
+        <Class IRI="#OxideOfSulphur"/>
+    </DisjointClasses>
+    <DisjointClasses>
+        <Class IRI="#PrimaryPollutant"/>
+        <Class IRI="#SecondaryPollutant"/>
+    </DisjointClasses>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#atStation"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <SubObjectPropertyOf>
+        <ObjectProperty IRI="#inCity"/>
+        <ObjectProperty abbreviatedIRI="owl:topObjectProperty"/>
+    </SubObjectPropertyOf>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#endsAt"/>
+    </FunctionalObjectProperty>
+    <FunctionalObjectProperty>
+        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#startsFrom"/>
+    </FunctionalObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#hasDemographic"/>
+    </AsymmetricObjectProperty>
+    <AsymmetricObjectProperty>
+        <ObjectProperty IRI="#inCity"/>
+    </AsymmetricObjectProperty>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasTrajectory"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#atStation"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasDemographic"/>
+        <ObjectUnionOf>
+            <Class IRI="#City"/>
+            <Class IRI="#Station"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#hasPrescribedRange"/>
+        <ObjectUnionOf>
+            <Class IRI="#OxideOfCarbon"/>
+            <Class IRI="#OxideOfNitrogen"/>
+            <Class IRI="#OxideOfSulphur"/>
+            <Class IRI="#ParticulateMatter"/>
+        </ObjectUnionOf>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#inCity"/>
+        <Class IRI="#Station"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyDomain>
+        <ObjectProperty IRI="#measure"/>
+        <Class IRI="#Observation"/>
+    </ObjectPropertyDomain>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="http://w3id.org/daselab/onto/trajectory#hasTrajectory"/>
+        <Class IRI="http://w3id.org/daselab/onto/trajectory#Trajectory"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#atStation"/>
+        <Class IRI="#Station"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasDemographic"/>
+        <Class IRI="#Demographic"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#hasPrescribedRange"/>
+        <Class IRI="#PrescribedStandards"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#inCity"/>
+        <Class IRI="#City"/>
+    </ObjectPropertyRange>
+    <ObjectPropertyRange>
+        <ObjectProperty IRI="#measure"/>
+        <ObjectUnionOf>
+            <Class IRI="http://webprotege.stanford.edu/AllPollutant"/>
+            <Class IRI="#MeteorologicalCharacterstic"/>
+        </ObjectUnionOf>
+    </ObjectPropertyRange>
+    <SubObjectPropertyOf>
+        <ObjectPropertyChain>
+            <ObjectProperty IRI="#atStation"/>
+            <ObjectProperty IRI="#inCity"/>
+        </ObjectPropertyChain>
+        <ObjectProperty IRI="#observedInCity"/>
+    </SubObjectPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="http://webprotege.stanford.edu/R9r7YBc0BnZh5RNRV8SYRT2"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#carbonMonoOxideConcentration"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#latitude"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#longitude"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#lowerBound"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#nitrogentOxideConcentration"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#particulateMatter10Concentration"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#particulateMatter2_5Concentration"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#stationName"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <SubDataPropertyOf>
+        <DataProperty IRI="#upperBound"/>
+        <DataProperty abbreviatedIRI="owl:topDataProperty"/>
+    </SubDataPropertyOf>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://webprotege.stanford.edu/R36kL58bPaz8I1125FfWam"/>
+        <Class IRI="#Station"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="http://webprotege.stanford.edu/R9r7YBc0BnZh5RNRV8SYRT2"/>
+        <Class IRI="#Demographic"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ambientTemperature"/>
+        <Class IRI="#MeteorologicalCharacterstic"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ammoniaConcentration"/>
+        <Class IRI="#GaseousPollutant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#bPressure"/>
+        <Class IRI="#MeteorologicalCharacterstic"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#benzeneConcentration"/>
+        <Class IRI="#Hydrocarbon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#carbonMonoOxideConcentration"/>
+        <Class IRI="#OxideOfCarbon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#cityName"/>
+        <Class IRI="#City"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#lowerBound"/>
+        <Class IRI="#PrescribedStandards"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nitrogenDiOxideConcentration"/>
+        <Class IRI="#OxideOfNitrogen"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nitrogenMonoOxideConcentration"/>
+        <Class IRI="#OxideOfNitrogen"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#nitrogentOxideConcentration"/>
+        <Class IRI="#OxideOfNitrogen"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#observedOn"/>
+        <ObjectUnionOf>
+            <Class IRI="http://w3id.org/daselab/onto/trajectory#Fix"/>
+            <Class IRI="#Observation"/>
+        </ObjectUnionOf>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#ozoneConcentration"/>
+        <Class IRI="#SecondaryPollutant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#particulateMatter10Concentration"/>
+        <Class IRI="#ParticulateMatter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#particulateMatter2_5Concentration"/>
+        <Class IRI="#ParticulateMatter"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#powerPlantCapacity"/>
+        <Class IRI="#PowerPlant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#powerPlantName"/>
+        <Class IRI="#PowerPlant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#powerPlantType"/>
+        <Class IRI="#PowerPlant"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#precipitation"/>
+        <Class IRI="#MeteorologicalCharacterstic"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#relativeHumidity"/>
+        <Class IRI="#MeteorologicalCharacterstic"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#solarRadiation"/>
+        <Class IRI="#MeteorologicalCharacterstic"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#stationName"/>
+        <Class IRI="#Station"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#sulphurDiOxideConcentration"/>
+        <Class IRI="#OxideOfSulphur"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#tolueneConcentration"/>
+        <Class IRI="#Hydrocarbon"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#upperBound"/>
+        <Class IRI="#PrescribedStandards"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#windDirection"/>
+        <Class IRI="#WindCharacterstic"/>
+    </DataPropertyDomain>
+    <DataPropertyDomain>
+        <DataProperty IRI="#windSpeed"/>
+        <Class IRI="#WindCharacterstic"/>
+    </DataPropertyDomain>
+    <DataPropertyRange>
+        <DataProperty IRI="http://webprotege.stanford.edu/R36kL58bPaz8I1125FfWam"/>
+        <Datatype abbreviatedIRI="xsd:boolean"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="http://webprotege.stanford.edu/R9r7YBc0BnZh5RNRV8SYRT2"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#latitude"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#longitude"/>
+        <Datatype abbreviatedIRI="xsd:double"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#lowerBound"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#nitrogenMonoOxideConcentration"/>
+        <Datatype abbreviatedIRI="xsd:decimal"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#observedOn"/>
+        <Datatype abbreviatedIRI="xsd:dateTime"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#stationName"/>
+        <Datatype abbreviatedIRI="xsd:string"/>
+    </DataPropertyRange>
+    <DataPropertyRange>
+        <DataProperty IRI="#upperBound"/>
+        <Datatype abbreviatedIRI="xsd:float"/>
+    </DataPropertyRange>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#Fix</IRI>
+        <Literal>Describes a fix, which is an adorned spatiotemporal point. A sequence of fixes form the trajectory.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#Fix</IRI>
+        <Literal>Fix</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#Place</IRI>
+        <Literal>This is the hook to other pattern/ontology that describes the notion of place, which is more general than just a location/geo-coordinate.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#Place</IRI>
+        <Literal>Place</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#Segment</IRI>
+        <Literal>The Segment class captures the &quot;connection&quot; between two consecutive fixes. That is, a segment starts from a fix and ends at another fix. If the pattern is used to model the trajectory of some moving object, each segment is traversed by that moving object. Additional information about a segment can be attached as attributes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#Segment</IRI>
+        <Literal>Segment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#Trajectory</IRI>
+        <Literal>Represents the notion of trajectory, this is the main class that can be hooked with other patterns that use the Trajectory pattern. Trajectory in this model is understood as a sequence of fixes connected by segments. There is exactly one starting fix and exactly one ending fix. Each fix has a temporal extent and a place (which is more general than just a location).</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#Trajectory</IRI>
+        <Literal>Trajectory</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#atPlace</IRI>
+        <Literal>Connects anything (including fixes in this pattern) to Place.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#atPlace</IRI>
+        <Literal>atPlace</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#endsAt</IRI>
+        <Literal>Connects a segment to the fix it ends at.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#endsAt</IRI>
+        <Literal>endsAt</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#hasFix</IRI>
+        <Literal>Relating the trajectory to each of its fixes.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#hasFix</IRI>
+        <Literal>hasFix</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#hasSegment</IRI>
+        <Literal>Relating the trajectory to each of its segments.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#hasSegment</IRI>
+        <Literal>hasSegment</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#hasTrajectory</IRI>
+        <Literal>Anything that has a trajectory can use this property to connect it to the trajectory instance.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#hasTrajectory</IRI>
+        <Literal>hasTrajectory</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#nextFix</IRI>
+        <Literal>Relates one fix to the immediately following fix in the sequence.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#nextFix</IRI>
+        <Literal>nextFix</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:comment"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#startsFrom</IRI>
+        <Literal>Connects a segment to the fix it starts from.</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://w3id.org/daselab/onto/trajectory#startsFrom</IRI>
+        <Literal>startsFrom</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/R36kL58bPaz8I1125FfWam</IRI>
+        <Literal>hasPowerPlantNearby</Literal>
+    </AnnotationAssertion>
+    <AnnotationAssertion>
+        <AnnotationProperty abbreviatedIRI="rdfs:label"/>
+        <IRI>http://webprotege.stanford.edu/R9r7YBc0BnZh5RNRV8SYRT2</IRI>
+        <Literal>hasPopulationDensity</Literal>
+    </AnnotationAssertion>
+</Ontology>
+
+
+
+<!-- Generated by the OWL API (version 4.5.9.2019-02-01T07:24:44Z) https://github.com/owlcs/owlapi -->
+

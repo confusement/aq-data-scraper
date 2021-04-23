@@ -9,18 +9,27 @@ const fs = require('fs');
 const util = require('util');
 const appendFile = util.promisify(fs.appendFile);
 
+var debugStop = false;
+
 async function cpcbJob(){
+    if(debugStop)
+        return;
     startTime = Date.now()
+    logger.debug("Started CPCB Job at ",new Date().toISOString())
     const cpcbConfig = require(__dirname+'/sources/config/cpcb.json')
     try{
-        let result = await cpcb.scrape({});
+        // let scraperesult = await cpcb.scrape({});
+        scraperesult={msg:"Debug Skipped Scrape"}
+        let mapResult = await cpcb.mapCSV()
         await appendFile(__dirname+cpcbConfig.schedule.logFile, JSON.stringify(
             {
-                result:result,
+                scraperesult:scraperesult,
+                mapResult,mapResult,
                 jobStart:startTime,
-                rdf_files:[]
             }
-        ));
+        )+"\n");
+        logger.debug("CPCB Job Ended")
+        debugStop=true;
     }
     catch(e){
         logger.error(e);

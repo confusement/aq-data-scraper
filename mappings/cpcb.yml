@@ -2,83 +2,256 @@ prefixes:
     aq: http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#
     grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
 mappings:
-    dat:
+    
+# Particulate Matter
+
+    pm:
         sources:
           - access: _filename
             referenceFormulation: csv
-        s: aq:pm25_filename__locname
+        s: aq:pm__locname$(To Date)
         po:
           - p: a
-            o: aq:ParticulateMatter2.5
-          - p: aq:hasValue
-            o: $(PM2.5 (ug/m3))
-          - p: aq:observedAt
-            o: _locname
+            o: aq:ParticulateMatter
+          - p: aq:particulateMatter10Concentration
+            o: $(PM10 (ug/m3\))
+          - p: aq:particulateMatter2_5Concentration
+            o: $(PM2.5 (ug/m3\))
+    obspm:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:pm_obs__locname$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
           - p: aq:observedOn
             o: $(To Date)
+          - p: aq:measure
+            o: aq:pm__locname$(To Date)
 
-        s: aq:no_filename__locname
+# Nitrogen oxides
+    oon:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:oon__locname$(To Date)
         po:
           - p: a
-            o: aq:NitrogenMonoOxide
-          - p: aq:hasValue
-            o: $(NO (ug/m3))
-          - p: aq:observedAt
-            o: _locname
+            o: aq:OxideOfNitrogen
+          - p: aq:nitrogenDiOxideConcentration
+            o: $(NO2 (ug/m3\))
+          - p: aq:nitrogenMonoOxideConcentration
+            o: $(NO (ug/m3\))
+          - p: aq:nitrogentOxideConcentration
+            o: $(NOx (ppb\))
+    ooon:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:oon_obs__locname$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
           - p: aq:observedOn
             o: $(To Date)
+          - p: aq:measure
+            o: aq:oon__locname$(To Date)
 
-        s: aq:no2_filename__locname
+# Oxides of carbon
+    ooc:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:ooc__locname$(To Date)
         po:
           - p: a
-            o: aq:NitrogenDiOxide
-          - p: aq:hasValue
-            o: $(PM2.5 (ug/m3))
-          - p: aq:observedAt
-            o: _locname
+            o: aq:OxideOfCarbon
+          - p: aq:carbonMonoOxideConcentration
+            o: $(CO (mg/m3\))
+    oooc:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:ooc_obs__locname$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
           - p: aq:observedOn
             o: $(To Date)
+          - p: aq:measure
+            o: aq:ooc__locname$(To Date)
 
-        s: aq:nox_filename__locname
+# Oxides of Sulphur
+    oos:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:oos__locname$(To Date)
         po:
           - p: a
-            o: aq:NitrogenOxide
-          - p: aq:hasValue
-            o: $(NOx (ppb))
-          - p: aq:observedAt
-            o: _locname
-          - p: aq:observedOn
-            o: $(To Date)
- 
-        s: aq:nh3_filename__locname
+            o: aq:OxideOfSulphur
+          - p: aq:sulphurDiOxideConcentration
+            o: $(SO2 (ug/m3\))
+    ooos:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:ooc_obs__locname$(To Date)
         po:
           - p: a
-            o: aq:Ammonia
-          - p: aq:hasValue
-            o: $(NH3 (ug/m3))
-          - p: aq:observedAt
-            o: _locname
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
           - p: aq:observedOn
             o: $(To Date)
-            
-        s: aq:so2_filename__locname
-        po:
-          - p: a
-            o: aq:SulphurDiOxide
-          - p: aq:hasValue
-            o: $(SO2 (ug/m3))
-          - p: aq:observedAt
-            o: _locname
-          - p: aq:observedOn
-            o: $(To Date)
+          - p: aq:measure
+            o: aq:oos__locname$(To Date)
 
-        s: aq:co_filename__locname
+# Ammonia
+    gp:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:gp__locname$(To Date)
         po:
           - p: a
-            o: aq:CarbonMonoOxide
-          - p: aq:hasValue
-            o: $(CO (mg/m3))
-          - p: aq:observedAt
-            o: _locname
+            o: aq:GaseousPollutant
+          - p: aq:ammoniaConcentration
+            o: $(NH3 (ug/m3\))
+    ogp:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:ooc_obs__locname$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
           - p: aq:observedOn
             o: $(To Date)
+          - p: aq:measure
+            o: aq:gp__locname$(To Date)
+
+# Ozone
+    sp:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:sp__locname$(To Date)
+        po:
+          - p: a
+            o: aq:SecondaryPollutant
+          - p: aq:ozoneConcentration
+            o: $(Ozone (ug/m3\))
+    osp:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:ooc_obs__locname$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:sp__locname$(To Date)
+
+# Hydrocarbon
+    hc:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:hc__locname$(To Date)
+        po:
+          - p: a
+            o: aq:Hydrocarbon
+          - p: aq:benzeneConcentration
+            o: $(Benzene (ug/m3\))
+          - p: aq:tolueneConcentration
+            o: $(Toluene (ug/m3\))
+    ohc:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:ooc_obs__locname$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:hc__locname$(To Date)
+
+# Meterological Characteristics
+    mc:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:mc__locname$(To Date)
+        po:
+          - p: a
+            o: aq:MeteorologicalCharacterstic
+          - p: aq:ambientTemperature
+            o: $(Temp (degree C\))
+          - p: aq:bPressure
+            o: $(BP (mmHg\))
+          - p: aq:precipitation
+            o: $(BP (mmHg\))
+          - p: aq:relativeHumidity
+            o: $(RH (%\))
+          - p: aq:solarRadiation
+            o: $(SR (W/mt2\))
+    omc:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:ooc_obs__locname$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:hc__locname$(To Date)
+
+# Wind Characteristics
+    wc:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:wc__locname$(To Date)
+        po:
+          - p: a
+            o: aq:WindCharacterstic
+          - p: aq:windDirection
+            o: $(WD (degree\))
+          - p: aq:windSpeed
+            o: $(WS (m/s\))
+    owc:
+        sources:
+          - access: _filename
+            referenceFormulation: csv
+        s: aq:ooc_obs__locname$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:wc__locname$(To Date)
