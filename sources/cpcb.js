@@ -7,6 +7,8 @@ const path = require('path');
 const exec = util.promisify(require('child_process').exec);
 const copyFile = util.promisify(require('fs').copyFile);
 const unlink = util.promisify(require('fs').unlink)
+const readFile = util.promisify(require('fs').readFile)
+const request = util.promisify(require('request'));
 
 const replace = require('replace-in-file');
 
@@ -16,9 +18,9 @@ var browserInstance = null;
 async function reloadBrowser(){
     if(!browserInstance)
         browserInstance = await puppeteer.launch({
-            headless: false ,
-            // executablePath: __dirname+'/../lib/chrome-linux/chrome',
-            executablePath: __dirname+'/../lib/chrome-win/chrome.exe',
+            headless: true ,
+            executablePath: __dirname+'/../lib/chrome-linux/chrome',
+            // executablePath: __dirname+'/../lib/chrome-win/chrome.exe',
             // args: ['--start-maximized']
         });
 }
@@ -124,11 +126,36 @@ async function mapCSV(args){
                 logger.debug(`error: ${stderr}`);
             }
 
-            // await unlink(rmlMapFile);
+            await unlink(rmlMapFile);
 
             logger.debug("java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m "+rmlMapFile+" -o "+rdfFileName);
 
             logger.debug("Mapped :" +rdfFileName);
+            
+            turtleData = await readFile(rdfFileName);
+            logger.debug(turtleData);
+            var options = {
+                'method': 'POST',
+                'url': 'http://localhost:3030/aqStore/data?default',
+                'headers': {
+                  'Content-Type': 'text/turtle;charset=utf-8'
+                },
+                formData: {
+                  'data': {
+                    'value': turtleData,
+                    'options': {
+                      'filename': rdfFileName,
+                      'contentType': 'text/turtle;charset=utf-8'
+                    }
+                  }
+                }
+            };
+
+            let turtleResponse = await request(options);
+            logger.debug("Response from fuseki : ["+turtleResponse.body+"]");
+
+            await unlink(__dirname+"/Data/RawData/cpcb/"+files[i]);
+
             rdfFiles.push(__dirname+"/../mappings/"+files[i]+".rml.ttl")
         }
     }
@@ -183,7 +210,7 @@ async function getCSV(location){
         let value = await page.evaluate(el => el.innerText, element);
 
         let = tableString = value.replaceAll("\t",",");
-        logger.debug(tableString);
+        // logger.debug(tableString);
         filename = location.IRI + "_" + Date.now()
         
         await fs.writeFile(__dirname+"/Data/RawData/cpcb/"+filename+".csv",tableString)

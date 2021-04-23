@@ -55,6 +55,9 @@ app.get('/',function(req,res,next){
     res.sendFile(__dirname+'/client/root.html')
 });
 
+app.get('/fuseki',function(req,res,next){
+    res.sendFile(__dirname+'/RDFstore/apache-jena-fuseki-3.17.0/webapp/index.html')
+});
 
 app.set('root',__dirname);
 

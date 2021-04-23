@@ -18,8 +18,9 @@ async function cpcbJob(){
     logger.debug("Started CPCB Job at ",new Date().toISOString())
     const cpcbConfig = require(__dirname+'/sources/config/cpcb.json')
     try{
-        // let scraperesult = await cpcb.scrape({});
-        scraperesult={msg:"Debug Skipped Scrape"}
+        debugStop=true;
+        let scraperesult = await cpcb.scrape({});
+        // scraperesult={msg:"Debug Skipped Scrape"}
         let mapResult = await cpcb.mapCSV()
         await appendFile(__dirname+cpcbConfig.schedule.logFile, JSON.stringify(
             {
@@ -29,7 +30,6 @@ async function cpcbJob(){
             }
         )+"\n");
         logger.debug("CPCB Job Ended")
-        debugStop=true;
     }
     catch(e){
         logger.error(e);

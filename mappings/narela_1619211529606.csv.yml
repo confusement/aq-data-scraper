@@ -1,0 +1,257 @@
+prefixes:
+    aq: http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#
+    grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+mappings:
+    
+# Particulate Matter
+
+    pm:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:pm_narela$(To Date)
+        po:
+          - p: a
+            o: aq:ParticulateMatter
+          - p: aq:particulateMatter10Concentration
+            o: $(PM10 (ug/m3\))
+          - p: aq:particulateMatter2_5Concentration
+            o: $(PM2.5 (ug/m3\))
+    obspm:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:pm_obs_narela$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:pm_narela$(To Date)
+
+# Nitrogen oxides
+    oon:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:oon_narela$(To Date)
+        po:
+          - p: a
+            o: aq:OxideOfNitrogen
+          - p: aq:nitrogenDiOxideConcentration
+            o: $(NO2 (ug/m3\))
+          - p: aq:nitrogenMonoOxideConcentration
+            o: $(NO (ug/m3\))
+          - p: aq:nitrogentOxideConcentration
+            o: $(NOx (ppb\))
+    ooon:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:oon_obs_narela$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:oon_narela$(To Date)
+
+# Oxides of carbon
+    ooc:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:ooc_narela$(To Date)
+        po:
+          - p: a
+            o: aq:OxideOfCarbon
+          - p: aq:carbonMonoOxideConcentration
+            o: $(CO (mg/m3\))
+    oooc:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:ooc_obs_narela$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:ooc_narela$(To Date)
+
+# Oxides of Sulphur
+    oos:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:oos_narela$(To Date)
+        po:
+          - p: a
+            o: aq:OxideOfSulphur
+          - p: aq:sulphurDiOxideConcentration
+            o: $(SO2 (ug/m3\))
+    ooos:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:ooc_obs_narela$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:oos_narela$(To Date)
+
+# Ammonia
+    gp:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:gp_narela$(To Date)
+        po:
+          - p: a
+            o: aq:GaseousPollutant
+          - p: aq:ammoniaConcentration
+            o: $(NH3 (ug/m3\))
+    ogp:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:ooc_obs_narela$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:gp_narela$(To Date)
+
+# Ozone
+    sp:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:sp_narela$(To Date)
+        po:
+          - p: a
+            o: aq:SecondaryPollutant
+          - p: aq:ozoneConcentration
+            o: $(Ozone (ug/m3\))
+    osp:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:ooc_obs_narela$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:sp_narela$(To Date)
+
+# Hydrocarbon
+    hc:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:hc_narela$(To Date)
+        po:
+          - p: a
+            o: aq:Hydrocarbon
+          - p: aq:benzeneConcentration
+            o: $(Benzene (ug/m3\))
+          - p: aq:tolueneConcentration
+            o: $(Toluene (ug/m3\))
+    ohc:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:ooc_obs_narela$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:hc_narela$(To Date)
+
+# Meterological Characteristics
+    mc:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:mc_narela$(To Date)
+        po:
+          - p: a
+            o: aq:MeteorologicalCharacterstic
+          - p: aq:ambientTemperature
+            o: $(Temp (degree C\))
+          - p: aq:bPressure
+            o: $(BP (mmHg\))
+          - p: aq:precipitation
+            o: $(BP (mmHg\))
+          - p: aq:relativeHumidity
+            o: $(RH (%\))
+          - p: aq:solarRadiation
+            o: $(SR (W/mt2\))
+    omc:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:ooc_obs_narela$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:hc_narela$(To Date)
+
+# Wind Characteristics
+    wc:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:wc_narela$(To Date)
+        po:
+          - p: a
+            o: aq:WindCharacterstic
+          - p: aq:windDirection
+            o: $(WD (degree\))
+          - p: aq:windSpeed
+            o: $(WS (m/s\))
+    owc:
+        sources:
+          - access: sources/Data/RawData/cpcb/narela_1619211529606.csv
+            referenceFormulation: csv
+        s: aq:ooc_obs_narela$(To Date)
+        po:
+          - p: a
+            o: aq:Observation
+          - p: aq:Station
+            o: _station
+          - p: aq:observedOn
+            o: $(To Date)
+          - p: aq:measure
+            o: aq:wc_narela$(To Date)
