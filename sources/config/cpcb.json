@@ -1,30 +1,30 @@
 {
-    "schedule":{
-        "recurrenceRule":{
-            "minute":null,
-            "second":30,
-            "hour":null,
-            "date":null,
-            "month":null
-        },
-        "logFile":"/logs/cpcb.log"
+  "schedule": {
+    "recurrenceRule": {
+      "minute": null,
+      "second": 30,
+      "hour": null,
+      "date": null,
+      "month": null
     },
-    "locations":[
-        {
-            "url":"https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1426%22%7D",
-            "State":"Delhi",
-            "City":"Delhi",
-            "StationName":"Narela, Delhi - DPCC",
-            "StationCode":"site_1426",
-            "IRI":"narela"
-        },
-        {
-            "url":"https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22%3A%22Delhi%22%2C%22city%22%3A%22Delhi%22%2C%22station%22%3A%22site_1428%22%7D",
-            "State":"Delhi",
-            "City":"Delhi",
-            "StationName":"Okhla Phase-2, Delhi - DPCC",
-            "StationCode":"site_1428",
-            "IRI":"okhla"
-        }
-    ]
+    "logFile": "/logs/cpcb.log"
+  },
+  "locations": [
+    {
+      "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1426%22%7D",
+      "State": "Delhi",
+      "City": "Delhi",
+      "StationName": "Narela, Delhi - DPCC",
+      "StationCode": "site_1426",
+      "IRI": "narela"
+    },
+    {
+      "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22%3A%22Delhi%22%2C%22city%22%3A%22Delhi%22%2C%22station%22%3A%22site_1428%22%7D",
+      "State": "Delhi",
+      "City": "Delhi",
+      "StationName": "Okhla Phase-2, Delhi - DPCC",
+      "StationCode": "site_1428",
+      "IRI": "okhla"
+    }
+  ]
 }
