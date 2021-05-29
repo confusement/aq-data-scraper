@@ -8,15 +8,101 @@ const path = require("path");
 const exec = util.promisify(require("child_process").exec);
 const puppeteer = require("puppeteer");
 var url = require("url");
+const parseKML = require("parse-kml");
+const createCsvWriter = require("csv-writer").createObjectCsvWriter;
+const logger = log4js.getLogger("kml-parser");
 
 var browserInstance = null;
 async function reloadBrowser() {
   if (!browserInstance)
     browserInstance = await puppeteer.launch({
-      headless: true,
+      headless: false,
       // args: ['--start-maximized']
     });
 }
+
+var dir_name = __dirname + "Data/RawData/hysplit";
+var directory = dir_name + "/ext";
+async function kmztokml(inputFile) {
+  try {
+    console.log("IM HERE");
+    await extract(inputFile, {
+      dir: dir_name + "/ext",
+    });
+    console.log("Extraction complete");
+
+    fs.readdir(directory, (err, files) => {
+      if (err) throw err;
+
+      for (const file of files) {
+        if (
+          path.join(directory, file).includes(".png") ||
+          path.join(directory, file).includes(".gif")
+        ) {
+          console.log(path.join(directory, file));
+          fs.unlink(path.join(directory, file), (err) => {
+            if (err) throw err;
+          });
+        }
+        //Rename File
+        // else if (path.join(directory, file).includes(".kml")) {
+        //   fs.rename(file, "hysplit.kml", () => {
+        //     console.log("\nFile Renamed!\n");
+        //   });
+        // }
+      }
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function kmltocsv(inputFile, outputFile) {
+  let response = await parseKML.toJson(inputFile);
+
+  const csvWriter = createCsvWriter({
+    path: outputFile,
+    header: [
+      { id: "timestamp", title: "timestamp" },
+      { id: "longitude", title: "longitude" },
+      { id: "latitude", title: "latitude" },
+      { id: "height", title: "height" },
+    ],
+  });
+
+  try {
+    var res = response["features"];
+    var finObj = [];
+    for (var i = 1; i < res.length; i++) {
+      var obj = res[i];
+      if (obj["geometry"]["type"] == "Point") {
+        temp = {};
+        if (obj["properties"]["timespan"] == null) {
+          temp["timestamp"] = res[i + 1]["properties"]["timespan"]["end"];
+        } else {
+          temp["timestamp"] = obj["properties"]["timespan"]["begin"];
+        }
+        temp["longitude"] = obj["geometry"]["coordinates"][0];
+        temp["latitude"] = obj["geometry"]["coordinates"][1];
+        temp["height"] = obj["geometry"]["coordinates"][2];
+        finObj.push(temp);
+      }
+    }
+  } catch (error) {
+    logger.error(error);
+  }
+
+  csvWriter
+    .writeRecords(finObj)
+    .then(() =>
+      logger.log("The CSV file " + outputFile + " was written successfully")
+    );
+  return response;
+}
+
+module.exports = {
+  kmltocsv: kmltocsv,
+};
 
 const config = require(__dirname + "/config/hysplit.json");
 
@@ -40,7 +126,119 @@ async function scrape(args) {
 }
 
 async function mapCSV(args) {
-  //TODO
+  logger.debug("Started Mapping");
+  rdfFiles = [];
+  try {
+    files = await fs.readdir(__dirname + "/Data/RawData/hysplit");
+    for (i in files) {
+      logger.debug(files[i]);
+      yarrmlFileName = path.resolve(
+        __dirname + "/../mappings/" + files[i] + ".yml"
+      );
+
+      await copyFile(
+        path.resolve(__dirname + "/../mappings/hysplit.yml"),
+        yarrmlFileName
+      );
+
+      // Change this to suit HYSPLIT format
+      // let LocationIRI = files[i].split("_")[0];
+      // const replace_locname = {
+      //   files: yarrmlFileName,
+      //   from: /_locname/g,
+      //   to: LocationIRI,
+      // };
+      // await replace(replace_locname);
+
+      // const replace_filename = {
+      //   files: yarrmlFileName,
+      //   from: /_filename/g,
+      //   to: "sources/Data/RawData/cpcb/" + files[i],
+      // };
+      // await replace(replace_filename);
+
+      var location = config.locations.find((search) => {
+        return search.IRI === LocationIRI;
+      });
+
+      let rmlMapFile = path.resolve(
+        __dirname + "/../mappings/" + files[i] + ".rml.ttl"
+      );
+
+      const { stdout3, stderr3 } = await exec(
+        "yarrrml-parser -i " + yarrmlFileName + " -o " + rmlMapFile,
+        {
+          cwd: __dirname + "/..",
+        }
+      );
+      0;
+      if (stderr3) {
+        logger.debug(`error: ${stderr}`);
+      }
+
+      await unlink(yarrmlFileName);
+
+      let rdfFileName = path.resolve(
+        __dirname + "/../sources/Data/RdfData/hysplit/" + files[i] + ".turtle"
+      );
+
+      const { stdout4, stderr4 } = await exec(
+        "java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m " +
+          rmlMapFile +
+          " -o " +
+          rdfFileName,
+        {
+          cwd: path.resolve(__dirname + "/.."),
+        }
+      );
+      if (stderr4) {
+        logger.debug(`error: ${stderr}`);
+      }
+
+      await unlink(rmlMapFile);
+
+      logger.debug(
+        "java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m " +
+          rmlMapFile +
+          " -o " +
+          rdfFileName
+      );
+
+      logger.debug("Mapped :" + rdfFileName);
+
+      turtleData = await readFile(rdfFileName);
+      logger.debug(turtleData);
+      var options = {
+        method: "POST",
+        url: "http://localhost:3030/aqStore/data?default",
+        headers: {
+          "Content-Type": "text/turtle;charset=utf-8",
+        },
+        formData: {
+          data: {
+            value: turtleData,
+            options: {
+              filename: rdfFileName,
+              contentType: "text/turtle;charset=utf-8",
+            },
+          },
+        },
+      };
+
+      let turtleResponse = await request(options);
+      logger.debug("Response from fuseki : [" + turtleResponse.body + "]");
+
+      await unlink(__dirname + "/Data/RawData/hysplit/" + files[i]);
+
+      rdfFiles.push(__dirname + "/../mappings/" + files[i] + ".rml.ttl");
+    }
+  } catch (err) {
+    logger.error(err);
+  }
+  return {
+    msg: "OK",
+    rdfFiles: rdfFiles,
+  };
 }
 
 async function getKMZ(location) {
@@ -125,3 +323,5 @@ async function getKMZ(location) {
     console.log(err);
   }
 }
+
+scrape();

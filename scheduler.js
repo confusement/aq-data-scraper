@@ -20,7 +20,7 @@ async function cpcbJob() {
   if (debugStop) return;
   startTime = Date.now();
   logger.debug("Started CPCB Job at ", new Date().toISOString());
-  const cpcbConfig = require(__dirname + "/sources/config/cpcb.json");
+  cpcbConfig = require(__dirname + "/sources/config/cpcb.json");
   try {
     debugStop = true;
     let scraperesult = await cpcb.scrape({});
@@ -45,7 +45,7 @@ async function hysplitJob() {
   if (debugStop) return;
   startTime = Date.now();
   logger.debug("Started HYSPLIT Job at ", new Date().toISOString());
-  const hysplitConfig = require(__dirname + "/sources/config/cpcb.json");
+  hysplitConfig = require(__dirname + "/sources/config/hysplit.json");
   try {
     debugStop = true;
     let scraperesult = await hysplit.scrape({});

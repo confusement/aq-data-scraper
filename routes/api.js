@@ -32,19 +32,6 @@ router.get("/mapCSV", async function (req, res, next) {
   }
 });
 
-router.get("/test1", (req, res, next) => {
-  req.app.locals.somethingNew = "Hi setting new global var";
-});
-
-router.get("/test3", (req, res, next) => {
-  req.app.set("testVar", " Hweello Workds2!");
-});
-
-router.get("/test2", (req, res, next) => {
-  console.log(req.app.locals.somethingNew);
-  console.log(req.app.get("testVar"));
-});
-
 router.get("/scrape", async function (req, res, next) {
   switch (req.query.source) {
     case "cpcb":
@@ -84,20 +71,7 @@ router.get("/performance", async function (req, res, next) {
     JSON.stringify({
       CPU: [45, 32, 64, 61, 62, 72, 71, 63, 68, 50, 40, 31, 35, 32, 36],
       RAM: [
-        368,
-        372,
-        468,
-        480,
-        492,
-        512,
-        508,
-        499,
-        467,
-        368,
-        378,
-        361,
-        333,
-        321,
+        368, 372, 468, 480, 492, 512, 508, 499, 467, 368, 378, 361, 333, 321,
         351,
       ],
       frequency: 1,
@@ -107,42 +81,90 @@ router.get("/performance", async function (req, res, next) {
 });
 router.get("/systems", async function (req, res, next) {
   res.setHeader("Content-Type", "application/json");
+  var cpcb_lastRun,
+    cpcb_lastMode,
+    hysplit_lastRun,
+    hysplit_lastMode,
+    modis_lastRun,
+    modis_lastMode;
+
+  var file_cpcb = fs.readFile("logs/app.log", "utf8", function (err, doc) {
+    var cpcb_parsed_log = doc.match(
+      /\[\d\d\d\d-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])\T(00|[0-9]|1[0-9]|2[0-3]):([0-9]|[0-5][0-9]):([0-9]|[0-5][0-9])\.([0-9]+)\] \[\w+\] (cpcb-scraper)/g
+    );
+    var cpcbstat = cpcb_parsed_log[cpcb_parsed_log.length - 1];
+    var cpcbtime_mode = cpcbstat.match(/\[(.*?)\]/g);
+    cpcb_lastRun = cpcbtime_mode[0].substring(1, cpcbtime_mode[0].length - 1);
+    cpcb_lastMode = cpcbtime_mode[1].substring(1, cpcbtime_mode[1].length - 1);
+
+    var hysplit_parsed_log = doc.match(
+      /\[\d\d\d\d-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])\T(00|[0-9]|1[0-9]|2[0-3]):([0-9]|[0-5][0-9]):([0-9]|[0-5][0-9])\.([0-9]+)\] \[\w+\] (hysplit-scraper)/g
+    );
+    var hysplitstat = hysplit_parsed_log[hysplit_parsed_log.length - 1];
+    var hysplittime_mode = hysplitstat.match(/\[(.*?)\]/g);
+    hysplit_lastRun = hysplittime_mode[0].substring(
+      1,
+      hysplittime_mode[0].length - 1
+    );
+    hysplit_lastMode = hysplittime_mode[1].substring(
+      1,
+      hysplittime_mode[1].length - 1
+    );
+
+    var modis_parsed_log = doc.match(
+      /\[\d\d\d\d-(0?[1-9]|1[0-2])-(0?[1-9]|[12][0-9]|3[01])\T(00|[0-9]|1[0-9]|2[0-3]):([0-9]|[0-5][0-9]):([0-9]|[0-5][0-9])\.([0-9]+)\] \[\w+\] (modis-scraper)/g
+    );
+    var modisstat = modis_parsed_log[modis_parsed_log.length - 1];
+    var modistime_mode = modisstat.match(/\[(.*?)\]/g);
+    modis_lastRun = modistime_mode[0].substring(
+      1,
+      modistime_mode[0].length - 1
+    );
+    modis_lastMode = modistime_mode[1].substring(
+      1,
+      modistime_mode[1].length - 1
+    );
+  });
   scheduler.getStatus(req.app);
   res.end(
     JSON.stringify({
       systemList: [
         {
           name: "cpcb",
-          //status: "enabled",
-          isRunning: req.app.get("statusVars").cpcbJobStatus,
+          //isRunning: "enabled",
+          status: req.app.get("statusVars").cpcbJobStatus,
           //   cron: "* * * * *",
           //   rdfCache: 0,
-          //   lastRun: 1617662546090,
-          //   description: "cpcb desc",
+          lastRun: cpcb_lastRun,
+          lastRunMode: cpcb_lastMode,
+          description: "cpcb desc",
         },
         {
           name: "modis",
-          //status: "enabled",
-          isRunning: req.app.get("statusVars").modisJobStatus,
+          //isRunning: "enabled",
+          status: req.app.get("statusVars").modisJobStatus,
           //   cron: "* * * * *",
           //   rdfCache: 0,
-          //   lastRun: 1617662546090,
-          //   description: "modis desc",
+          lastRun: modis_lastRun,
+          lastRunMode: modis_lastMode,
+          description: "modis desc",
         },
         {
           name: "hysplit",
-          //status: "enabled",
-          isRunning: req.app.get("statusVars").hysplitJobStatus,
+          //isRunning: "enabled",
+          status: req.app.get("statusVars").hysplitJobStatus,
           //   cron: "* * * * *",
           //   rdfCache: 0,
-          //   lastRun: 1617662546090,
-          //   description: "trajectory desc",
+          lastRun: hysplit_lastRun,
+          lastRunMode: hysplit_lastMode,
+          description: "trajectory desc",
         },
       ],
       msg: "Success... OK",
     })
   );
 });
+
 router.get("/systems/:system/enable", async function (req, res, next) {
   res.setHeader("Content-Type", "application/json");
   try {
@@ -163,6 +185,7 @@ router.get("/systems/:system/enable", async function (req, res, next) {
     logger.error(error);
   }
 });
+
 router.get("/systems/:system/disable", async function (req, res, next) {
   res.setHeader("Content-Type", "application/json");
   try {
@@ -183,6 +206,7 @@ router.get("/systems/:system/disable", async function (req, res, next) {
     logger.error(error);
   }
 });
+// Everything except rdf store
 router.get("/systems/:system/clear", async function (req, res, next) {
   res.setHeader("Content-Type", "application/json");
   res.end(

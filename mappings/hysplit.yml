@@ -1,0 +1,91 @@
+prefixes:
+  aq: http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#
+  grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+
+mappings:
+  # Trajectory
+
+  observation:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:observation__locname$(id)
+    po:
+      - [a, aq:BackTrajectoryParameter]
+      - [aq:atTime, $(timestamp)]
+      - [aq:latitude, $(latitude)]
+      - [aq:longitude, $(longitude)]
+
+  backtraj:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:backtraj__locname$(id)
+    po:
+      - [a, aq:BackTrajectoryPoint]
+      - [aq:latitude, $(latitude)]
+      - [aq:longitude, $(longitude)]
+      - p: e:appearsIn
+        o:
+          mapping: coalpowerplant
+          condition:
+            function: grel:nearby(ex:latitude1 = $(latitude1), ex:longitude1 = $(longitude1),ex:latitude2 = $(latitude2),ex:longitude2 = $(longitude2))
+          mapping: dieselpowerplant
+          condition:
+            function: grel:nearby(ex:latitude1 = $(latitude1), ex:longitude1 = $(longitude1),ex:latitude2 = $(latitude2),ex:longitude2 = $(longitude2))
+          mapping: gaspowerplant
+          condition:
+            function: grel:nearby(ex:latitude1 = $(latitude1), ex:longitude1 = $(longitude1),ex:latitude2 = $(latitude2),ex:longitude2 = $(longitude2))
+
+  backtrajstart:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:backtrajstart__locname$(0)
+    po:
+      - [a, aq:StartingBackTrajectoryPoint]
+      - [aq:latitude, $(latitude)]
+      - [aq:longitude, $(longitude)]
+
+  backtrajend:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:backtrajend__locname$(_lastid)
+    po:
+      - [a, aq:EndingBackTrajectoryPoint]
+      - [aq:latitude, $(latitude)]
+      - [aq:longitude, $(longitude)]
+
+  coalpowerplant:
+    sources:
+      - access: _filenameppc
+        referenceFormulation: csv
+    s: aq:coalpowerplant$(id)
+    po:
+      - [a, aq:CoalBasedPowerPlant]
+      - [aq:latitude, $(latitude)]
+      - [aq:longitude, $(longitude)]
+      - [aq:placeName, $(placename)]
+
+  dieselpowerplant:
+    sources:
+      - access: _filenameppd
+        referenceFormulation: csv
+    s: aq:dieselpowerplant$(id)
+    po:
+      - [a, aq:DieselBasedPowerPlant]
+      - [aq:latitude, $(latitude)]
+      - [aq:longitude, $(longitude)]
+      - [aq:placeName, $(placename)]
+
+  gaspowerplant:
+    sources:
+      - access: _filenameppg
+        referenceFormulation: csv
+    s: aq:gaspowerplant$(id)
+    po:
+      - [a, aq:CoalBasedPowerPlant]
+      - [aq:latitude, $(latitude)]
+      - [aq:longitude, $(longitude)]
+      - [aq:placeName, $(placename)]
