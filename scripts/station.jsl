@@ -1,0 +1,281 @@
+[{
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_5024%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Alipur, Delhi - DPCC   ",
+    "StationCode": ["site_5024"],
+    "IRI": "Alipur"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_301%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Anand Vihar, Delhi - DPCC   ",
+    "StationCode": ["site_301"],
+    "IRI": "Anand Vihar"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1420%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Ashok Vihar, Delhi - DPCC   ",
+    "StationCode": ["site_1420"],
+    "IRI": "Ashok Vihar"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_108%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Aya Nagar, Delhi - IMD   ",
+    "StationCode": ["site_108"],
+    "IRI": "Aya Nagar"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1560%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Bawana, Delhi - DPCC   ",
+    "StationCode": ["site_1560"],
+    "IRI": "Bawana"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_104%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Burari Crossing, Delhi - IMD   ",
+    "StationCode": ["site_104"],
+    "IRI": "Burari Crossing"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_103%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "CRRI Mathura Road, Delhi - IMD   ",
+    "StationCode": ["site_103"],
+    "IRI": "CRRI Mathura Road"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_5393%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Chandni Chowk, Delhi - IITM   ",
+    "StationCode": ["site_5393"],
+    "IRI": "Chandni Chowk"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_118%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "DTU, Delhi - CPCB   ",
+    "StationCode": ["site_118"],
+    "IRI": "DTU"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1421%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Dr. Karni Singh Shooting Range, Delhi - DPCC   ",
+    "StationCode": ["site_1421"],
+    "IRI": "Dr. Karni Singh Shooting Range"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1422%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Dwarka-Sector 8, Delhi - DPCC   ",
+    "StationCode": ["site_1422"],
+    "IRI": "Dwarka-Sector 8"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_116%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "East Arjun Nagar, Delhi - CPCB   ",
+    "StationCode": ["site_116"],
+    "IRI": "East Arjun Nagar"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_106%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "IGI Airport (T3), Delhi - IMD   ",
+    "StationCode": ["site_106"],
+    "IRI": "IGI Airport (T3)"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_114%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "IHBAS, Dilshad Garden, Delhi - CPCB   ",
+    "StationCode": ["site_114"],
+    "IRI": "IHBAS"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_117%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "ITO, Delhi - CPCB   ",
+    "StationCode": ["site_117"],
+    "IRI": "ITO"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1423%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Jahangirpuri, Delhi - DPCC   ",
+    "StationCode": ["site_1423"],
+    "IRI": "Jahangirpuri"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1424%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Jawaharlal Nehru Stadium, Delhi - DPCC   ",
+    "StationCode": ["site_1424"],
+    "IRI": "Jawaharlal Nehru Stadium"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_5395%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Lodhi Road, Delhi - IITM   ",
+    "StationCode": ["site_5395"],
+    "IRI": "Lodhi Road"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_109%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Lodhi Road, Delhi - IMD   ",
+    "StationCode": ["site_109"],
+    "IRI": "Lodhi Road"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1425%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Major Dhyan Chand National Stadium, Delhi - DPCC   ",
+    "StationCode": ["site_1425"],
+    "IRI": "Major Dhyan Chand National Stadium"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_122%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Mandir Marg, Delhi - DPCC   ",
+    "StationCode": ["site_122"],
+    "IRI": "Mandir Marg"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1561%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Mundka, Delhi - DPCC   ",
+    "StationCode": ["site_1561"],
+    "IRI": "Mundka"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_115%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "NSIT Dwarka, Delhi - CPCB   ",
+    "StationCode": ["site_115"],
+    "IRI": "NSIT Dwarka"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1427%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Najafgarh, Delhi - DPCC   ",
+    "StationCode": ["site_1427"],
+    "IRI": "Najafgarh"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1426%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Narela, Delhi - DPCC   ",
+    "StationCode": ["site_1426"],
+    "IRI": "Narela"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1429%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Nehru Nagar, Delhi - DPCC   ",
+    "StationCode": ["site_1429"],
+    "IRI": "Nehru Nagar"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_105%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "North Campus, DU, Delhi - IMD   ",
+    "StationCode": ["site_105"],
+    "IRI": "North Campus"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1428%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Okhla Phase-2, Delhi - DPCC   ",
+    "StationCode": ["site_1428"],
+    "IRI": "Okhla Phase-2"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1431%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Patparganj, Delhi - DPCC   ",
+    "StationCode": ["site_1431"],
+    "IRI": "Patparganj"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_125%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Punjabi Bagh, Delhi - DPCC   ",
+    "StationCode": ["site_125"],
+    "IRI": "Punjabi Bagh"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1563%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Pusa, Delhi - DPCC   ",
+    "StationCode": ["site_1563"],
+    "IRI": "Pusa"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_107%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Pusa, Delhi - IMD   ",
+    "StationCode": ["site_107"],
+    "IRI": "Pusa"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_124%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "R K Puram, Delhi - DPCC   ",
+    "StationCode": ["site_124"],
+    "IRI": "R K Puram"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1430%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Rohini, Delhi - DPCC   ",
+    "StationCode": ["site_1430"],
+    "IRI": "Rohini"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_113%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Shadipur, Delhi - CPCB   ",
+    "StationCode": ["site_113"],
+    "IRI": "Shadipur"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_119%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Sirifort, Delhi - CPCB   ",
+    "StationCode": ["site_119"],
+    "IRI": "Sirifort"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1432%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Sonia Vihar, Delhi - DPCC   ",
+    "StationCode": ["site_1432"],
+    "IRI": "Sonia Vihar"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1562%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Sri Aurobindo Marg, Delhi - DPCC   ",
+    "StationCode": ["site_1562"],
+    "IRI": "Sri Aurobindo Marg"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1435%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Vivek Vihar, Delhi - DPCC   ",
+    "StationCode": ["site_1435"],
+    "IRI": "Vivek Vihar"
+}, {
+    "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1434%22%7D",
+    "State": "Delhi",
+    "City": "Delhi",
+    "StationName": "Wazirpur, Delhi - DPCC   ",
+    "StationCode": ["site_1434"],
+    "IRI": "Wazirpur"
+}]
