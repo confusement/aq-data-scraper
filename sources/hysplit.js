@@ -8,6 +8,7 @@ const path = require("path");
 const exec = util.promisify(require("child_process").exec);
 const puppeteer = require("puppeteer");
 var url = require("url");
+const extract = require("extract-zip");
 const parseKML = require("parse-kml");
 const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 const logger = log4js.getLogger("kml-parser");
@@ -16,115 +17,10 @@ var browserInstance = null;
 async function reloadBrowser() {
   if (!browserInstance)
     browserInstance = await puppeteer.launch({
-      headless: false,
-      // args: ['--start-maximized']
+      headless: true,
+      args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 }
-
-var dir_name = __dirname + "Data/RawData/hysplit";
-var directory = dir_name + "/ext";
-async function kmztokml(inputFile) {
-  try {
-    console.log("IM HERE");
-    await extract(inputFile, {
-      dir: dir_name + "/ext",
-    });
-    console.log("Extraction complete");
-
-    fs.readdir(directory, (err, files) => {
-      if (err) throw err;
-
-      for (const file of files) {
-        if (
-          path.join(directory, file).includes(".png") ||
-          path.join(directory, file).includes(".gif")
-        ) {
-          console.log(path.join(directory, file));
-          fs.unlink(path.join(directory, file), (err) => {
-            if (err) throw err;
-          });
-        }
-        //Rename File
-        // else if (path.join(directory, file).includes(".kml")) {
-        //   fs.rename(file, "hysplit.kml", () => {
-        //     console.log("\nFile Renamed!\n");
-        //   });
-        // }
-      }
-    });
-  } catch (err) {
-    console.log(err);
-  }
-}
-
-async function kmltocsv(inputFile, outputFile) {
-  let response = await parseKML.toJson(inputFile);
-
-  const csvWriter = createCsvWriter({
-    path: outputFile,
-    header: [
-      { id: "timestamp", title: "timestamp" },
-      { id: "longitude", title: "longitude" },
-      { id: "latitude", title: "latitude" },
-      { id: "height", title: "height" },
-    ],
-  });
-
-  try {
-    var res = response["features"];
-    var finObj = [];
-    for (var i = 1; i < res.length; i++) {
-      var obj = res[i];
-      if (obj["geometry"]["type"] == "Point") {
-        temp = {};
-        if (obj["properties"]["timespan"] == null) {
-          temp["timestamp"] = res[i + 1]["properties"]["timespan"]["end"];
-        } else {
-          temp["timestamp"] = obj["properties"]["timespan"]["begin"];
-        }
-        temp["longitude"] = obj["geometry"]["coordinates"][0];
-        temp["latitude"] = obj["geometry"]["coordinates"][1];
-        temp["height"] = obj["geometry"]["coordinates"][2];
-        finObj.push(temp);
-      }
-    }
-  } catch (error) {
-    logger.error(error);
-  }
-
-  csvWriter
-    .writeRecords(finObj)
-    .then(() =>
-      logger.log("The CSV file " + outputFile + " was written successfully")
-    );
-  return response;
-}
-
-module.exports = {
-  kmltocsv: kmltocsv,
-};
-
-const config = require(__dirname + "/config/hysplit.json");
-
-function sleep(ms) {
-  return new Promise((resolve) => setTimeout(resolve, ms));
-}
-
-async function scrape(args) {
-  // Create new browser if not already running
-  await reloadBrowser();
-  try {
-    console.log(config.locations[0]);
-    //await getKMZ(config.locations[0]);
-    for (i in config.locations) {
-      await getKMZ(config.locations[i]);
-    }
-  } catch (err) {
-    logger.error(err);
-  }
-  return { msg: "All location scraped" };
-}
-
 async function mapCSV(args) {
   logger.debug("Started Mapping");
   rdfFiles = [];
@@ -241,6 +137,120 @@ async function mapCSV(args) {
   };
 }
 
+var dir_name = __dirname + "/Data/RawData/hysplit";
+var directory = dir_name + "/ext";
+
+async function kmztokml(inputFile, outPutFileName) {
+  try {
+    console.log("IM HERE" + inputFile + "   " + outPutFileName);
+    await extract(inputFile, {
+      dir: dir_name + "/ext",
+    });
+    console.log("Extraction complete");
+
+    fs.readdir(directory, (err, files) => {
+      if (err) throw err;
+      var kmlFileName = "";
+      for (const file of files) {
+        if (
+          path.join(directory, file).includes(".png") ||
+          path.join(directory, file).includes(".gif")
+        ) {
+          console.log(path.join(directory, file));
+          try {
+            fs.unlink(path.join(directory, file));
+          } catch (err) {
+            console.log(err);
+          }
+        }
+        if (path.join(directory, file).includes(".kml")) {
+          kmlFileName = path.join(directory, file);
+        }
+      }
+
+      kmltocsv(kmlFileName, outPutFileName);
+    });
+  } catch (err) {
+    console.log(err);
+  }
+}
+
+async function kmltocsv(inputFile, outputFile) {
+  let response = await parseKML.toJson(inputFile);
+  console.log(outputFile);
+  const csvWriter = createCsvWriter({
+    path: outputFile,
+    header: [
+      { id: "timestamp", title: "timestamp" },
+      { id: "longitude", title: "longitude" },
+      { id: "latitude", title: "latitude" },
+      { id: "height", title: "height" },
+    ],
+  });
+
+  try {
+    var res = response["features"];
+    var finObj = [];
+    for (var i = 1; i < res.length; i++) {
+      var obj = res[i];
+      if (obj["geometry"]["type"] == "Point") {
+        temp = {};
+        if (obj["properties"]["timespan"] == null) {
+          temp["timestamp"] = res[i + 1]["properties"]["timespan"]["end"];
+        } else {
+          temp["timestamp"] = obj["properties"]["timespan"]["begin"];
+        }
+        temp["longitude"] = obj["geometry"]["coordinates"][0];
+        temp["latitude"] = obj["geometry"]["coordinates"][1];
+        temp["height"] = obj["geometry"]["coordinates"][2];
+        finObj.push(temp);
+      }
+    }
+  } catch (error) {
+    logger.error(error);
+  }
+
+  csvWriter
+    .writeRecords(finObj)
+    .then(() =>
+      logger.log("The CSV file " + outputFile + " was written successfully")
+    );
+
+  return response;
+}
+const config = require(__dirname + "/config/hysplit.json");
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+
+var io_file_names = {};
+async function scrape(args) {
+  // Create new browser if not already running
+  await reloadBrowser();
+  try {
+    //await getKMZ(config.locations[0]);
+    for (i in config.locations) {
+      console.log(config.locations[i]);
+      let res = await getKMZ(config.locations[i]);
+      var inp = __dirname + "\\Data\\RawData\\hysplit\\" + res + ".kmz";
+      var opt = dir_name + "\\" + res + ".csv";
+      io_file_names[inp] = opt;
+    }
+  } catch (err) {
+    logger.error(err);
+  }
+  return { msg: "All location scraped" };
+}
+
+async function convertKMZ() {
+  console.log(io_file_names);
+  Object.keys(io_file_names).forEach(function (key) {
+    console.log("Key : " + key + ", Value : " + io_file_names[key]);
+    kmztokml(key, io_file_names[key]);
+  });
+}
+
 async function getKMZ(location) {
   let page;
   try {
@@ -308,9 +318,9 @@ async function getKMZ(location) {
         jobno = param[1];
       }
     }
-    const filename = location.IRI;
+    const filename = location.IRI + "_" + Date.now();
     const file = fs.createWriteStream(
-      __dirname + "/Data/RawData/hysplit/" + filename + ".kmz"
+      __dirname + "\\Data\\RawData\\hysplit\\" + filename + ".kmz"
     );
     const request = https.get(
       "https://www.ready.noaa.gov/hypubout/HYSPLITtraj_" + jobno + ".kmz",
@@ -318,10 +328,18 @@ async function getKMZ(location) {
         response.pipe(file);
       }
     );
+    await sleep(5000);
+    page.close();
+    return filename;
   } catch (err) {
     page.close();
     console.log(err);
   }
 }
 
-scrape();
+async function execute_fin() {
+  await scrape();
+  await convertKMZ();
+  await browserInstance.close();
+}
+execute_fin();
