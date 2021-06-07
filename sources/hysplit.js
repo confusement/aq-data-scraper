@@ -302,7 +302,7 @@ async function kmltocsv(inputFile, outputFile, orgPlace) {
             minIRI = row[0];
           }
         }
-        temp['nearby'] = minIRI;
+        temp['nearby'] = "place_"+minIRI;
         finObj.push(temp);
       }
     }
