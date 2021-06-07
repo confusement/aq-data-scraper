@@ -76,7 +76,7 @@ async function mapCSV(args) {
       const replace_locname = {
         files: yarrmlFileName,
         from: /_locname/g,
-        to: LocationIRI,
+        to: "_place"+LocationIRI,
       };
       await replace(replace_locname);
 
