@@ -1,0 +1,20 @@
+prefixes:
+    aq: http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#
+    grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+mappings:
+    
+# Particulate Matter
+    place:
+        sources:
+          - access: placesList.csv
+            referenceFormulation: csv
+        s: aq:place_$(PlaceName)
+        po:
+          - p: a
+            o: aq:Place
+          - p: aq:PlaceName
+            o: $(PlaceName)
+          - p: aq:latitude
+            o: $(latitude)
+          - p: aq:longitude
+            o: $(PlaceName)
