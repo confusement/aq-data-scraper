@@ -1,91 +1,59 @@
 prefixes:
-  aq: http://www.semanticweb.org/saadf/ontologies/2021/2/untitled-ontology-11#
-  grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+  aq: "http://www.semanticweb.org/saadf/ontologies/2021/2/AirQualityOntology#"
 
 mappings:
   # Trajectory
-
-  observation:
+  backTrajectory:
     sources:
       - access: _filename
         referenceFormulation: csv
-    s: aq:observation__locname$(id)
+    s: aq:hs__locname_$(uuid)
     po:
-      - [a, aq:BackTrajectoryParameter]
+      - [a, aq:BackTrajectoryPoint]
       - [aq:atTime, $(timestamp)]
       - [aq:latitude, $(latitude)]
       - [aq:longitude, $(longitude)]
-
-  backtraj:
-    sources:
-      - access: _filename
-        referenceFormulation: csv
-    s: aq:backtraj__locname$(id)
-    po:
-      - [a, aq:BackTrajectoryPoint]
-      - [aq:latitude, $(latitude)]
-      - [aq:longitude, $(longitude)]
-      - p: e:appearsIn
+      - [aq:atHeight, $(height)]
+      - p: aq:nextFix
         o:
-          mapping: coalpowerplant
-          condition:
-            function: grel:nearby(ex:latitude1 = $(latitude1), ex:longitude1 = $(longitude1),ex:latitude2 = $(latitude2),ex:longitude2 = $(longitude2))
-          mapping: dieselpowerplant
-          condition:
-            function: grel:nearby(ex:latitude1 = $(latitude1), ex:longitude1 = $(longitude1),ex:latitude2 = $(latitude2),ex:longitude2 = $(longitude2))
-          mapping: gaspowerplant
-          condition:
-            function: grel:nearby(ex:latitude1 = $(latitude1), ex:longitude1 = $(longitude1),ex:latitude2 = $(latitude2),ex:longitude2 = $(longitude2))
+          - mapping: helper
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(nextuuid)]
+                - [str2, $(uuid)]
 
-  backtrajstart:
+  helper:
     sources:
       - access: _filename
         referenceFormulation: csv
-    s: aq:backtrajstart__locname$(0)
+    s: aq:hs__locname_$(uuid)
+
+  observationfirst:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:hs__locname_$(uuid)
+    condition:
+      function: equal
+      parameters:
+        - [str1, $(firstlast)]
+        - [str2, "first"]
     po:
+      - [a, aq:Observation]
+      - [a, aq:BackTrajectoryParameter]
       - [a, aq:StartingBackTrajectoryPoint]
-      - [aq:latitude, $(latitude)]
-      - [aq:longitude, $(longitude)]
+      - [aq:placeName, $(orgplaceiri)]
 
-  backtrajend:
+  observationlast:
     sources:
       - access: _filename
         referenceFormulation: csv
-    s: aq:backtrajend__locname$(_lastid)
+    s: aq:hs__locname_$(uuid)
+    condition:
+      function: equal
+      parameters:
+        - [str1, $(firstlast)]
+        - [str2, "last"]
     po:
       - [a, aq:EndingBackTrajectoryPoint]
-      - [aq:latitude, $(latitude)]
-      - [aq:longitude, $(longitude)]
-
-  coalpowerplant:
-    sources:
-      - access: _filenameppc
-        referenceFormulation: csv
-    s: aq:coalpowerplant$(id)
-    po:
-      - [a, aq:CoalBasedPowerPlant]
-      - [aq:latitude, $(latitude)]
-      - [aq:longitude, $(longitude)]
-      - [aq:placeName, $(placename)]
-
-  dieselpowerplant:
-    sources:
-      - access: _filenameppd
-        referenceFormulation: csv
-    s: aq:dieselpowerplant$(id)
-    po:
-      - [a, aq:DieselBasedPowerPlant]
-      - [aq:latitude, $(latitude)]
-      - [aq:longitude, $(longitude)]
-      - [aq:placeName, $(placename)]
-
-  gaspowerplant:
-    sources:
-      - access: _filenameppg
-        referenceFormulation: csv
-    s: aq:gaspowerplant$(id)
-    po:
-      - [a, aq:CoalBasedPowerPlant]
-      - [aq:latitude, $(latitude)]
-      - [aq:longitude, $(longitude)]
-      - [aq:placeName, $(placename)]

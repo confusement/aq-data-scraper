@@ -178,9 +178,11 @@ async function mapCSV(args) {
 var dir_name = __dirname + "/Data/RawData/hysplit";
 var directory = dir_name + "/ext";
 
-async function kmztokml(inputFile, outPutFileName) {
+async function kmztokml(inputFile, outPutFileName, orgPlace1) {
   try {
-    console.log("IM HERE" + inputFile + "   " + outPutFileName);
+    console.log(
+      "IM HERE" + inputFile + "   " + outPutFileName + " " + orgPlace1
+    );
     await extract(inputFile, {
       dir: dir_name + "/ext",
     });
@@ -206,14 +208,22 @@ async function kmztokml(inputFile, outPutFileName) {
         }
       }
 
-      kmltocsv(kmlFileName, outPutFileName);
+      kmltocsv(kmlFileName, outPutFileName, orgPlace1);
     });
   } catch (err) {
     console.log(err);
   }
 }
 
-async function kmltocsv(inputFile, outputFile) {
+async function uuidv4() {
+  return "xxxxxxxx-xxxx-4xxx-yxxx-xxxxxxxxxxxx".replace(/[xy]/g, function (c) {
+    var r = (Math.random() * 16) | 0,
+      v = c == "x" ? r : (r & 0x3) | 0x8;
+    return v.toString(16);
+  });
+}
+
+async function kmltocsv(inputFile, outputFile, orgPlace) {
   let response = await parseKML.toJson(inputFile);
   console.log(outputFile);
   const csvWriter = createCsvWriter({
@@ -223,13 +233,28 @@ async function kmltocsv(inputFile, outputFile) {
       { id: "longitude", title: "longitude" },
       { id: "latitude", title: "latitude" },
       { id: "height", title: "height" },
+      { id: "uuid", title: "uuid" },
+      { id: "nextuuid", title: "nextuuid" },
+      { id: "firstlast", title: "firstlast" },
+      { id: "orgplaceiri", title: "orgplaceiri" },
     ],
   });
 
   try {
     var res = response["features"];
     var finObj = [];
+    var uuids = [];
+    console.log(res.length);
+    // for (let index = 0; index < res.length; index++) {
+    //   console.log("fuck");
+    //   uuids[index] = await uuidv4();
+    // }
+    console.log(uuids);
+    var uuid_org = await uuidv4();
+    var prev_uuid;
+    //console.log(response["features"]);
     for (var i = 1; i < res.length; i++) {
+      var next_uuid = await uuidv4();
       var obj = res[i];
       if (obj["geometry"]["type"] == "Point") {
         temp = {};
@@ -241,6 +266,22 @@ async function kmltocsv(inputFile, outputFile) {
         temp["longitude"] = obj["geometry"]["coordinates"][0];
         temp["latitude"] = obj["geometry"]["coordinates"][1];
         temp["height"] = obj["geometry"]["coordinates"][2];
+        temp["orgplaceiri"] = orgPlace;
+        if (i == 1) {
+          temp["firstlast"] = "first";
+          temp["uuid"] = uuid_org;
+          temp["nextuuid"] = next_uuid;
+          prev_uuid = next_uuid;
+        } else {
+          temp["uuid"] = prev_uuid;
+          temp["nextuuid"] = next_uuid;
+          prev_uuid = next_uuid;
+          if (i == res.length - 1) {
+            temp["firstlast"] = "last";
+          } else {
+            temp["firstlast"] = "mid";
+          }
+        }
         finObj.push(temp);
       }
     }
@@ -263,6 +304,7 @@ function sleep(ms) {
 }
 
 var io_file_names = {};
+var placeiri = {};
 async function scrape(args) {
   // Create new browser if not already running
   await reloadBrowser();
@@ -274,6 +316,7 @@ async function scrape(args) {
       var inp = path.resolve(__dirname + "/Data/RawData/hysplit/" + res + ".kmz");
       var opt = path.resolve(dir_name + "/" + res + ".csv");
       io_file_names[inp] = opt;
+      placeiri[inp] = config.locations[i]["IRI"];
     }
   } catch (err) {
     logger.error(err);
@@ -282,10 +325,10 @@ async function scrape(args) {
 }
 
 async function convertKMZ() {
-  console.log(io_file_names);
+  console.log(io_file_names + " iofilenames");
   Object.keys(io_file_names).forEach(function (key) {
     console.log("Key : " + key + ", Value : " + io_file_names[key]);
-    kmztokml(key, io_file_names[key]);
+    kmztokml(key, io_file_names[key], placeiri[key]);
   });
 }
 
@@ -375,10 +418,19 @@ async function getKMZ(location) {
   }
 }
 
+// kmltocsv(
+//   "Data\\RawData\\hysplit\\ext\\HYSPLITtraj_154279_01.kml",
+//   "Data\\RawData\\hysplit\\testing_uuid.csv"
+// );
 async function execute_fin() {
+<<<<<<< Updated upstream
   //await scrape();
   //await convertKMZ();
   let mappingResult = await mapCSV({});
   //await browserInstance.close();
+=======
+  await scrape();
+  await convertKMZ();
+>>>>>>> Stashed changes
 }
 execute_fin();
