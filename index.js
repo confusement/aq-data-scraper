@@ -87,6 +87,7 @@ console.log("it's started on http://localhost:" + port);
 // scheduler.initJobs();
 
 var csvEditor = require("./scripts/csvEditor");
+const processGeoData = require("./scripts/processGeoData");
 
 async function main(){
 
@@ -115,8 +116,9 @@ async function main(){
 
   //Save Changes
   await csvEditor.saveCSV(tableCSV,__dirname+"/csvFileNew.csv")
+  await processGeoData.main();
 
 }
 
-main();
+// main();
 module.exports = app;

@@ -38,6 +38,7 @@ mappings:
           - p: aq:atTime
             o: $(To Date)
           - p: aq:atPlace
+            o: _locname
           - p: aq:hasParameter
             o: pm_apa__locname$(To Date)
 
@@ -74,8 +75,8 @@ mappings:
         po:
           - p: a
             o: aq:Observation
-          - p: aq:Station
-            o: _station
+          - p: aq:atPlace
+            o: _locname
           - p: aq:atTime
             o: $(To Date)
           - p: aq:hasParameter
@@ -110,8 +111,8 @@ mappings:
         po:
           - p: a
             o: aq:Observation
-          - p: aq:Station
-            o: _station
+          - p: aq:atPlace
+            o: _locname
           - p: aq:atTime
             o: $(To Date)
           - p: aq:hasParameter
@@ -146,8 +147,8 @@ mappings:
         po:
           - p: a
             o: aq:Observation
-          - p: aq:Station
-            o: _station
+          - p: aq:atPlace
+            o: _locname
           - p: aq:atTime
             o: $(To Date)
           - p: aq:hasParameter
@@ -182,8 +183,8 @@ mappings:
         po:
           - p: a
             o: aq:Observation
-          - p: aq:Station
-            o: _station
+          - p: aq:atPlace
+            o: _locname
           - p: aq:atTime
             o: $(To Date)
           - p: aq:hasParameter
@@ -218,8 +219,8 @@ mappings:
         po:
           - p: a
             o: aq:Observation
-          - p: aq:Station
-            o: _station
+          - p: aq:atPlace
+            o: _locname
           - p: aq:atTime
             o: $(To Date)
           - p: aq:hasParameter
@@ -256,8 +257,8 @@ mappings:
         po:
           - p: a
             o: aq:Observation
-          - p: aq:Station
-            o: _station
+          - p: aq:atPlace
+            o: _locname
           - p: aq:atTime
             o: $(To Date)
           - p: aq:hasParameter
@@ -300,8 +301,8 @@ mappings:
         po:
           - p: a
             o: aq:Observation
-          - p: aq:Station
-            o: _station
+          - p: aq:atPlace
+            o: _locname
           - p: aq:atTime
             o: $(To Date)
           - p: aq:hasParameter
@@ -338,8 +339,8 @@ mappings:
         po:
           - p: a
             o: aq:Observation
-          - p: aq:Station
-            o: _station
+          - p: aq:atPlace
+            o: _locname
           - p: aq:atTime
             o: $(To Date)
           - p: aq:hasParameter

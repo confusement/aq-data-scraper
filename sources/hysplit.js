@@ -3,7 +3,7 @@ const log4js = require("log4js");
 const util = require("util");
 const http = require("http");
 const https = require("https"); // or 'https' for https:// URLs
-const fs = require("fs");
+const fs = require("fs").promises;
 const path = require("path");
 const exec = util.promisify(require("child_process").exec);
 const puppeteer = require("puppeteer");
@@ -13,29 +13,67 @@ const parseKML = require("parse-kml");
 const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 const logger = log4js.getLogger("kml-parser");
 
+const csvEditor = require("./../scripts/csvEditor")
+
 var browserInstance = null;
 async function reloadBrowser() {
   if (!browserInstance)
     browserInstance = await puppeteer.launch({
-      headless: true,
+      headless: false,
+      //executablePath: __dirname + "/../lib/chrome-linux/chrome",
+      executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 }
 async function mapCSV(args) {
-  logger.debug("Started Mapping");
+  console.log("Started Mapping");
   rdfFiles = [];
   try {
-    files = await fs.readdir(__dirname + "/Data/RawData/hysplit");
+    files = await fs.readdir(path.resolve(__dirname + "/Data/RawData/hysplit"));
     for (i in files) {
-      logger.debug(files[i]);
-      yarrmlFileName = path.resolve(
-        __dirname + "/../mappings/" + files[i] + ".yml"
-      );
+      if(!files[i].toString().endsWith("csv")){
+        continue;
+      }
+      console.log(files[i]);
 
-      await copyFile(
-        path.resolve(__dirname + "/../mappings/hysplit.yml"),
-        yarrmlFileName
-      );
+        //Load CSV
+      var [tableCSV,numRows,numCols] = await csvEditor.loadCSV(path.resolve(__dirname + "/Data/RawData/hysplit/" + files[i]));
+      if(tableCSV[numRows-1].length!=numCols)
+        numRows-=1
+      //Do changes
+      //Append new column
+      tableCSV[0].push("nextId")
+      //Append value for each row
+      let it = 0;
+      tableCSV.forEach(row => {
+        //skip header
+        if(it==0){
+          it++;
+          return;
+        } 
+        if(row.length!=numCols)
+          return;
+
+        if(it<numRows-1)
+          row.push((it+1).toString())
+        else
+          row.push("null")
+          
+        it++;
+      });
+
+      //Save Changes
+      await csvEditor.saveCSV(tableCSV,path.resolve(__dirname + "/Data/RawData/hysplit/" + "edit_"+files[i]))
+
+      break;
+      // yarrmlFileName = path.resolve(
+      //   __dirname + "/../mappings/" + files[i] + ".yml"
+      // );
+
+      // await copyFile(
+      //   path.resolve(__dirname + "/../mappings/hysplit.yml"),
+      //   yarrmlFileName
+      // );
 
       // Change this to suit HYSPLIT format
       // let LocationIRI = files[i].split("_")[0];
@@ -72,7 +110,7 @@ async function mapCSV(args) {
         logger.debug(`error: ${stderr}`);
       }
 
-      await unlink(yarrmlFileName);
+      // await unlink(yarrmlFileName);
 
       let rdfFileName = path.resolve(
         __dirname + "/../sources/Data/RdfData/hysplit/" + files[i] + ".turtle"
@@ -91,7 +129,7 @@ async function mapCSV(args) {
         logger.debug(`error: ${stderr}`);
       }
 
-      await unlink(rmlMapFile);
+      // await unlink(rmlMapFile);
 
       logger.debug(
         "java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m " +
@@ -124,12 +162,12 @@ async function mapCSV(args) {
       let turtleResponse = await request(options);
       logger.debug("Response from fuseki : [" + turtleResponse.body + "]");
 
-      await unlink(__dirname + "/Data/RawData/hysplit/" + files[i]);
+      // await unlink(__dirname + "/Data/RawData/hysplit/" + files[i]);
 
       rdfFiles.push(__dirname + "/../mappings/" + files[i] + ".rml.ttl");
     }
   } catch (err) {
-    logger.error(err);
+    console.log(err)
   }
   return {
     msg: "OK",
@@ -233,8 +271,8 @@ async function scrape(args) {
     for (i in config.locations) {
       console.log(config.locations[i]);
       let res = await getKMZ(config.locations[i]);
-      var inp = __dirname + "\\Data\\RawData\\hysplit\\" + res + ".kmz";
-      var opt = dir_name + "\\" + res + ".csv";
+      var inp = path.resolve(__dirname + "/Data/RawData/hysplit/" + res + ".kmz");
+      var opt = path.resolve(dir_name + "/" + res + ".csv");
       io_file_names[inp] = opt;
     }
   } catch (err) {
@@ -320,7 +358,7 @@ async function getKMZ(location) {
     }
     const filename = location.IRI + "_" + Date.now();
     const file = fs.createWriteStream(
-      __dirname + "\\Data\\RawData\\hysplit\\" + filename + ".kmz"
+      path.resolve(__dirname + "/Data/RawData/hysplit/" + filename + ".kmz")
     );
     const request = https.get(
       "https://www.ready.noaa.gov/hypubout/HYSPLITtraj_" + jobno + ".kmz",
@@ -338,8 +376,9 @@ async function getKMZ(location) {
 }
 
 async function execute_fin() {
-  await scrape();
-  await convertKMZ();
-  await browserInstance.close();
+  //await scrape();
+  //await convertKMZ();
+  let mappingResult = await mapCSV({});
+  //await browserInstance.close();
 }
 execute_fin();

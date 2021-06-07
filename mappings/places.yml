@@ -17,4 +17,4 @@ mappings:
           - p: aq:latitude
             o: $(latitude)
           - p: aq:longitude
-            o: $(PlaceName)
+            o: $(longitude)
