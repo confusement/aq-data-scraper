@@ -3,18 +3,105 @@ prefixes:
 
 mappings:
   # Trajectory
-  backTrajectory:
+
+  bkobs:
     sources:
       - access: _filename
         referenceFormulation: csv
-    s: aq:hs__locname_$(uuid)
+    s: aq:bk_obs__locname_$(uuid)
+    condition:
+      function: equal
+      parameters:
+        - [str1, $(firstlast)]
+        - [str2, "first"]
     po:
-      - [a, aq:BackTrajectoryPoint]
+      - [a, aq:Observation]
+      - [aq:atPlace, aq:_locname]
+      - [aq:hasParameter, aq:bkparam__locname_$(uuid)]
       - [aq:atTime, $(timestamp)]
+
+  bkparam:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:bkparam__locname_$(uuid)
+    condition:
+      function: equal
+      parameters:
+        - [str1, $(firstlast)]
+        - [str2, "first"]
+    po:
+      - [a, aq:BackTrajectoryParameter]
+      - [aq:hasFix, aq:bkp_start__locname_$(uuid)]
+
+  bkplc:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:bkp_plc__locname_$(uuid)
+    po:
+      - [a, aq:Place]
       - [aq:latitude, $(latitude)]
       - [aq:longitude, $(longitude)]
+
+  bkp_end:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:bkp_locname_$(uuid)
+    condition:
+      function: equal
+      parameters:
+        - [str1, $(firstlast)]
+        - [str2, "last"]
+    po:
+      - [a, aq:EndingBackTrajectoryPoint]
+      - [aq:atHeight, $(height)]
+      - [aq:hasFix, aq:bkp_end__locname_$(uuid)]
+      - [aq:nearby, $(nearby)]
+      - [aq:atPlace, aq:bkp_plc__locname_$(uuid)]
+
+  bkp_start:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:bkp_start__locname_$(uuid)
+    condition:
+      function: equal
+      parameters:
+        - [str1, $(firstlast)]
+        - [str2, "first"]
+    po:
+      - [a, aq:StartingBackTrajectoryPoint]
+      - [aq:atPlace, aq:_locname]
+      - [aq:hasFix, aq:bkp_start__locname_$(uuid)]
       - [aq:atHeight, $(height)]
       - [aq:nearby, $(nearby)]
+      - p: aq:nextFix
+        o:
+          - mapping: helper
+            condition:
+              function: equal
+              parameters:
+                - [str1, $(nextuuid)]
+                - [str2, $(uuid)]
+
+  bkp_mid:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:bkp_locname_$(uuid)
+    condition:
+      function: equal
+      parameters:
+        - [str1, $(firstlast)]
+        - [str2, "mid"]
+    po:
+      - [a, aq:BackTrajectoryPoint]
+      - [aq:atPlace, aq:bkp_plc__locname_$(uuid)]
+      - [aq:atHeight, $(height)]
+      - [aq:nearby, $(nearby)]
+      - [aq:hasFix, aq:bkp_locname_$(uuid)]
       - p: aq:nextFix
         o:
           - mapping: helper
@@ -28,33 +115,4 @@ mappings:
     sources:
       - access: _filename
         referenceFormulation: csv
-    s: aq:hs__locname_$(uuid)
-
-  observationfirst:
-    sources:
-      - access: _filename
-        referenceFormulation: csv
-    s: aq:hs__locname_$(uuid)
-    condition:
-      function: equal
-      parameters:
-        - [str1, $(firstlast)]
-        - [str2, "first"]
-    po:
-      - [a, aq:Observation]
-      - [a, aq:BackTrajectoryParameter]
-      - [a, aq:StartingBackTrajectoryPoint]
-      - [aq:placeName, $(orgplaceiri)]
-
-  observationlast:
-    sources:
-      - access: _filename
-        referenceFormulation: csv
-    s: aq:hs__locname_$(uuid)
-    condition:
-      function: equal
-      parameters:
-        - [str1, $(firstlast)]
-        - [str2, "last"]
-    po:
-      - [a, aq:EndingBackTrajectoryPoint]
+    s: aq:bkp_locname_$(uuid)

@@ -13,8 +13,8 @@ const extract = require("extract-zip");
 const parseKML = require("parse-kml");
 const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 const logger = log4js.getLogger("kml-parser");
-const haversine = require('haversine')
-const csvEditor = require("./../scripts/csvEditor")
+const haversine = require("haversine");
+const csvEditor = require("./../scripts/csvEditor");
 
 const copyFile = util.promisify(require("fs").copyFile);
 const readFile = util.promisify(require("fs").readFile);
@@ -37,41 +37,44 @@ async function mapCSV(args) {
   console.log("Started Mapping");
   rdfFiles = [];
   try {
-    files = await fsPromises.readdir(path.resolve(__dirname + "/Data/RawData/hysplit"));
+    files = await fsPromises.readdir(
+      path.resolve(__dirname + "/Data/RawData/hysplit")
+    );
     for (i in files) {
-      if(!files[i].toString().endsWith("csv")){
+      if (!files[i].toString().endsWith("csv")) {
         continue;
       }
       console.log(files[i]);
 
-        //Load CSV
-      var [tableCSV,numRows,numCols] = await csvEditor.loadCSV(path.resolve(__dirname + "/Data/RawData/hysplit/" + files[i]));
-      if(tableCSV[numRows-1].length!=numCols)
-        numRows-=1
+      //Load CSV
+      var [tableCSV, numRows, numCols] = await csvEditor.loadCSV(
+        path.resolve(__dirname + "/Data/RawData/hysplit/" + files[i])
+      );
+      if (tableCSV[numRows - 1].length != numCols) numRows -= 1;
       //Do changes
       //Append new column
-      tableCSV[0].push("nextId")
+      tableCSV[0].push("nextId");
       //Append value for each row
       let it = 0;
-      tableCSV.forEach(row => {
+      tableCSV.forEach((row) => {
         //skip header
-        if(it==0){
+        if (it == 0) {
           it++;
           return;
-        } 
-        if(row.length!=numCols)
-          return;
+        }
+        if (row.length != numCols) return;
 
-        if(it<numRows-1)
-          row.push((it+1).toString())
-        else
-          row.push("null")
-          
+        if (it < numRows - 1) row.push((it + 1).toString());
+        else row.push("null");
+
         it++;
       });
 
       //Save Changes
-      await csvEditor.saveCSV(tableCSV,path.resolve(__dirname + "/Data/RawData/hysplit/" + "edit_"+files[i]))
+      await csvEditor.saveCSV(
+        tableCSV,
+        path.resolve(__dirname + "/Data/RawData/hysplit/" + "edit_" + files[i])
+      );
 
       yarrmlFileName = path.resolve(
         __dirname + "/../mappings/" + files[i] + ".yml"
@@ -170,7 +173,7 @@ async function mapCSV(args) {
       rdfFiles.push(__dirname + "/../mappings/" + files[i] + ".rml.ttl");
     }
   } catch (err) {
-    console.log(err)
+    console.log(err);
   }
   return {
     msg: "OK",
@@ -190,11 +193,11 @@ async function kmztokml(inputFile, outPutFileName, orgPlace1) {
       dir: dir_name + "/ext",
     });
     console.log("Extraction complete");
-    
+
     fs.readdir(directory, (err, files) => {
-      if (err){
+      if (err) {
         throw err;
-      } 
+      }
       var kmlFileName = "";
       for (const file of files) {
         if (
@@ -214,7 +217,6 @@ async function kmztokml(inputFile, outPutFileName, orgPlace1) {
       }
       kmltocsv(kmlFileName, outPutFileName, orgPlace1);
     });
-
   } catch (err) {
     console.log(err);
   }
@@ -245,8 +247,10 @@ async function kmltocsv(inputFile, outputFile, orgPlace) {
       { id: "nearby", title: "nearby" },
     ],
   });
-  let [tableCSV,numRows,numCols] = await csvEditor.loadCSV(path.resolve(__dirname+"./../mappings/placesList.csv"))
-  console.log(tableCSV[1])
+  let [tableCSV, numRows, numCols] = await csvEditor.loadCSV(
+    path.resolve(__dirname + "./../mappings/placesList.csv")
+  );
+  console.log(tableCSV[1]);
   try {
     var res = response["features"];
     var finObj = [];
@@ -290,19 +294,21 @@ async function kmltocsv(inputFile, outputFile, orgPlace) {
           }
         }
 
-        sourceCoords = {latitude: temp["latitude"], longitude : temp["longitude"]}
+        sourceCoords = {
+          latitude: temp["latitude"],
+          longitude: temp["longitude"],
+        };
         minIRI = "null";
         minDist = 1000;
-        for(const row of tableCSV){
-          destCoords = {latitude: row[1], longitude :row[2]}
-          let dist = haversine(sourceCoords,destCoords);
-          if(dist<minDist)
-          {
+        for (const row of tableCSV) {
+          destCoords = { latitude: row[1], longitude: row[2] };
+          let dist = haversine(sourceCoords, destCoords);
+          if (dist < minDist) {
             minDist = dist;
             minIRI = row[0];
           }
         }
-        temp['nearby'] = "place_"+minIRI;
+        temp["nearby"] = "place_" + minIRI;
         finObj.push(temp);
       }
     }
@@ -334,7 +340,9 @@ async function scrape(args) {
     for (i in config.locations) {
       console.log(config.locations[i]);
       let res = await getKMZ(config.locations[i]);
-      var inp = path.resolve(__dirname + "/Data/RawData/hysplit/" + res + ".kmz");
+      var inp = path.resolve(
+        __dirname + "/Data/RawData/hysplit/" + res + ".kmz"
+      );
       var opt = path.resolve(dir_name + "/" + res + ".csv");
       io_file_names[inp] = opt;
       placeiri[inp] = config.locations[i]["IRI"];
@@ -386,7 +394,7 @@ async function getKMZ(location) {
     await sleep(1000);
     await page.waitForSelector('Input[value="Next>>"]');
     await page.click('Input[value="Next>>"]');
-    await page.waitForSelector('Input[value="Backward"]',{timeout:60000});
+    await page.waitForSelector('Input[value="Backward"]', { timeout: 60000 });
     await page.click('Input[value="Backward"]');
     await page.$eval(
       "input[name='duration']",

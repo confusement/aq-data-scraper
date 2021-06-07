@@ -20,14 +20,14 @@ async function cpcbJob() {
   if (debugStop) return;
   startTime = Date.now();
   logger.debug("Started CPCB Job at ", new Date().toISOString());
-  cpcbConfig = require(__dirname + "/sources/config/cpcb.json");
+  const cc = require(__dirname + "/sources/config/cpcb.json");
   try {
     debugStop = true;
     let scraperesult = await cpcb.scrape({});
     // scraperesult={msg:"Debug Skipped Scrape"}
     let mapResult = await cpcb.mapCSV();
     await appendFile(
-      __dirname + cpcbConfig.schedule.logFile,
+      __dirname + cc.schedule.logFile,
       JSON.stringify({
         scraperesult: scraperesult,
         mapResult,
@@ -45,14 +45,14 @@ async function hysplitJob() {
   if (debugStop) return;
   startTime = Date.now();
   logger.debug("Started HYSPLIT Job at ", new Date().toISOString());
-  hysplitConfig = require(__dirname + "/sources/config/hysplit.json");
+  const hc = require(__dirname + "/sources/config/hysplit.json");
   try {
     debugStop = true;
     let scraperesult = await hysplit.scrape({});
     // scraperesult={msg:"Debug Skipped Scrape"}
     let mapResult = await hysplit.mapCSV();
     await appendFile(
-      __dirname + hysplitConfig.schedule.logFile,
+      __dirname + hc.schedule.logFile,
       JSON.stringify({
         scraperesult: scraperesult,
         mapResult,
@@ -80,22 +80,17 @@ async function initJobs(system) {
       hysplitRule.second = hysplitConfig.schedule.recurrenceRule.second;
       hysplitJobInstance = schedule.scheduleJob(hysplitRule, hysplitJob);
       break;
-    case "modis":
-      const hysplitConfig = require(__dirname + "/sources/config/hysplit.json");
-      const hysplitRule = new schedule.RecurrenceRule();
-      hysplitRule.second = hysplitConfig.schedule.recurrenceRule.second;
-      hysplitJobInstance = schedule.scheduleJob(hysplitRule, hysplitJob);
-      break;
     default:
-      const cpcbConfig = require(__dirname + "/sources/config/cpcb.json");
-      const cpcbRule = new schedule.RecurrenceRule();
-      cpcbRule.second = cpcbConfig.schedule.recurrenceRule.second;
-      cpcbJobInstance = schedule.scheduleJob(cpcbRule, cpcbJob);
+      const cpcbConfig2 = require(__dirname + "/sources/config/cpcb.json");
+      const cpcbRule2 = new schedule.RecurrenceRule();
+      cpcbRule2.second = cpcbConfig2.schedule.recurrenceRule.second;
+      cpcbJobInstance = schedule.scheduleJob(cpcbRule2, cpcbJob);
 
-      const hysplitConfig = require(__dirname + "/sources/config/hysplit.json");
-      const hysplitRule = new schedule.RecurrenceRule();
-      hysplitRule.second = hysplitConfig.schedule.recurrenceRule.second;
-      hysplitJobInstance = schedule.scheduleJob(hysplitRule, hysplitJob);
+      const hysplitConfig2 = require(__dirname +
+        "/sources/config/hysplit.json");
+      const hysplitRule2 = new schedule.RecurrenceRule();
+      hysplitRule2.second = hysplitConfig2.schedule.recurrenceRule.second;
+      hysplitJobInstance = schedule.scheduleJob(hysplitRule2, hysplitJob);
 
       break;
   }
