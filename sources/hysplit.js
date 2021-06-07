@@ -3,7 +3,8 @@ const log4js = require("log4js");
 const util = require("util");
 const http = require("http");
 const https = require("https"); // or 'https' for https:// URLs
-const fs = require("fs").promises;
+const fs = require("fs");
+const fsPromises = require("fs").promises;
 const path = require("path");
 const exec = util.promisify(require("child_process").exec);
 const puppeteer = require("puppeteer");
@@ -12,8 +13,15 @@ const extract = require("extract-zip");
 const parseKML = require("parse-kml");
 const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 const logger = log4js.getLogger("kml-parser");
-
+const haversine = require('haversine')
 const csvEditor = require("./../scripts/csvEditor")
+
+const copyFile = util.promisify(require("fs").copyFile);
+const readFile = util.promisify(require("fs").readFile);
+
+const request = util.promisify(require("request"));
+
+const replace = require("replace-in-file");
 
 var browserInstance = null;
 async function reloadBrowser() {
@@ -29,7 +37,7 @@ async function mapCSV(args) {
   console.log("Started Mapping");
   rdfFiles = [];
   try {
-    files = await fs.readdir(path.resolve(__dirname + "/Data/RawData/hysplit"));
+    files = await fsPromises.readdir(path.resolve(__dirname + "/Data/RawData/hysplit"));
     for (i in files) {
       if(!files[i].toString().endsWith("csv")){
         continue;
@@ -65,35 +73,30 @@ async function mapCSV(args) {
       //Save Changes
       await csvEditor.saveCSV(tableCSV,path.resolve(__dirname + "/Data/RawData/hysplit/" + "edit_"+files[i]))
 
-      break;
-      // yarrmlFileName = path.resolve(
-      //   __dirname + "/../mappings/" + files[i] + ".yml"
-      // );
+      yarrmlFileName = path.resolve(
+        __dirname + "/../mappings/" + files[i] + ".yml"
+      );
 
-      // await copyFile(
-      //   path.resolve(__dirname + "/../mappings/hysplit.yml"),
-      //   yarrmlFileName
-      // );
+      await copyFile(
+        path.resolve(__dirname + "/../mappings/hysplit.yml"),
+        yarrmlFileName
+      );
 
-      // Change this to suit HYSPLIT format
-      // let LocationIRI = files[i].split("_")[0];
-      // const replace_locname = {
-      //   files: yarrmlFileName,
-      //   from: /_locname/g,
-      //   to: LocationIRI,
-      // };
-      // await replace(replace_locname);
+      //Change this to suit HYSPLIT format
+      let LocationIRI = files[i].split("_")[0];
+      const replace_locname = {
+        files: yarrmlFileName,
+        from: /_locname/g,
+        to: LocationIRI,
+      };
+      await replace(replace_locname);
 
-      // const replace_filename = {
-      //   files: yarrmlFileName,
-      //   from: /_filename/g,
-      //   to: "sources/Data/RawData/cpcb/" + files[i],
-      // };
-      // await replace(replace_filename);
-
-      var location = config.locations.find((search) => {
-        return search.IRI === LocationIRI;
-      });
+      const replace_filename = {
+        files: yarrmlFileName,
+        from: /_filename/g,
+        to: "sources/Data/RawData/hysplit/" + files[i],
+      };
+      await replace(replace_filename);
 
       let rmlMapFile = path.resolve(
         __dirname + "/../mappings/" + files[i] + ".rml.ttl"
@@ -187,9 +190,11 @@ async function kmztokml(inputFile, outPutFileName, orgPlace1) {
       dir: dir_name + "/ext",
     });
     console.log("Extraction complete");
-
+    
     fs.readdir(directory, (err, files) => {
-      if (err) throw err;
+      if (err){
+        throw err;
+      } 
       var kmlFileName = "";
       for (const file of files) {
         if (
@@ -207,9 +212,9 @@ async function kmztokml(inputFile, outPutFileName, orgPlace1) {
           kmlFileName = path.join(directory, file);
         }
       }
-
       kmltocsv(kmlFileName, outPutFileName, orgPlace1);
     });
+
   } catch (err) {
     console.log(err);
   }
@@ -237,9 +242,11 @@ async function kmltocsv(inputFile, outputFile, orgPlace) {
       { id: "nextuuid", title: "nextuuid" },
       { id: "firstlast", title: "firstlast" },
       { id: "orgplaceiri", title: "orgplaceiri" },
+      { id: "nearby", title: "nearby" },
     ],
   });
-
+  let [tableCSV,numRows,numCols] = await csvEditor.loadCSV(path.resolve(__dirname+"./../mappings/placesList.csv"))
+  console.log(tableCSV[1])
   try {
     var res = response["features"];
     var finObj = [];
@@ -282,6 +289,20 @@ async function kmltocsv(inputFile, outputFile, orgPlace) {
             temp["firstlast"] = "mid";
           }
         }
+
+        sourceCoords = {latitude: temp["latitude"], longitude : temp["longitude"]}
+        minIRI = "null";
+        minDist = 1000;
+        for(const row of tableCSV){
+          destCoords = {latitude: row[1], longitude :row[2]}
+          let dist = haversine(sourceCoords,destCoords);
+          if(dist<minDist)
+          {
+            minDist = dist;
+            minIRI = row[0];
+          }
+        }
+        temp['nearby'] = minIRI;
         finObj.push(temp);
       }
     }
@@ -330,6 +351,9 @@ async function convertKMZ() {
     console.log("Key : " + key + ", Value : " + io_file_names[key]);
     kmztokml(key, io_file_names[key], placeiri[key]);
   });
+  // kmztokml(path.resolve(__dirname+'/Data/RawData/hysplit/ito_1623066641515.kmz').toString(),
+  // path.resolve(__dirname+'/Data/RawData/hysplit/ito_1623066641515_new.csv').toString(),
+  //  'ito');
 }
 
 async function getKMZ(location) {
@@ -362,7 +386,7 @@ async function getKMZ(location) {
     await sleep(1000);
     await page.waitForSelector('Input[value="Next>>"]');
     await page.click('Input[value="Next>>"]');
-    await page.waitForSelector('Input[value="Backward"]');
+    await page.waitForSelector('Input[value="Backward"]',{timeout:60000});
     await page.click('Input[value="Backward"]');
     await page.$eval(
       "input[name='duration']",
@@ -423,14 +447,9 @@ async function getKMZ(location) {
 //   "Data\\RawData\\hysplit\\testing_uuid.csv"
 // );
 async function execute_fin() {
-<<<<<<< Updated upstream
   //await scrape();
   //await convertKMZ();
   let mappingResult = await mapCSV({});
   //await browserInstance.close();
-=======
-  await scrape();
-  await convertKMZ();
->>>>>>> Stashed changes
 }
 execute_fin();

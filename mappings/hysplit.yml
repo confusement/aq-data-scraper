@@ -14,6 +14,7 @@ mappings:
       - [aq:latitude, $(latitude)]
       - [aq:longitude, $(longitude)]
       - [aq:atHeight, $(height)]
+      - [aq:nearby, $(nearby)]
       - p: aq:nextFix
         o:
           - mapping: helper
