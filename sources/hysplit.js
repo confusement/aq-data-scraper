@@ -29,7 +29,7 @@ async function reloadBrowser() {
     browserInstance = await puppeteer.launch({
       headless: false,
       //executablePath: __dirname + "/../lib/chrome-linux/chrome",
-      executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
+      // executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
 }
@@ -44,7 +44,7 @@ async function mapCSV(args) {
       if (!files[i].toString().endsWith("csv")) {
         continue;
       }
-      console.log(files[i]);
+      console.log(files[i] + " FILES!!!!!");
 
       //Load CSV
       var [tableCSV, numRows, numCols] = await csvEditor.loadCSV(
@@ -87,17 +87,18 @@ async function mapCSV(args) {
 
       //Change this to suit HYSPLIT format
       let LocationIRI = files[i].split("_")[0];
+      console.log(LocationIRI);
       const replace_locname = {
         files: yarrmlFileName,
         from: /_locname/g,
-        to: LocationIRI,
+        to: "place_" + LocationIRI,
       };
       await replace(replace_locname);
 
       const replace_filename = {
         files: yarrmlFileName,
         from: /_filename/g,
-        to: "sources/Data/RawData/hysplit/" + files[i],
+        to: "sources/Data/RawData/hysplit/" + "edit_" + files[i],
       };
       await replace(replace_filename);
 
@@ -115,7 +116,7 @@ async function mapCSV(args) {
       if (stderr3) {
         logger.debug(`error: ${stderr}`);
       }
-
+      console.log("Done till .rml.ttl");
       // await unlink(yarrmlFileName);
 
       let rdfFileName = path.resolve(
@@ -145,7 +146,7 @@ async function mapCSV(args) {
       );
 
       logger.debug("Mapped :" + rdfFileName);
-
+      console.log("turtleFileReady");
       turtleData = await readFile(rdfFileName);
       logger.debug(turtleData);
       var options = {
@@ -431,7 +432,7 @@ async function getKMZ(location) {
         jobno = param[1];
       }
     }
-    const filename = location.IRI + "_" + Date.now();
+    const filename = location.IRI.split(" ").join("%20") + "_" + Date.now();
     const file = fs.createWriteStream(
       path.resolve(__dirname + "/Data/RawData/hysplit/" + filename + ".kmz")
     );

@@ -89,35 +89,33 @@ console.log("it's started on http://localhost:" + port);
 var csvEditor = require("./scripts/csvEditor");
 const processGeoData = require("./scripts/processGeoData");
 
-async function main(){
-
+async function main() {
   //Load CSV
-  var [tableCSV,numRows,numCols] = await csvEditor.loadCSV(__dirname+"/csvFile.csv")
+  var [tableCSV, numRows, numCols] = await csvEditor.loadCSV(
+    __dirname + "/csvFile.csv"
+  );
 
   //Do changes
   //Append new column
-  tableCSV[0].push("nextId")
+  tableCSV[0].push("nextId");
   //Append value for each row
   let it = 0;
-  tableCSV.forEach(row => {
+  tableCSV.forEach((row) => {
     //skip header
-    if(it==0){
+    if (it == 0) {
       it++;
       return;
-    } 
+    }
 
-    if(it<numRows-1)
-      row.push((it+1).toString())
-    else
-      row.push("null")
-      
+    if (it < numRows - 1) row.push((it + 1).toString());
+    else row.push("null");
+
     it++;
   });
 
   //Save Changes
-  await csvEditor.saveCSV(tableCSV,__dirname+"/csvFileNew.csv")
+  await csvEditor.saveCSV(tableCSV, __dirname + "/csvFileNew.csv");
   await processGeoData.main();
-
 }
 
 // main();

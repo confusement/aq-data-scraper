@@ -15,10 +15,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Alipur, Delhi - DPCC   ",
-      "StationCode": [
-        "site_5024"
-      ],
-      "coords":[28.79834576307126, 77.13200548149945],
+      "StationCode": ["site_5024"],
+      "coords": [28.79834576307126, 77.13200548149945],
       "IRI": "Alipur"
     },
     {
@@ -26,10 +24,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Anand Vihar, Delhi - DPCC   ",
-      "StationCode": [
-        "site_301"
-      ],
-      "coords":[28.651684438470827, 77.30740618047795],
+      "StationCode": ["site_301"],
+      "coords": [28.651684438470827, 77.30740618047795],
       "IRI": "Anand Vihar"
     },
     {
@@ -37,10 +33,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Ashok Vihar, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1420"
-      ],
-      "coords":[28.69244922312765, 77.17596528398548],
+      "StationCode": ["site_1420"],
+      "coords": [28.69244922312765, 77.17596528398548],
       "IRI": "Ashok Vihar"
     },
     {
@@ -48,10 +42,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Aya Nagar, Delhi - IMD   ",
-      "StationCode": [
-        "site_108"
-      ],
-      "coords":[28.47242677414323, 77.13156569632227],
+      "StationCode": ["site_108"],
+      "coords": [28.47242677414323, 77.13156569632227],
       "IRI": "Aya Nagar"
     },
     {
@@ -59,10 +51,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Bawana, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1560"
-      ],
-      "coords":[28.7938583363514, 77.04704334020228],
+      "StationCode": ["site_1560"],
+      "coords": [28.7938583363514, 77.04704334020228],
       "IRI": "Bawana"
     },
     {
@@ -70,10 +60,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Burari Crossing, Delhi - IMD   ",
-      "StationCode": [
-        "site_104"
-      ],
-      "coords":[28.728631593749004, 77.19939832792016],
+      "StationCode": ["site_104"],
+      "coords": [28.728631593749004, 77.19939832792016],
       "IRI": "Burari Crossing"
     },
     {
@@ -81,10 +69,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "CRRI Mathura Road, Delhi - IMD   ",
-      "StationCode": [
-        "site_103"
-      ],
-      "coords":[28.55187096729415, 77.27491638003981],
+      "StationCode": ["site_103"],
+      "coords": [28.55187096729415, 77.27491638003981],
       "IRI": "CRRI Mathura Road"
     },
     {
@@ -92,10 +78,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Chandni Chowk, Delhi - IITM   ",
-      "StationCode": [
-        "site_5393"
-      ],
-      "coords":[28.658793275769952, 77.22850448576679],
+      "StationCode": ["site_5393"],
+      "coords": [28.658793275769952, 77.22850448576679],
       "IRI": "Chandni Chowk"
     },
     {
@@ -103,10 +87,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "DTU, Delhi - CPCB   ",
-      "StationCode": [
-        "site_118"
-      ],
-      "coords":[28.75137800825496, 77.11764126186573],
+      "StationCode": ["site_118"],
+      "coords": [28.75137800825496, 77.11764126186573],
       "IRI": "DTU"
     },
     {
@@ -114,10 +96,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Dr. Karni Singh Shooting Range, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1421"
-      ],
-      "coords":[28.49992478517268, 77.26750309300365],
+      "StationCode": ["site_1421"],
+      "coords": [28.49992478517268, 77.26750309300365],
       "IRI": "Dr. Karni Singh Shooting Range"
     },
     {
@@ -125,10 +105,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Dwarka-Sector 8, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1422"
-      ],
-      "coords":[28.572705850286017, 77.07056503521558],
+      "StationCode": ["site_1422"],
+      "coords": [28.572705850286017, 77.07056503521558],
       "IRI": "Dwarka-Sector 8"
     },
     {
@@ -136,10 +114,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "East Arjun Nagar, Delhi - CPCB   ",
-      "StationCode": [
-        "site_116"
-      ],
-      "coords":[28.656351921864687, 77.29471668749049],
+      "StationCode": ["site_116"],
+      "coords": [28.656351921864687, 77.29471668749049],
       "IRI": "East Arjun Nagar"
     },
     {
@@ -147,10 +123,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "IGI Airport (T3), Delhi - IMD   ",
-      "StationCode": [
-        "site_106"
-      ],
-      "coords":[28.557216890317395, 77.10228580936229],
+      "StationCode": ["site_106"],
+      "coords": [28.557216890317395, 77.10228580936229],
       "IRI": "IGI Airport (T3)"
     },
     {
@@ -158,10 +132,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "IHBAS, Dilshad Garden, Delhi - CPCB   ",
-      "StationCode": [
-        "site_114"
-      ],
-      "coords":[28.68273101785564, 77.30510340094386],
+      "StationCode": ["site_114"],
+      "coords": [28.68273101785564, 77.30510340094386],
       "IRI": "IHBAS"
     },
     {
@@ -169,10 +141,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "ITO, Delhi - CPCB   ",
-      "StationCode": [
-        "site_117"
-      ],
-      "coords":[28.629512538842555, 77.24140592792635],
+      "StationCode": ["site_117"],
+      "coords": [28.629512538842555, 77.24140592792635],
       "IRI": "ITO"
     },
     {
@@ -180,10 +150,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Jahangirpuri, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1423"
-      ],
-      "coords":[28.73015244876172, 77.16652985248695],
+      "StationCode": ["site_1423"],
+      "coords": [28.73015244876172, 77.16652985248695],
       "IRI": "Jahangirpuri"
     },
     {
@@ -191,10 +159,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Jawaharlal Nehru Stadium, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1424"
-      ],
-      "coords":[28.583146000250732, 77.23499420721967],
+      "StationCode": ["site_1424"],
+      "coords": [28.583146000250732, 77.23499420721967],
       "IRI": "Jawaharlal Nehru Stadium"
     },
     {
@@ -202,10 +168,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Lodhi Road, Delhi - IITM   ",
-      "StationCode": [
-        "site_5395"
-      ],
-      "coords":[28.61083176379604, 77.10178681919167],
+      "StationCode": ["site_5395"],
+      "coords": [28.61083176379604, 77.10178681919167],
       "IRI": "Lodhi Road"
     },
     {
@@ -213,10 +177,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Lodhi Road, Delhi - IMD   ",
-      "StationCode": [
-        "site_109"
-      ],
-      "coords":[28.590267688587204, 77.22078511533704],
+      "StationCode": ["site_109"],
+      "coords": [28.590267688587204, 77.22078511533704],
       "IRI": "Lodhi Road"
     },
     {
@@ -224,10 +186,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Major Dhyan Chand National Stadium, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1425"
-      ],
-      "coords":[28.612625494060545, 77.236519447501],
+      "StationCode": ["site_1425"],
+      "coords": [28.612625494060545, 77.236519447501],
       "IRI": "Major Dhyan Chand National Stadium"
     },
     {
@@ -235,10 +195,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Mandir Marg, Delhi - DPCC   ",
-      "StationCode": [
-        "site_122"
-      ],
-      "coords":[28.632621420332367, 77.19897256019473],
+      "StationCode": ["site_122"],
+      "coords": [28.632621420332367, 77.19897256019473],
       "IRI": "Mandir Marg"
     },
     {
@@ -246,10 +204,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Mundka, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1561"
-      ],
-      "coords":[28.683034646528025, 77.03630602504803],
+      "StationCode": ["site_1561"],
+      "coords": [28.683034646528025, 77.03630602504803],
       "IRI": "Mundka"
     },
     {
@@ -257,10 +213,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "NSIT Dwarka, Delhi - CPCB   ",
-      "StationCode": [
-        "site_115"
-      ],
-      "coords":[28.610147243626134, 77.03839441787487],
+      "StationCode": ["site_115"],
+      "coords": [28.610147243626134, 77.03839441787487],
       "IRI": "NSIT Dwarka"
     },
     {
@@ -268,10 +222,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Najafgarh, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1427"
-      ],
-      "coords":[28.611298618165936, 76.98279261447992],
+      "StationCode": ["site_1427"],
+      "coords": [28.611298618165936, 76.98279261447992],
       "IRI": "Najafgarh"
     },
     {
@@ -279,10 +231,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Narela, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1426"
-      ],
-      "coords":[28.857166846185606, 77.08888473983959],
+      "StationCode": ["site_1426"],
+      "coords": [28.857166846185606, 77.08888473983959],
       "IRI": "Narela"
     },
     {
@@ -290,10 +240,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Nehru Nagar, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1429"
-      ],
-      "coords":[28.570636706367836, 77.25046813155092],
+      "StationCode": ["site_1429"],
+      "coords": [28.570636706367836, 77.25046813155092],
       "IRI": "Nehru Nagar"
     },
     {
@@ -301,10 +249,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "North Campus, DU, Delhi - IMD   ",
-      "StationCode": [
-        "site_105"
-      ],
-      "coords":[28.687767812403557, 77.21029445590997],
+      "StationCode": ["site_105"],
+      "coords": [28.687767812403557, 77.21029445590997],
       "IRI": "North Campus"
     },
     {
@@ -312,10 +258,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Okhla Phase-2, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1428"
-      ],
-      "coords":[28.536810727329563, 77.27641508548183],
+      "StationCode": ["site_1428"],
+      "coords": [28.536810727329563, 77.27641508548183],
       "IRI": "Okhla Phase-2"
     },
     {
@@ -323,10 +267,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Patparganj, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1431"
-      ],
-      "coords":[28.63448925623288, 77.30959859343264],
+      "StationCode": ["site_1431"],
+      "coords": [28.63448925623288, 77.30959859343264],
       "IRI": "Patparganj"
     },
     {
@@ -334,10 +276,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Punjabi Bagh, Delhi - DPCC   ",
-      "StationCode": [
-        "site_125"
-      ],
-      "coords":[28.663432486733342, 77.12430386172231],
+      "StationCode": ["site_125"],
+      "coords": [28.663432486733342, 77.12430386172231],
       "IRI": "Punjabi Bagh"
     },
     {
@@ -345,10 +285,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Pusa, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1563"
-      ],
-      "coords":[28.637649657178716, 77.15657918016943],
+      "StationCode": ["site_1563"],
+      "coords": [28.637649657178716, 77.15657918016943],
       "IRI": "Pusa"
     },
     {
@@ -356,10 +294,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Pusa, Delhi - IMD   ",
-      "StationCode": [
-        "site_107"
-      ],
-      "coords":[28.637649657178716, 77.15657918016943],
+      "StationCode": ["site_107"],
+      "coords": [28.637649657178716, 77.15657918016943],
       "IRI": "Pusa"
     },
     {
@@ -367,10 +303,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "R K Puram, Delhi - DPCC   ",
-      "StationCode": [
-        "site_124"
-      ],
-      "coords":[28.567172325585233, 77.17691142239359],
+      "StationCode": ["site_124"],
+      "coords": [28.567172325585233, 77.17691142239359],
       "IRI": "R K Puram"
     },
     {
@@ -378,10 +312,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Rohini, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1430"
-      ],
-      "coords":[28.739129790925237, 77.08263427353674],
+      "StationCode": ["site_1430"],
+      "coords": [28.739129790925237, 77.08263427353674],
       "IRI": "Rohini"
     },
     {
@@ -389,10 +321,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Shadipur, Delhi - CPCB   ",
-      "StationCode": [
-        "site_113"
-      ],
-      "coords":[28.6518546725705, 77.15709522415378],
+      "StationCode": ["site_113"],
+      "coords": [28.6518546725705, 77.15709522415378],
       "IRI": "Shadipur"
     },
     {
@@ -400,10 +330,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Sirifort, Delhi - CPCB   ",
-      "StationCode": [
-        "site_119"
-      ],
-      "coords":[28.550643045898664, 77.21495295318438],
+      "StationCode": ["site_119"],
+      "coords": [28.550643045898664, 77.21495295318438],
       "IRI": "Sirifort"
     },
     {
@@ -411,10 +339,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Sonia Vihar, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1432"
-      ],
-      "coords":[28.735374331066758, 77.24863784500265],
+      "StationCode": ["site_1432"],
+      "coords": [28.735374331066758, 77.24863784500265],
       "IRI": "Sonia Vihar"
     },
     {
@@ -422,10 +348,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Sri Aurobindo Marg, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1562"
-      ],
-      "coords":[28.531277804796225, 77.19049028374364],
+      "StationCode": ["site_1562"],
+      "coords": [28.531277804796225, 77.19049028374364],
       "IRI": "Sri Aurobindo Marg"
     },
     {
@@ -433,10 +357,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Vivek Vihar, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1435"
-      ],
-      "coords":[28.67214809121237, 77.31760341383868],
+      "StationCode": ["site_1435"],
+      "coords": [28.67214809121237, 77.31760341383868],
       "IRI": "Vivek Vihar"
     },
     {
@@ -444,10 +366,8 @@
       "State": "Delhi",
       "City": "Delhi",
       "StationName": "Wazirpur, Delhi - DPCC   ",
-      "StationCode": [
-        "site_1434"
-      ],
-      "coords":[28.696036730248455, 77.15731208313564],
+      "StationCode": ["site_1434"],
+      "coords": [28.696036730248455, 77.15731208313564],
       "IRI": "Wazirpur"
     }
   ]

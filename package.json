@@ -10,7 +10,7 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@rmlio/yarrrml-parser": "^1.2.2",
+    "@rmlio/yarrrml-parser": "^1.2.3",
     "chromium": "^3.0.2",
     "csv-writer": "^1.6.0",
     "express": "^4.17.1",

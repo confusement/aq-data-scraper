@@ -76,7 +76,7 @@ async function mapCSV(args) {
       const replace_locname = {
         files: yarrmlFileName,
         from: /_locname/g,
-        to: "_place"+LocationIRI,
+        to: "place_" + LocationIRI,
       };
       await replace(replace_locname);
 
@@ -280,7 +280,7 @@ async function retry(location, retryCount) {
     return await retry(location, retryCount - 1);
   }
 }
-
+mapCSV();
 module.exports = {
   scrape: scrape,
   mapCSV: mapCSV,
