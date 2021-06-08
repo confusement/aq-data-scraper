@@ -18,7 +18,7 @@ var browserInstance = null;
 async function reloadBrowser() {
   if (!browserInstance)
     browserInstance = await puppeteer.launch({
-      headless: true,
+      headless: false,
       executablePath: __dirname + "/../lib/chrome-linux/chrome",
       //executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
       // args: ['--start-maximized']
@@ -52,27 +52,27 @@ async function scrape(args) {
 async function mapCSV(args) {
   // sed -i 's/$(_locname)/source_0.csv/g' ./mappings/cpcb.yml
   logger.debug("Started Mapping");
-  rdfFiles = [];
+  rdffiles1 = [];
   try {
-    files = await fs.readdir(__dirname + "/Data/RawData/cpcb");
-    for (i in files) {
-      logger.debug(files[i]);
-      yarrmlFileName = path.resolve(
-        __dirname + "/../mappings/" + files[i] + ".yml"
-      );
+    files1 = await fs.readdir(__dirname + "/Data/RawData/cpcb");
+    for (i in files1) {
+      logger.debug(files1[i]);
 
+      yarrmlFileName = path.resolve(
+        __dirname + "/../mappings/" + files1[i] + ".yml"
+      );
+      logger.debug("awuwuwuw",yarrmlFileName);
       await copyFile(
         path.resolve(__dirname + "/../mappings/cpcb.yml"),
         yarrmlFileName
       );
-
       //Deprecated
-      // const { stdout1, stderr1 } = await exec('cp '+__dirname+"/../mappings/cpcb.yml "+ __dirname+"/../mappings/"+files[i]+".yml");
+      // const { stdout1, stderr1 } = await exec('cp '+__dirname+"/../mappings/cpcb.yml "+ __dirname+"/../mappings/"+files1[i]+".yml");
       // if (stderr1) {
       //     logger.debug(`error: ${stderr}`);
       // }
-
-      let LocationIRI = files[i].split("_")[0];
+      console.log(files1[i])
+      let LocationIRI = files1[i].split("_")[0];
       const replace_locname = {
         files: yarrmlFileName,
         from: /_locname/g,
@@ -89,32 +89,34 @@ async function mapCSV(args) {
       const replace_filename = {
         files: yarrmlFileName,
         from: /_filename/g,
-        to: "sources/Data/RawData/cpcb/" + files[i],
+        to: "sources/Data/RawData/cpcb/" + files1[i],
       };
       await replace(replace_filename);
 
       var location = config.locations.find((search) => {
-        return search.IRI === LocationIRI;
+        return search.IRI === LocationIRI.split("%20").join(" ");
       });
-
+      logger.debug(config.locations)
+      logger.debug(LocationIRI)
+      logger.debug(files1[i])
       const replace_station = {
-        files: yarrmlFileName,
+        files1: yarrmlFileName,
         from: /_station/g,
         to: location.StationCode,
       };
       await replace(replace_filename);
 
-      // const { stdout3, stderr3 } = await exec("sed -i 's/_filename/"+files[i]+"/g' "+ yarrmlFileName);
+      // const { stdout3, stderr3 } = await exec("sed -i 's/_filename/"+files1[i]+"/g' "+ yarrmlFileName);
       // if (stderr3) {
       //     logger.debug(`error: ${stderr}`);
       // }
 
       let rmlMapFile = path.resolve(
-        __dirname + "/../mappings/" + files[i] + ".rml.ttl"
+        __dirname + "/../mappings/" + files1[i] + ".rml.ttl"
       );
-
+        logger.debug("yarrrml-parser -i " + "\""+ yarrmlFileName +  "\" -o " + rmlMapFile)
       const { stdout3, stderr3 } = await exec(
-        "yarrrml-parser -i " + yarrmlFileName + " -o " + rmlMapFile,
+        "yarrrml-parser -i " + "\""+ yarrmlFileName +  "\" -o " + rmlMapFile,
         {
           cwd: __dirname + "/..",
         }
@@ -124,17 +126,16 @@ async function mapCSV(args) {
         logger.debug(`error: ${stderr}`);
       }
 
-      await unlink(yarrmlFileName);
-
+      //await unlink(yarrmlFileName);
       let rdfFileName = path.resolve(
-        __dirname + "/../sources/Data/RdfData/cpcb/" + files[i] + ".turtle"
+        __dirname + "/../sources/Data/RdfData/cpcb/" + files1[i] + ".turtle"
       );
 
       const { stdout4, stderr4 } = await exec(
-        "java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m " +
+        "java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m \"" +
           rmlMapFile +
-          " -o " +
-          rdfFileName,
+          "\" -o " +
+          "\""+rdfFileName+"\"",
         {
           cwd: path.resolve(__dirname + "/.."),
         }
@@ -143,7 +144,7 @@ async function mapCSV(args) {
         logger.debug(`error: ${stderr}`);
       }
 
-      await unlink(rmlMapFile);
+      //await unlink(rmlMapFile);
 
       logger.debug(
         "java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m " +
@@ -176,16 +177,16 @@ async function mapCSV(args) {
       let turtleResponse = await request(options);
       logger.debug("Response from fuseki : [" + turtleResponse.body + "]");
 
-      await unlink(__dirname + "/Data/RawData/cpcb/" + files[i]);
+      //await unlink(__dirname + "/Data/RawData/cpcb/" + files1[i]);
 
-      rdfFiles.push(__dirname + "/../mappings/" + files[i] + ".rml.ttl");
+      rdffiles1.push(__dirname + "/../mappings/" + files1[i] + ".rml.ttl");
     }
   } catch (err) {
     logger.error(err);
   }
   return {
     msg: "OK",
-    rdfFiles: rdfFiles,
+    rdfFiles: rdffiles1,
   };
 }
 async function getCSV(location) {
@@ -236,7 +237,7 @@ async function getCSV(location) {
 
     let tableString = value.replace(/\t/g, ","); //.replaceAll("\t", ","); <- Only works for chrome>85
     // logger.debug(tableString);
-    filename = location.IRI + "_" + Date.now();
+    filename = location.IRI.split(" ").join("%20") + "_" + Date.now();
     await fs.writeFile(
       __dirname + "/Data/RawData/cpcb/" + filename + ".csv",
       tableString

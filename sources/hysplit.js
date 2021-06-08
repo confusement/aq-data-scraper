@@ -18,6 +18,7 @@ const csvEditor = require("./../scripts/csvEditor");
 
 const copyFile = util.promisify(require("fs").copyFile);
 const readFile = util.promisify(require("fs").readFile);
+const unlink = util.promisify(require("fs").unlink);
 
 const request = util.promisify(require("request"));
 
@@ -28,7 +29,7 @@ async function reloadBrowser() {
   if (!browserInstance)
     browserInstance = await puppeteer.launch({
       headless: false,
-      //executablePath: __dirname + "/../lib/chrome-linux/chrome",
+      executablePath: __dirname + "/../lib/chrome-linux/chrome",
       // executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
@@ -44,7 +45,7 @@ async function mapCSV(args) {
       if (!files[i].toString().endsWith("csv")) {
         continue;
       }
-      console.log(files[i] + " FILES!!!!!");
+      //console.log(files[i] + " FILES!!!!!");
 
       //Load CSV
       var [tableCSV, numRows, numCols] = await csvEditor.loadCSV(
@@ -87,7 +88,7 @@ async function mapCSV(args) {
 
       //Change this to suit HYSPLIT format
       let LocationIRI = files[i].split("_")[0];
-      console.log(LocationIRI);
+      //console.log(LocationIRI);
       const replace_locname = {
         files: yarrmlFileName,
         from: /_locname/g,
@@ -116,8 +117,7 @@ async function mapCSV(args) {
       if (stderr3) {
         logger.debug(`error: ${stderr}`);
       }
-      console.log("Done till .rml.ttl");
-      // await unlink(yarrmlFileName);
+      await unlink(yarrmlFileName);
 
       let rdfFileName = path.resolve(
         __dirname + "/../sources/Data/RdfData/hysplit/" + files[i] + ".turtle"
@@ -136,7 +136,7 @@ async function mapCSV(args) {
         logger.debug(`error: ${stderr}`);
       }
 
-      // await unlink(rmlMapFile);
+       await unlink(rmlMapFile);
 
       logger.debug(
         "java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m " +
@@ -148,7 +148,7 @@ async function mapCSV(args) {
       logger.debug("Mapped :" + rdfFileName);
       console.log("turtleFileReady");
       turtleData = await readFile(rdfFileName);
-      logger.debug(turtleData);
+      //logger.debug(turtleData);
       var options = {
         method: "POST",
         url: "http://localhost:3030/aqStore/data?default",
@@ -169,7 +169,7 @@ async function mapCSV(args) {
       let turtleResponse = await request(options);
       logger.debug("Response from fuseki : [" + turtleResponse.body + "]");
 
-      // await unlink(__dirname + "/Data/RawData/hysplit/" + files[i]);
+      await unlink(__dirname + "/Data/RawData/hysplit/" + files[i]);
 
       rdfFiles.push(__dirname + "/../mappings/" + files[i] + ".rml.ttl");
     }
@@ -233,7 +233,7 @@ async function uuidv4() {
 
 async function kmltocsv(inputFile, outputFile, orgPlace) {
   let response = await parseKML.toJson(inputFile);
-  console.log(outputFile);
+  //console.log(outputFile);
   const csvWriter = createCsvWriter({
     path: outputFile,
     header: [
@@ -251,7 +251,6 @@ async function kmltocsv(inputFile, outputFile, orgPlace) {
   let [tableCSV, numRows, numCols] = await csvEditor.loadCSV(
     path.resolve(__dirname + "./../mappings/placesList.csv")
   );
-  console.log(tableCSV[1]);
   try {
     var res = response["features"];
     var finObj = [];
@@ -458,7 +457,13 @@ async function getKMZ(location) {
 async function execute_fin() {
   //await scrape();
   //await convertKMZ();
-  let mappingResult = await mapCSV({});
+  //let mappingResult = await mapCSV({});
   //await browserInstance.close();
 }
 execute_fin();
+
+module.exports = {
+  scrape: scrape,
+  convertKMZ: convertKMZ,
+  mapCSV:mapCSV
+};

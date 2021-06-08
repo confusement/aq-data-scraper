@@ -5,9 +5,40 @@ const logger = log4js.getLogger("API");
 const util = require("util");
 
 const cpcb = require("./../sources/cpcb");
+const hysplit = require("./../sources/hysplit")
 const testSource = require("./../sources/testSource");
 const scheduler = require("./../scheduler");
 
+router.get("/demo1", async function (req, res, next) {
+  startTime = Date.now();
+  let scraperesult = await cpcb.scrape({});
+  //let scraperesult = {};
+  let mapResult = await cpcb.mapCSV();
+    res.setHeader("Content-Type", "application/json");
+    res.end(
+      JSON.stringify({
+        result: "Succesfull",
+        msg: "Demo 1 Ran succesfully",
+        details: {
+          scraperesult: scraperesult,
+          mapResult:mapResult,
+          jobStart: startTime,
+        }
+      })
+    );
+});
+router.get("/demo2", async function (req, res, next) {
+  await hysplit.scrape();
+  await hysplit.convertKMZ();
+  let mappingResult = await hysplit.mapCSV({});
+  res.setHeader("Content-Type", "application/json");
+  res.end(
+    JSON.stringify({
+      result: "Succesfull",
+      msg: "Demo 2 Ran succesfully",
+    })
+  );
+});
 router.get("/mapCSV", async function (req, res, next) {
   switch (req.query.source) {
     case "cpcb":

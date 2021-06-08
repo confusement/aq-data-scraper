@@ -10,9 +10,11 @@ module.exports = {
       env_production: {
         NODE_ENV: "production",
       },
+      interpreter: "node",
     },
     {
       name: "triple-store-app",
+      watch: true,
       script: "./RDFstore/apache-jena-fuseki-3.17.0/fuseki-server",
       interpreter: "bash",
     },

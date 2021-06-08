@@ -3,7 +3,6 @@ prefixes:
   grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
 mappings:
   # Particulate Matter
-
   pm:
     sources:
       - access: _filename
@@ -344,3 +343,4 @@ mappings:
         o: $(To Date)
       - p: aq:hasParameter
         o: aq:wc_apa__locname$(To Date)
+
