@@ -29,7 +29,7 @@ async function reloadBrowser() {
   if (!browserInstance)
     browserInstance = await puppeteer.launch({
       headless: false,
-      executablePath: __dirname + "/../lib/chrome-linux/chrome",
+      //executablePath: __dirname + "/../lib/chrome-linux/chrome",
       // executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
     });
@@ -136,7 +136,7 @@ async function mapCSV(args) {
         logger.debug(`error: ${stderr}`);
       }
 
-       await unlink(rmlMapFile);
+      await unlink(rmlMapFile);
 
       logger.debug(
         "java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m " +
@@ -255,15 +255,8 @@ async function kmltocsv(inputFile, outputFile, orgPlace) {
     var res = response["features"];
     var finObj = [];
     var uuids = [];
-    console.log(res.length);
-    // for (let index = 0; index < res.length; index++) {
-    //   console.log("fuck");
-    //   uuids[index] = await uuidv4();
-    // }
-    console.log(uuids);
     var uuid_org = await uuidv4();
     var prev_uuid;
-    //console.log(response["features"]);
     for (var i = 1; i < res.length; i++) {
       var next_uuid = await uuidv4();
       var obj = res[i];
@@ -446,24 +439,22 @@ async function getKMZ(location) {
     return filename;
   } catch (err) {
     page.close();
+    await browserInstance.close();
     console.log(err);
   }
+}
+
+async function closeBrowser() {
+  await browserInstance.close();
 }
 
 // kmltocsv(
 //   "Data\\RawData\\hysplit\\ext\\HYSPLITtraj_154279_01.kml",
 //   "Data\\RawData\\hysplit\\testing_uuid.csv"
 // );
-async function execute_fin() {
-  //await scrape();
-  //await convertKMZ();
-  //let mappingResult = await mapCSV({});
-  //await browserInstance.close();
-}
-execute_fin();
-
 module.exports = {
   scrape: scrape,
   convertKMZ: convertKMZ,
-  mapCSV:mapCSV
+  mapCSV: mapCSV,
+  closeBrowser: closeBrowser,
 };

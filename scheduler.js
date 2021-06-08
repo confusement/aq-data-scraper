@@ -49,6 +49,7 @@ async function hysplitJob() {
   try {
     debugStop = true;
     let scraperesult = await hysplit.scrape({});
+    await hysplit.convertKMZ();
     // scraperesult={msg:"Debug Skipped Scrape"}
     let mapResult = await hysplit.mapCSV();
     await appendFile(

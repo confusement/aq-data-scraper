@@ -15,24 +15,6 @@
       "latitude": "28.628624",
       "longitude": "77.241060",
       "IRI": "ITO"
-    },
-    {
-      "StationName": "Chandni Chowk, Delhi - IITM",
-      "latitude": "28.656756",
-      "longitude": "77.227234",
-      "IRI": "Chandni Chowk"
-    },
-    {
-      "StationName": "Sri Aurobindo Marg, Delhi - DPCC",
-      "latitude": "28.531346",
-      "longitude": "77.190156",
-      "IRI": "Sri Aurobindo Marg"
-    },
-    {
-      "StationName": "Mandir Marg, Delhi - DPCC",
-      "latitude": "28.636429",
-      "longitude": "77.201067",
-      "IRI": "Mandir Marg"
     }
   ]
 }

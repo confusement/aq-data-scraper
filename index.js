@@ -3,8 +3,10 @@ const port = 5001;
 var express = require("express");
 var path = require("path");
 var log4js = require("log4js");
-const tester = require("./test");
+const cors = require("cors");
 var app = express();
+app.use(cors());
+app.options("*", cors());
 var serv = require("http").Server(app);
 
 app.set("statusVars", {

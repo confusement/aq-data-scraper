@@ -19,7 +19,7 @@ async function reloadBrowser() {
   if (!browserInstance)
     browserInstance = await puppeteer.launch({
       headless: false,
-      executablePath: __dirname + "/../lib/chrome-linux/chrome",
+      //executablePath: __dirname + "/../lib/chrome-linux/chrome",
       //executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
       // args: ['--start-maximized']
     });
@@ -61,7 +61,7 @@ async function mapCSV(args) {
       yarrmlFileName = path.resolve(
         __dirname + "/../mappings/" + files1[i] + ".yml"
       );
-      logger.debug("awuwuwuw",yarrmlFileName);
+      logger.debug("awuwuwuw", yarrmlFileName);
       await copyFile(
         path.resolve(__dirname + "/../mappings/cpcb.yml"),
         yarrmlFileName
@@ -71,7 +71,7 @@ async function mapCSV(args) {
       // if (stderr1) {
       //     logger.debug(`error: ${stderr}`);
       // }
-      console.log(files1[i])
+      console.log(files1[i]);
       let LocationIRI = files1[i].split("_")[0];
       const replace_locname = {
         files: yarrmlFileName,
@@ -96,9 +96,9 @@ async function mapCSV(args) {
       var location = config.locations.find((search) => {
         return search.IRI === LocationIRI.split("%20").join(" ");
       });
-      logger.debug(config.locations)
-      logger.debug(LocationIRI)
-      logger.debug(files1[i])
+      logger.debug(config.locations);
+      logger.debug(LocationIRI);
+      logger.debug(files1[i]);
       const replace_station = {
         files1: yarrmlFileName,
         from: /_station/g,
@@ -114,9 +114,11 @@ async function mapCSV(args) {
       let rmlMapFile = path.resolve(
         __dirname + "/../mappings/" + files1[i] + ".rml.ttl"
       );
-        logger.debug("yarrrml-parser -i " + "\""+ yarrmlFileName +  "\" -o " + rmlMapFile)
+      logger.debug(
+        "yarrrml-parser -i " + '"' + yarrmlFileName + '" -o ' + rmlMapFile
+      );
       const { stdout3, stderr3 } = await exec(
-        "yarrrml-parser -i " + "\""+ yarrmlFileName +  "\" -o " + rmlMapFile,
+        "yarrrml-parser -i " + '"' + yarrmlFileName + '" -o ' + rmlMapFile,
         {
           cwd: __dirname + "/..",
         }
@@ -132,10 +134,12 @@ async function mapCSV(args) {
       );
 
       const { stdout4, stderr4 } = await exec(
-        "java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m \"" +
+        'java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m "' +
           rmlMapFile +
-          "\" -o " +
-          "\""+rdfFileName+"\"",
+          '" -o ' +
+          '"' +
+          rdfFileName +
+          '"',
         {
           cwd: path.resolve(__dirname + "/.."),
         }
@@ -281,7 +285,7 @@ async function retry(location, retryCount) {
     return await retry(location, retryCount - 1);
   }
 }
-mapCSV();
+//mapCSV();
 module.exports = {
   scrape: scrape,
   mapCSV: mapCSV,
