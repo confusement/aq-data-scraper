@@ -4,113 +4,126 @@ const log4js = require("log4js");
 const logger = log4js.getLogger("API");
 const util = require("util");
 
-const cpcb = require("./../sources/cpcb");
-const hysplit = require("./../sources/hysplit");
-const testSource = require("./../sources/testSource");
-const scheduler = require("./../scheduler");
+const cpcb = require("../sources/cpcb");
+const hysplit = require("../sources/hysplit");
+const testSource = require("../sources/testSource");
+const scheduler = require("../scheduler");
 
-router.get("/demo1", async function (req, res, next) {
-  startTime = Date.now();
-  let scraperesult = await cpcb.scrape({});
-  //let scraperesult = {};
-  let mapResult = await cpcb.mapCSV();
-  res.setHeader("Content-Type", "application/json");
-  res.end(
-    JSON.stringify({
-      result: "Succesfull",
-      msg: "Demo 1 Ran succesfully",
-      details: {
-        scraperesult: scraperesult,
-        mapResult: mapResult,
-        jobStart: startTime,
-      },
-    })
-  );
-});
-router.get("/demo2", async function (req, res, next) {
-  await hysplit.scrape();
-  await hysplit.closeBrowser();
-  await hysplit.convertKMZ();
-  let mappingResult = await hysplit.mapCSV({});
-  res.setHeader("Content-Type", "application/json");
-  res.end(
-    JSON.stringify({
-      result: "Succesfull",
-      msg: "Demo 2 Ran succesfully",
-    })
-  );
-});
-router.get("/mapCSV", async function (req, res, next) {
-  switch (req.query.source) {
-    case "cpcb":
-      let result = await cpcb.mapCSV(req.query);
-      res.setHeader("Content-Type", "application/json");
-      res.end(
-        JSON.stringify({
-          result: "Succesfull",
-          msg: result.msg,
-        })
-      );
-      break;
-    default:
-      res.setHeader("Content-Type", "application/json");
-      res.end(
-        JSON.stringify({
-          result: "ERROR",
-          msg: "Source name doesn't match",
-        })
-      );
-      break;
+const statusHandler = require("../handlers/server_status")
+
+// router.get("/demo1", async function (req, res, next) {
+//   startTime = Date.now();
+//   let scraperesult = await cpcb.scrape({});
+//   //let scraperesult = {};
+//   let mapResult = await cpcb.mapCSV();
+//   res.setHeader("Content-Type", "application/json");
+//   res.end(
+//     JSON.stringify({
+//       result: "Succesfull",
+//       msg: "Demo 1 Ran succesfully",
+//       details: {
+//         scraperesult: scraperesult,
+//         mapResult: mapResult,
+//         jobStart: startTime,
+//       },
+//     })
+//   );
+// });
+
+// router.get("/demo2", async function (req, res, next) {
+//   await hysplit.scrape();
+//   await hysplit.closeBrowser();
+//   await hysplit.convertKMZ();
+//   let mappingResult = await hysplit.mapCSV({});
+//   res.setHeader("Content-Type", "application/json");
+//   res.end(
+//     JSON.stringify({
+//       result: "Succesfull",
+//       msg: "Demo 2 Ran succesfully",
+//     })
+//   );
+// });
+
+// router.get("/mapCSV", async function (req, res, next) {
+//   switch (req.query.source) {
+//     case "cpcb":
+//       let result = await cpcb.mapCSV(req.query);
+//       res.setHeader("Content-Type", "application/json");
+//       res.end(
+//         JSON.stringify({
+//           result: "Succesfull",
+//           msg: result.msg,
+//         })
+//       );
+//       break;
+//     default:
+//       res.setHeader("Content-Type", "application/json");
+//       res.end(
+//         JSON.stringify({
+//           result: "ERROR",
+//           msg: "Source name doesn't match",
+//         })
+//       );
+//       break;
+//   }
+// });
+
+// router.get("/scrape", async function (req, res, next) {
+//   switch (req.query.source) {
+//     case "cpcb":
+//       let result = await cpcb.scrape(req.query);
+//       res.setHeader("Content-Type", "application/json");
+//       res.end(
+//         JSON.stringify({
+//           result: "Succesfull",
+//           msg: result.msg,
+//         })
+//       );
+//       break;
+//     case "test":
+//       let r = await testSource.test(req.query);
+//       res.setHeader("Content-Type", "application/json");
+//       res.end(
+//         JSON.stringify({
+//           result: "Succesfull",
+//           msg: r.msg,
+//         })
+//       );
+//       break;
+//     default:
+//       res.setHeader("Content-Type", "application/json");
+//       res.end(
+//         JSON.stringify({
+//           result: "ERROR",
+//           msg: "Source name doesn't match",
+//         })
+//       );
+//       break;
+//   }
+// });
+
+router.get("/status", async function (req, res, next) {
+  try {
+    statusData = await statusHandler.handleGetStatus(req.query);
+    res.setHeader("Content-Type", "application/json");
+    res.end(
+      JSON.stringify({
+        "payload": statusData,
+        "msg": "Success... OK",
+      })
+    );
+  } catch (err) {
+    res.setHeader("Content-Type", "application/json");
+    res.statusCode = 404;
+    res.end(
+      JSON.stringify({
+        "error": err,
+        "msg": "Error... Failed",
+      })
+    );
   }
 });
 
-router.get("/scrape", async function (req, res, next) {
-  switch (req.query.source) {
-    case "cpcb":
-      let result = await cpcb.scrape(req.query);
-      res.setHeader("Content-Type", "application/json");
-      res.end(
-        JSON.stringify({
-          result: "Succesfull",
-          msg: result.msg,
-        })
-      );
-      break;
-    case "test":
-      let r = await testSource.test(req.query);
-      res.setHeader("Content-Type", "application/json");
-      res.end(
-        JSON.stringify({
-          result: "Succesfull",
-          msg: r.msg,
-        })
-      );
-      break;
-    default:
-      res.setHeader("Content-Type", "application/json");
-      res.end(
-        JSON.stringify({
-          result: "ERROR",
-          msg: "Source name doesn't match",
-        })
-      );
-      break;
-  }
-});
-router.get("/performance", async function (req, res, next) {
-  res.setHeader("Content-Type", "application/json");
-  res.end(
-    JSON.stringify({
-      CPU: [45, 32, 64, 61, 62, 72, 71, 63, 68, 50, 40, 31, 35, 32, 36],
-      RAM: [
-        368, 372, 468, 480, 492, 512, 508, 499, 467, 368, 378, 361, 333, 321,
-        351,
-      ],
-      frequency: 1,
-      msg: "Success... OK",
-    })
-  );
-});
 router.get("/systems", async function (req, res, next) {
   res.setHeader("Content-Type", "application/json");
   // var cpcb_lastRun,
@@ -160,8 +173,7 @@ router.get("/systems", async function (req, res, next) {
   scheduler.getStatus(req.app);
   res.end(
     JSON.stringify({
-      systemList: [
-        {
+      systemList: [{
           name: "cpcb",
           //isRunning: "enabled",
           status: req.app.get("statusVars").cpcbJobStatus,
@@ -260,8 +272,7 @@ router.get("/systems/:system", async function (req, res, next) {
           rdfCache: 0,
           lastRun: 1617662546090,
           description: "cpcb desc",
-          history: [
-            {
+          history: [{
               jobStart: 1617662546090,
               rdf_files: [
                 "baseURI/file1.owl",
@@ -295,8 +306,7 @@ router.get("/systems/:system", async function (req, res, next) {
           rdfCache: 0,
           lastRun: 1617662546090,
           description: "modis desc",
-          history: [
-            {
+          history: [{
               jobStart: 1617662546090,
               rdf_files: [
                 "baseURI/file1.owl",
@@ -330,8 +340,7 @@ router.get("/systems/:system", async function (req, res, next) {
           rdfCache: 0,
           lastRun: 1617662546090,
           description: "trajectory desc",
-          history: [
-            {
+          history: [{
               jobStart: 1617662546090,
               rdf_files: [
                 "baseURI/file1.owl",
@@ -358,8 +367,7 @@ router.get("/systems/:system", async function (req, res, next) {
       res.setHeader("Content-Type", "application/json");
       res.end(
         JSON.stringify({
-          msg:
-            'No System found with name: "' +
+          msg: 'No System found with name: "' +
             req.params.system +
             '"' +
             "... Failed",

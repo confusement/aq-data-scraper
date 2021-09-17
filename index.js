@@ -24,6 +24,7 @@ app.set("controlVars", {
 //Enable other routes
 var apiRouter = require("./routes/api");
 app.use("/api", apiRouter);
+
 log4js.configure({
   appenders: {
     access: {
@@ -91,7 +92,7 @@ console.log("it's started on http://localhost:" + port);
 var csvEditor = require("./scripts/csvEditor");
 const processGeoData = require("./scripts/processGeoData");
 
-async function main() {
+async function main1() {
   //Load CSV
   var [tableCSV, numRows, numCols] = await csvEditor.loadCSV(
     __dirname + "/csvFile.csv"
@@ -120,5 +121,11 @@ async function main() {
   await processGeoData.main();
 }
 
-// main();
+const browser = require("./services/browser");
+async function main() {
+  browser.reloadBrowser();
+  console.log("reloaded");
+  instance = browser.getBrowserInstance();
+}
+main();
 module.exports = app;
