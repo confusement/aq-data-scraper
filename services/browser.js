@@ -19,11 +19,13 @@ async function reloadBrowser() {
         // args: ['--start-maximized']
       });
 }
-function getBrowserStatus(){
-
+async function getPage(){
+  await reloadBrowser()
+  return await browserInstance.newPage()
 }
 module.exports = {
     "reloadBrowser": reloadBrowser,
     "getBrowserStatus": getBrowserStatus,
-    "getBrowserInstance":getBrowserInstance
+    "getBrowserInstance":getBrowserInstance,
+    "getPage":getPage
 };

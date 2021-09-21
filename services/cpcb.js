@@ -16,16 +16,7 @@ const puppeteer = require("puppeteer");
 const config = require("../config/cpcb.json");
 const localdb = require("./../dals/localdb")
 
-var browserInstance = null;
-async function reloadBrowser() {
-  if (!browserInstance)
-    browserInstance = await puppeteer.launch({
-      headless: false,
-      //executablePath: __dirname + "/../lib/chrome-linux/chrome",
-      //executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
-      // args: ['--start-maximized']
-    });
-}
+const browser = require("../services/browser")
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -34,7 +25,6 @@ async function scrape(args) {
   // Create new browser if not already running
   let totalLocations = 0;
   let retryCount = 0;
-  await reloadBrowser();
   try {
     for (i in config.locations) {
       console.log(config.locations[i]);
@@ -339,7 +329,50 @@ async function initializeJobs(){
 async function acquisition(id,data){
   logger.debug("acq called")
   try{
-    throw new Error('error');
+    page = await browser.getPage();
+    await page.goto(location.url, {
+      waitUntil: "domcontentloaded",
+      timeout: 60000,
+    });
+    await page.waitForSelector("multi-select", { timeout: 60000 });
+
+    //Change to Hourly Model
+    await page.click('ng-select[ng-reflect-model="24 Hours"]');
+    await sleep(500);
+    const [dropdown] = await page.$x("//li[contains(., '1 Hour')]");
+    await dropdown.click();
+    await sleep(500);
+    //Select all Parameters
+    await page.click(".c-btn");
+    await sleep(1500);
+    await page.evaluate(() =>
+      document.querySelector(".pure-checkbox.select-all").click()
+    );
+    await sleep(1500);
+    await sleep(2000);
+
+    const [submit] = await page.$x("//button[contains(., 'Submit')]");
+    await submit.click();
+
+    await page.waitForSelector(".toast.toast-success", { timeout: 60000 });
+    console.log("Intmdiate3");
+
+    await page._client.send("Page.setDownloadBehavior", {
+      behavior: "allow",
+      downloadPath: __dirname + "/Data/RawData/cpcb",
+    });
+
+    await page.select('select[name="DataTables_Table_0_length"]', "100");
+    await page.waitForSelector("thead", { timeout: 60000 });
+    let element = await page.$("#DataTables_Table_0");
+    let value = await page.evaluate((el) => el.innerText, element);
+    let tableString = value.replace(/\t/g, ",");
+    filename = location.IRI.split(" ").join("%20") + "_" + Date.now();
+    await fs.writeFile(
+      __dirname + "/Data/RawData/cpcb/" + filename + ".csv",
+      tableString
+    );
+    page.close();
     return {
       result: "Success",
     }
