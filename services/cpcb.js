@@ -13,6 +13,8 @@ const request = util.promisify(require("request"));
 const replace = require("replace-in-file");
 
 const puppeteer = require("puppeteer");
+const config = require("../config/cpcb.json");
+const localdb = require("./../dals/localdb")
 
 var browserInstance = null;
 async function reloadBrowser() {
@@ -24,7 +26,6 @@ async function reloadBrowser() {
       // args: ['--start-maximized']
     });
 }
-const config = require(__dirname + "/config/cpcb.json");
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -285,8 +286,84 @@ async function retry(location, retryCount) {
     return await retry(location, retryCount - 1);
   }
 }
-//mapCSV();
+
+async function test() {
+  logger.info("test ran")
+}
+
+async function initializeJobs(){
+  try {
+    jobs = []
+    for (location of config.locations) {
+      let newID = await localdb.generateID();
+      jobs.push(
+      {
+        id: newID,
+        stages:{
+          "acquisition":{
+            status: "I",
+            comment: "Not started",
+            retriesLeft:5,
+            data:{
+              "url": location.url,
+              "State": location.State,
+              "City": location.City,
+              "StationName": location.StationName
+            }
+          },
+          "preprocess":{
+            status: "I",
+            comment: "Not started",
+            retriesLeft:1,
+            data:{
+
+            }
+          },
+          "mapOntology":{
+            status: "I",
+            comment: "Not started",
+            retriesLeft:1,
+            data:{
+
+            }
+          }
+        }
+      })
+    }
+    return jobs;
+  } catch (err) {
+    logger.error(err);
+  }
+}
+
+async function acquisition(id,data){
+  logger.debug("acq called")
+  try{
+    throw new Error('error');
+    return {
+      result: "Success",
+    }
+  }
+  catch(e){
+    logger.debug("catch block")
+    return {
+      result: "Failure",
+      error: "error"
+    }
+  }
+}
+
+async function preprocess(id,data){
+
+}
+
+async function mapOntology(id,data){
+  
+}
 module.exports = {
-  scrape: scrape,
-  mapCSV: mapCSV,
+  "test": test,
+  "initializeJobs": initializeJobs,
+  "acquisition": acquisition,
+  "preprocess":preprocess,
+  "mapOntology":mapOntology
 };

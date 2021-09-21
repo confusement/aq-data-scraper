@@ -4,6 +4,7 @@ const logger = log4js.getLogger("browser");
 const util = require("util");
 const fs = require("fs").promises;
 const path = require("path");
+const localdb = require("./../dals/localdb")
 
 var browserInstance = null;
 async function getBrowserInstance(){
@@ -24,4 +25,5 @@ function getBrowserStatus(){
 module.exports = {
     "reloadBrowser": reloadBrowser,
     "getBrowserStatus": getBrowserStatus,
+    "getBrowserInstance":getBrowserInstance
 };

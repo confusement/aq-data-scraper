@@ -63,6 +63,7 @@ app.use(
     format: ":method :status HTTP/:http-version :url",
   })
 );
+const logger = log4js.getLogger("index-logger");
 
 app.use("/public", express.static(__dirname + "/public"));
 
@@ -89,8 +90,8 @@ console.log("it's started on http://localhost:" + port);
 // const scheduler = require("./scheduler");
 // scheduler.initJobs();
 
-var csvEditor = require("./scripts/csvEditor");
-const processGeoData = require("./scripts/processGeoData");
+var csvEditor = require("./dals/csveditor");
+const processGeoData = require("./services/geonames");
 
 async function main1() {
   //Load CSV
@@ -122,10 +123,22 @@ async function main1() {
 }
 
 const browser = require("./services/browser");
+const localdb = require("./dals/localdb")
+const scheduler = require("./services/scheduler")
+
 async function main() {
-  browser.reloadBrowser();
-  console.log("reloaded");
-  instance = browser.getBrowserInstance();
+  logger.debug("In main");
+  await localdb.initializeDB();
+  // await localdb.set("k1",[2,124,124,4]);
+  // logger.debug(await localdb.get("k1"));
+
+  // await localdb.set("k2",{"jok":[1,2,3],"aa":"bb"});
+  // logger.debug(await localdb.get("k2"));
+
+  scheduler.testSystem();
+  // browser.reloadBrowser();
+  // console.log("reloaded");
+  // instance = browser.getBrowserInstance();
 }
 main();
 module.exports = app;
