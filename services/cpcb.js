@@ -14,9 +14,9 @@ const replace = require("replace-in-file");
 
 const puppeteer = require("puppeteer");
 const config = require("../config/cpcb.json");
-const localdb = require("./../dals/localdb")
+const localdb = require("./../dals/localdb");
 
-const browser = require("../services/browser")
+const browser = require("../services/browser");
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -278,47 +278,42 @@ async function retry(location, retryCount) {
 }
 
 async function test() {
-  logger.info("test ran")
+  logger.info("test ran");
 }
 
-async function initializeJobs(){
+async function initializeJobs() {
   try {
-    jobs = []
+    jobs = [];
     for (location of config.locations) {
       let newID = await localdb.generateID();
-      jobs.push(
-      {
+      jobs.push({
         id: newID,
-        stages:{
-          "acquisition":{
+        stages: {
+          acquisition: {
             status: "I",
             comment: "Not started",
-            retriesLeft:5,
-            data:{
-              "url": location.url,
-              "State": location.State,
-              "City": location.City,
-              "StationName": location.StationName
-            }
+            retriesLeft: 5,
+            data: {
+              url: location.url,
+              State: location.State,
+              City: location.City,
+              StationName: location.StationName,
+            },
           },
-          "preprocess":{
+          preprocess: {
             status: "I",
             comment: "Not started",
-            retriesLeft:1,
-            data:{
-
-            }
+            retriesLeft: 1,
+            data: {},
           },
-          "mapOntology":{
+          mapOntology: {
             status: "I",
             comment: "Not started",
-            retriesLeft:1,
-            data:{
-
-            }
-          }
-        }
-      })
+            retriesLeft: 1,
+            data: {},
+          },
+        },
+      });
     }
     return jobs;
   } catch (err) {
@@ -326,9 +321,9 @@ async function initializeJobs(){
   }
 }
 
-async function acquisition(id,data){
-  logger.debug("acq called")
-  try{
+async function acquisition(id, data) {
+  logger.debug("acq called");
+  try {
     page = await browser.getPage();
     await page.goto(location.url, {
       waitUntil: "domcontentloaded",
@@ -375,28 +370,23 @@ async function acquisition(id,data){
     page.close();
     return {
       result: "Success",
-    }
-  }
-  catch(e){
-    logger.debug("catch block")
+    };
+  } catch (e) {
+    logger.debug("catch block");
     return {
       result: "Failure",
-      error: "error"
-    }
+      error: "error",
+    };
   }
 }
 
-async function preprocess(id,data){
+async function preprocess(id, data) {}
 
-}
-
-async function mapOntology(id,data){
-  
-}
+async function mapOntology(id, data) {}
 module.exports = {
-  "test": test,
-  "initializeJobs": initializeJobs,
-  "acquisition": acquisition,
-  "preprocess":preprocess,
-  "mapOntology":mapOntology
+  test: test,
+  initializeJobs: initializeJobs,
+  acquisition: acquisition,
+  preprocess: preprocess,
+  mapOntology: mapOntology,
 };
