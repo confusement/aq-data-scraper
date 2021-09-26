@@ -58,7 +58,8 @@ async function execNRemove(db, table, col, excFunc) {
           `DELETE FROM ${table} WHERE ${col}=?`,
           ele.path
         );
-        let selRes = await get(db, table);
+        delFile(ele.path);
+        let selRes = await getAll(db, table);
         console.log("DELRES " + selRes);
       }
     }
@@ -67,7 +68,22 @@ async function execNRemove(db, table, col, excFunc) {
   }
 }
 
-async function get(db, table) {
+function delFile(path) {
+  fs.stat(path, function (err, stats) {
+    console.log(stats); //here we got all information of file in stats variable
+
+    if (err) {
+      return console.error(err);
+    }
+
+    fs.unlink(path, function (err) {
+      if (err) return console.log(err);
+      console.log("file deleted successfully");
+    });
+  });
+}
+
+async function getAll(db, table) {
   try {
     const result = await db.all(`SELECT * FROM ${table}`);
     console.log(result);
@@ -77,11 +93,24 @@ async function get(db, table) {
   }
 }
 
+async function fileExists(path) {
+  fs.access(path, fs.F_OK, (err) => {
+    if (err) {
+      console.error(err);
+      return false;
+    }
+    return true;
+  });
+}
+
 async function writeToDB(db, fileID) {
   try {
-    await insertRow(db, fileID);
+    if (fileExists(fileID.path)) {
+      console.log("file exists");
+      await insertRow(db, fileID);
+    }
   } catch (err) {
-    console.log(err);
+    console.error(err);
   }
 }
 
@@ -132,6 +161,15 @@ function readAndPrint(filepath) {
   return 2;
 }
 
+async function resetTable(db, table) {
+  let sql = `DROP TABLE IF EXISTS ${table};`;
+  try {
+    await db.exec(sql);
+  } catch (error) {
+    logger.log(error);
+  }
+}
+
 async function test() {
   //readAndPrint("./AllFiles/rawData/hysplit/usoogi.txt");
   const db = await getDBConnection();
@@ -152,8 +190,18 @@ async function test() {
   await execNRemove(db, fileId.table, "path", readAndPrint);
 }
 
-function tester() {
-  test();
-}
+// function tester() {
+//   test();
+// }
 
-tester();
+// tester();
+
+module.exports = {
+  getDBConnection: getDBConnection,
+  writeToDB: writeToDB,
+  createTable: createTable,
+  getAll: getAll,
+  execNRemove: execNRemove,
+  genFileName: genFileName,
+  resetTable: resetTable,
+};

@@ -20,20 +20,25 @@ const copyFile = util.promisify(require("fs").copyFile);
 const readFile = util.promisify(require("fs").readFile);
 const unlink = util.promisify(require("fs").unlink);
 
+const config = require("../config/cpcb.json");
+const localdb = require("./../dals/localdb");
+
+const browser = require("../services/browser");
+
 const request = util.promisify(require("request"));
 
 const replace = require("replace-in-file");
 
-var browserInstance = null;
-async function reloadBrowser() {
-  if (!browserInstance)
-    browserInstance = await puppeteer.launch({
-      headless: false,
-      //executablePath: __dirname + "/../lib/chrome-linux/chrome",
-      // executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
-      args: ["--no-sandbox", "--disable-setuid-sandbox"],
-    });
-}
+// var browserInstance = null;
+// async function reloadBrowser() {
+//   if (!browserInstance)
+//     browserInstance = await puppeteer.launch({
+//       headless: false,
+//       //executablePath: __dirname + "/../lib/chrome-linux/chrome",
+//       // executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
+//       args: ["--no-sandbox", "--disable-setuid-sandbox"],
+//     });
+// }
 async function mapCSV(args) {
   console.log("Started Mapping");
   rdfFiles = [];
