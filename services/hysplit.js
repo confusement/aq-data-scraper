@@ -15,13 +15,13 @@ const createCsvWriter = require("csv-writer").createObjectCsvWriter;
 const logger = log4js.getLogger("kml-parser");
 const haversine = require("haversine");
 const csvEditor = require("./../scripts/csvEditor");
-
 const copyFile = util.promisify(require("fs").copyFile);
 const readFile = util.promisify(require("fs").readFile);
 const unlink = util.promisify(require("fs").unlink);
 
 const config = require("../config/cpcb.json");
 const localdb = require("./../dals/localdb");
+const filedb = require("./../dals/filedb");
 
 const browser = require("../services/browser");
 
@@ -190,10 +190,10 @@ async function mapCSV(args) {
 var dir_name = __dirname + "/Data/RawData/hysplit";
 var directory = dir_name + "/ext";
 
-async function kmztokml(inputFile, outPutFileName, orgPlace1) {
+async function kmztokml(fileId, inputFile, outPutFileName, orgPlace1) {
   try {
     console.log(
-      "IM HERE" + inputFile + "   " + outPutFileName + " " + orgPlace1
+      "IM HERE" + fileId.path + "   " + outPutFileName + " " + orgPlace1
     );
     await extract(inputFile, {
       dir: dir_name + "/ext",
@@ -236,11 +236,32 @@ async function uuidv4() {
   });
 }
 
-async function kmltocsv(inputFile, outputFile, orgPlace) {
-  let response = await parseKML.toJson(inputFile);
+/**
+ * file Id structure
+ * {
+      src: "hysplit",
+      ext: "kmz",
+      name: filename,
+      table: "Temp",
+      IRI: location.IRI,
+      csvFileName: xyz
+    };
+ */
+
+async function kmltocsv(fileId) {
+  let response = await parseKML.toJson(fileId.path);
   //console.log(outputFile);
+  const csvFileId = {
+    src: "hysplit",
+    ext: "csv",
+    name: fileId.csvFileName,
+    table: "RawData",
+    IRI: fileId.IRI,
+    path: "",
+  };
+  const tempCSVName = filedb.genFileName(csvFileId);
   const csvWriter = createCsvWriter({
-    path: outputFile,
+    path: csvFileId.path,
     header: [
       { id: "timestamp", title: "timestamp" },
       { id: "longitude", title: "longitude" },
@@ -317,7 +338,7 @@ async function kmltocsv(inputFile, outputFile, orgPlace) {
   csvWriter
     .writeRecords(finObj)
     .then(() =>
-      logger.log("The CSV file " + outputFile + " was written successfully")
+      logger.log("The CSV file " + csvFileId.name + " was written successfully")
     );
 
   return response;
@@ -330,9 +351,15 @@ function sleep(ms) {
 
 var io_file_names = {};
 var placeiri = {};
-async function acquisition(args) {
+
+/**
+ * @deprecated Use acquisition instead.
+ */
+async function scrape(args) {
   // Create new browser if not already running
-  await reloadBrowser();
+  //await reloadBrowser();
+  let totalLocations = 0;
+  let retryCount = 0;
   try {
     //await getKMZ(config.locations[0]);
     for (i in config.locations) {
@@ -351,21 +378,24 @@ async function acquisition(args) {
   return { msg: "All location scraped" };
 }
 
-async function convertKMZ() {
-  console.log(io_file_names + " iofilenames");
-  Object.keys(io_file_names).forEach(function (key) {
-    console.log("Key : " + key + ", Value : " + io_file_names[key]);
-    kmztokml(key, io_file_names[key], placeiri[key]);
-  });
+async function convertKMZ(fileId, inp, out, orgIRI) {
+  await kmztokml(fileId);
+  // console.log(io_file_names + " iofilenames");
+  // Object.keys(io_file_names).forEach(function (key) {
+  //   console.log("Key : " + key + ", Value : " + io_file_names[key]);
+  //   kmztokml(key, io_file_names[key], placeiri[key]);
+  // });
   // kmztokml(path.resolve(__dirname+'/Data/RawData/hysplit/ito_1623066641515.kmz').toString(),
   // path.resolve(__dirname+'/Data/RawData/hysplit/ito_1623066641515_new.csv').toString(),
   //  'ito');
 }
 
+// Rename to acquisition
 async function getKMZ(location) {
+  logger.debug(location + "Hysplit acquisition called");
   let page;
   try {
-    page = await browserInstance.newPage();
+    page = await browser.getPage();
     const hysplit_url =
       "https://www.ready.noaa.gov/hypub-bin/trajtype.pl?runtype=archive";
     await page.goto(hysplit_url, {
@@ -430,22 +460,40 @@ async function getKMZ(location) {
       }
     }
     const filename = location.IRI.split(" ").join("%20") + "_" + Date.now();
-    const file = fs.createWriteStream(
-      path.resolve(__dirname + "/Data/RawData/hysplit/" + filename + ".kmz")
-    );
+    var fileId = {
+      src: "hysplit",
+      ext: "kmz",
+      name: filename,
+      table: "Temp",
+      IRI: location.IRI,
+    };
+    let fnPath = filedb.genFileName(fileId);
+
+    const file = fs.createWriteStream(path.resolve(fileId.path));
     const request = https.get(
       "https://www.ready.noaa.gov/hypubout/HYSPLITtraj_" + jobno + ".kmz",
       function (response) {
         response.pipe(file);
       }
     );
+    filedb.writeToDB(db, fileId);
     await sleep(5000);
+
+    // let inp = fileId.path;
+    // var opt = path.resolve(dir_name + "/" + res + ".csv");
+    // io_file_names[inp] = opt;
+    // placeiri[inp] = location.IRI;
+
     page.close();
-    return filename;
+    return {
+      result: "Success",
+    };
   } catch (err) {
-    page.close();
-    await browserInstance.close();
-    console.log(err);
+    logger.debug(err);
+    return {
+      result: "Failure",
+      error: err,
+    };
   }
 }
 
