@@ -6,6 +6,8 @@ const fs = require("fs").promises;
 const path = require("path");
 const localdb = require("./../dals/localdb");
 
+async function getBrowserStatus() {}
+
 var browserInstance = null;
 async function getBrowserInstance() {
   return await browser.newPage();
@@ -15,7 +17,9 @@ async function reloadBrowser() {
     browserInstance = await puppeteer.launch({
       headless: false,
       //executablePath: __dirname + "/../lib/chrome-linux/chrome",
-      executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
+      //executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
+      executablePath:
+        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
       // args: ['--start-maximized']
     });
 }

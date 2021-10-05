@@ -19,11 +19,12 @@ const copyFile = util.promisify(require("fs").copyFile);
 const readFile = util.promisify(require("fs").readFile);
 const unlink = util.promisify(require("fs").unlink);
 
-const config = require("../config/cpcb.json");
+const config = require("../config/hysplit.json");
 const localdb = require("./../dals/localdb");
 const filedb = require("./../dals/filedb");
 
 const browser = require("../services/browser");
+let page;
 
 const request = util.promisify(require("request"));
 
@@ -187,43 +188,55 @@ async function mapCSV(args) {
   };
 }
 
-var dir_name = __dirname + "/Data/RawData/hysplit";
-var directory = dir_name + "/ext";
+//var dir_name = __dirname + "/Data/RawData/hysplit";
+//var fileId.dir = dir_name + "/ext";
 
 async function kmztokml(fileId, inputFile, outPutFileName, orgPlace1) {
   try {
     console.log(
-      "IM HERE" + fileId.path + "   " + outPutFileName + " " + orgPlace1
+      "IM HERE" +
+        fileId.path +
+        "   " +
+        fileId.outfile +
+        " " +
+        fileId.IRI +
+        " " +
+        fileId.absDir
     );
-    await extract(inputFile, {
-      dir: dir_name + "/ext",
+    await extract(fileId.path, {
+      dir: fileId.absDir,
     });
     console.log("Extraction complete");
 
-    fs.readdir(directory, (err, files) => {
+    fs.readdir(fileId.dir, (err, files) => {
       if (err) {
         throw err;
       }
       var kmlFileName = "";
       for (const file of files) {
         if (
-          path.join(directory, file).includes(".png") ||
-          path.join(directory, file).includes(".gif")
+          path.join(fileId.dir, file).includes(".png") ||
+          path.join(fileId.dir, file).includes(".gif")
         ) {
-          console.log(path.join(directory, file));
+          console.log(path.join(fileId.dir, file));
           try {
-            fs.unlink(path.join(directory, file));
+            //await unlink(path.join(fileId.dir, file));
+            fs.unlink(path.join(fileId.dir, file), (err) => {
+              console.log(err);
+            });
           } catch (err) {
+            page.close();
             console.log(err);
           }
         }
-        if (path.join(directory, file).includes(".kml")) {
-          kmlFileName = path.join(directory, file);
+        if (path.join(fileId.dir, file).includes(".kml")) {
+          kmlFileName = path.join(fileId.dir, file);
         }
       }
-      kmltocsv(kmlFileName, outPutFileName, orgPlace1);
+      kmltocsv(kmlFileName, fileId);
     });
   } catch (err) {
+    page.close();
     console.log(err);
   }
 }
@@ -248,13 +261,13 @@ async function uuidv4() {
     };
  */
 
-async function kmltocsv(fileId) {
-  let response = await parseKML.toJson(fileId.path);
+async function kmltocsv(inputFile, fileId) {
+  let response = await parseKML.toJson(inputFile);
   //console.log(outputFile);
   const csvFileId = {
     src: "hysplit",
     ext: "csv",
-    name: fileId.csvFileName,
+    name: fileId.name,
     table: "RawData",
     IRI: fileId.IRI,
     path: "",
@@ -332,6 +345,7 @@ async function kmltocsv(fileId) {
       }
     }
   } catch (error) {
+    page.close();
     logger.error(error);
   }
 
@@ -343,7 +357,7 @@ async function kmltocsv(fileId) {
 
   return response;
 }
-const config = require(__dirname + "/config/hysplit.json");
+//const config = require(__dirname + "/config/hysplit.json");
 
 function sleep(ms) {
   return new Promise((resolve) => setTimeout(resolve, ms));
@@ -378,6 +392,46 @@ async function scrape(args) {
   return { msg: "All location scraped" };
 }
 
+async function initializeJobs() {
+  try {
+    jobs = [];
+    for (location of config.locations) {
+      let newID = await localdb.generateID();
+      jobs.push({
+        id: newID,
+        stages: {
+          acquisition: {
+            status: "I",
+            comment: "Not started",
+            retriesLeft: 5,
+            data: {
+              url: location.url,
+              State: location.State,
+              City: location.City,
+              StationName: location.StationName,
+            },
+          },
+          preprocess: {
+            status: "I",
+            comment: "Not started",
+            retriesLeft: 1,
+            data: {},
+          },
+          mapOntology: {
+            status: "I",
+            comment: "Not started",
+            retriesLeft: 1,
+            data: {},
+          },
+        },
+      });
+    }
+    return jobs;
+  } catch (err) {
+    logger.error(err);
+  }
+}
+
 async function convertKMZ(fileId, inp, out, orgIRI) {
   await kmztokml(fileId);
   // console.log(io_file_names + " iofilenames");
@@ -391,10 +445,10 @@ async function convertKMZ(fileId, inp, out, orgIRI) {
 }
 
 // Rename to acquisition
-async function getKMZ(location) {
-  logger.debug(location + "Hysplit acquisition called");
-  let page;
+async function acquisition(id, location) {
+  console.log(location + "Hysplit acquisition called");
   try {
+    console.log("got page");
     page = await browser.getPage();
     const hysplit_url =
       "https://www.ready.noaa.gov/hypub-bin/trajtype.pl?runtype=archive";
@@ -429,7 +483,7 @@ async function getKMZ(location) {
       (el, value) => (el.value = value),
       "24"
     );
-
+    console.log("evaluating");
     await page.evaluate(() =>
       document
         .querySelector(
@@ -460,15 +514,22 @@ async function getKMZ(location) {
       }
     }
     const filename = location.IRI.split(" ").join("%20") + "_" + Date.now();
-    var fileId = {
+    let fileId = {
       src: "hysplit",
       ext: "kmz",
       name: filename,
       table: "Temp",
       IRI: location.IRI,
+      path: "",
+      dir: "",
+      outfile: "",
     };
-    let fnPath = filedb.genFileName(fileId);
-
+    const db = await filedb.getDBConnection();
+    const createTblRes = await filedb.createTable(db, "Temp");
+    console.log(fileId);
+    let fnPath = filedb.genFileName(fileId, true, "csv");
+    !fs.existsSync(fileId.dir) && fs.mkdirSync(fileId.dir, { recursive: true });
+    console.log(fnPath);
     const file = fs.createWriteStream(path.resolve(fileId.path));
     const request = https.get(
       "https://www.ready.noaa.gov/hypubout/HYSPLITtraj_" + jobno + ".kmz",
@@ -485,11 +546,16 @@ async function getKMZ(location) {
     // placeiri[inp] = location.IRI;
 
     page.close();
+
+    await convertKMZ(fileId);
+
     return {
       result: "Success",
     };
   } catch (err) {
+    page.close();
     logger.debug(err);
+    console.log(err);
     return {
       result: "Failure",
       error: err,
@@ -505,8 +571,20 @@ async function closeBrowser() {
 //   "Data\\RawData\\hysplit\\ext\\HYSPLITtraj_154279_01.kml",
 //   "Data\\RawData\\hysplit\\testing_uuid.csv"
 // );
+
+// async function tester() {
+//   for (location of config.locations) {
+//     console.log(location);
+//     await acquisition("abc", location);
+//     break;
+//   }
+// }
+
+// tester();
+
 module.exports = {
-  scrape: scrape,
+  initializeJobs: initializeJobs,
+  acquisition: acquisition,
   convertKMZ: convertKMZ,
   mapCSV: mapCSV,
   closeBrowser: closeBrowser,

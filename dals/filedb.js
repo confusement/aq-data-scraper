@@ -40,9 +40,13 @@ async function createTable(db, tableName) {
   }
 }
 
-async function genFileName(fileID) {
+async function genFileName(fileID, genOutFile = false, outFileExt = "csv") {
   fileID.path = `${parentDict}/${fileID.table}/${fileID.src}/${fileID.name}.${fileID.ext}`;
   fileID.dir = `${parentDict}/${fileID.table}/${fileID.src}`;
+  fileID.absDir = `C:\\Users\\saadf\\Documents\\GitHub\\aq-data-scraper\\Allfiles\\${fileID.table}\\${fileID.src}`;
+  if (genOutFile) {
+    fileID.outfile = `${parentDict}/${fileID.table}/${fileID.src}/${fileID.name}.${outFileExt}`;
+  }
   return fileID.path;
 }
 

@@ -6,6 +6,7 @@ const util = require("util");
 const systemsInfo = require("../config/systems");
 const { start } = require("repl");
 const cpcb = require("../services/cpcb");
+const hysplit = require("../services/hysplit");
 var systems = {};
 for (const system of systemsInfo["systems"]) {
   systems[system["source"]] = require("../services/" + system["source"]);
