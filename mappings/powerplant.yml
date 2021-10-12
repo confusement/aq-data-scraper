@@ -1,0 +1,28 @@
+prefixes:
+  aq: "http://www.semanticweb.org/saadf/ontologies/2021/2/AirQualityOntology#"
+  grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+mappings:
+  # Power Plant
+  pp:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:pp__name
+    po:
+      - p: a
+        o: aq:PowerPlant
+      - p: aq:plantCapacity
+        o: $(plant_capacity)
+
+  ppplace:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:pp_place__name
+    po:
+      - p: a
+        o: aq:Place
+      - p: aq:latitude
+        o: $(latitude)
+      - p: aq:longitude
+        o: $(longitude)

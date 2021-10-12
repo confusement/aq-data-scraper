@@ -1,0 +1,47 @@
+prefixes:
+  aq: "http://www.semanticweb.org/saadf/ontologies/2021/2/AirQualityOntology#"
+  grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+mappings:
+  # Fire Product
+  afp:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:afp__locname$(uuid)
+    po:
+      - p: a
+        o: aq:FireProduct
+      - p: aq:frp
+        o: $(frp)
+      - p: aq:ti4Brightness
+        o: $(bright_ti4)
+      - p: aq:ti5Brightness
+        o: $(bright_ti5)
+      - p: aq:confidence
+        o: $(confidence)
+
+  afpplace:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:afp_place__locname$(uuid)
+    po:
+      - p: a
+        o: aq:Place
+      - p: aq:latitude
+        o: $(latitude)
+      - p: aq:longitude
+        o: $(longitude)
+
+  obsafp:
+    sources:
+      - access: _filename
+        referenceFormulation: csv
+    s: aq:obs_afp__locname$(uuid)
+    po:
+      - p: a
+        o: aq:Observation
+      - p: aq:atTime
+        o: $(acq_date)
+      - p: aq:atPlace
+        o: aq:afp_place__locname$(uuid)
