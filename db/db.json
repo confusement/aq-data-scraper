@@ -1,60 +1,43 @@
 {
-    "key1": "value1",
-    "key2": [
-        "v1",
-        "v2"
-    ],
-    "cpcb": {
-        "history": []
-    },
     "jobs": [
         {
             "id": 0,
             "stages": {
                 "acquisition": {
-                    "status": "I",
+                    "status": "S",
                     "comment": "Not started",
                     "retriesLeft": 5,
                     "data": {
                         "url": "https://app.cpcbccr.com/ccr/#/caaqm-dashboard-all/caaqm-landing/data/%7B%22state%22:%22Delhi%22,%22city%22:%22Delhi%22,%22station%22:%22site_1428%22%7D",
                         "State": "Delhi",
                         "City": "Delhi",
-                        "StationName": "Okhla Phase-2, Delhi - DPCC   "
+                        "StationName": "Okhla Phase-2, Delhi - DPCC   ",
+                        "locationIRI": "Narela"
                     }
                 },
                 "preprocess": {
-                    "status": "I",
+                    "status": "S",
                     "comment": "Not started",
                     "retriesLeft": 1,
-                    "data": {}
+                    "data": {
+                        "csvFile": "E:\\btp\\aq-data-scraper\\temp\\0_csv.csv",
+                        "locationIRI": "Narela"
+                    }
                 },
                 "mapOntology": {
-                    "status": "I",
+                    "status": "S",
                     "comment": "Not started",
                     "retriesLeft": 1,
-                    "data": {}
+                    "data": {
+                    }
                 }
             }
         }
     ],
-    "k1": [
-        2,
-        124,
-        124,
-        4
-    ],
-    "k2": {
-        "jok": [
-            1,
-            2,
-            3
-        ],
-        "aa": "bb"
-    },
     "systems": {
         "cbcb": {
             "history": []
         }
     },
-    "jobCounter": 1
+    "jobCounter": 5
 }

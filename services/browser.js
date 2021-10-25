@@ -18,8 +18,7 @@ async function reloadBrowser() {
       headless: false,
       //executablePath: __dirname + "/../lib/chrome-linux/chrome",
       //executablePath: __dirname + "/../lib/chrome-win/chrome.exe",
-      executablePath:
-        "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
+      executablePath: "C:\\Program Files\\Google\\Chrome\\Application\\chrome.exe",
       // args: ['--start-maximized']
     });
 }
@@ -27,6 +26,11 @@ async function getPage() {
   await reloadBrowser();
   return await browserInstance.newPage();
 }
+
+async function getBrowserStatus(){
+
+}
+
 module.exports = {
   reloadBrowser: reloadBrowser,
   getBrowserStatus: getBrowserStatus,

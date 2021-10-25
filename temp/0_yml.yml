@@ -1,0 +1,346 @@
+prefixes:
+  aq: "http://www.semanticweb.org/saadf/ontologies/2021/2/AirQualityOntology#"
+  grel: http://users.ugent.be/~bjdmeest/function/grel.ttl#
+mappings:
+  # Particulate Matter
+  pm:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:pm_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:ParticulateMatter
+      - p: aq:particulateMatter10Concentration
+        o: $(PM10 (ug/m3\))
+      - p: aq:particulateMatter2_5Concentration
+        o: $(PM2.5 (ug/m3\))
+  apapm:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:pm_apa_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:AtmosphericParameter
+      - p: aq:measure
+        o: aq:pm_place_Narela$(To Date)
+  obspm:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:pm_obs_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:Observation
+      - p: aq:atTime
+        o: $(To Date)
+      - p: aq:atPlace
+        o: aq:place_Narela
+      - p: aq:hasParameter
+        o: pm_apa_place_Narela$(To Date)
+
+  # Nitrogen oxides
+  oon:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:oon_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:OxideOfNitrogen
+      - p: aq:nitrogenDiOxideConcentration
+        o: $(NO2 (ug/m3\))
+      - p: aq:nitrogenMonoOxideConcentration
+        o: $(NO (ug/m3\))
+      - p: aq:nitrogentOxideConcentration
+        o: $(NOx (ppb\))
+  apaoon:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:oon_apa_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:AtmosphericParameter
+      - p: aq:measure
+        o: aq:oon_place_Narela$(To Date)
+  ooon:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:oon_obs_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:Observation
+      - p: aq:atPlace
+        o: aq:place_Narela
+      - p: aq:atTime
+        o: $(To Date)
+      - p: aq:hasParameter
+        o: aq:oon_apa_place_Narela$(To Date)
+
+  # Oxides of carbon
+  ooc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:ooc_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:OxideOfCarbon
+      - p: aq:carbonMonoOxideConcentration
+        o: $(CO (mg/m3\))
+  apaooc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:ooc_apa_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:AtmosphericParameter
+      - p: aq:measure
+        o: aq:ooc_place_Narela$(To Date)
+  oooc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:ooc_obs_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:Observation
+      - p: aq:atPlace
+        o: aq:place_Narela
+      - p: aq:atTime
+        o: $(To Date)
+      - p: aq:hasParameter
+        o: aq:ooc_apa_place_Narela$(To Date)
+
+  # Oxides of Sulphur
+  oos:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:oos_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:OxideOfSulphur
+      - p: aq:sulphurDiOxideConcentration
+        o: $(SO2 (ug/m3\))
+  apaoos:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:oos_apa_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:AtmosphericParameter
+      - p: aq:measure
+        o: aq:oos_place_Narela$(To Date)
+  ooos:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:ooc_obs_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:Observation
+      - p: aq:atPlace
+        o: aq:place_Narela
+      - p: aq:atTime
+        o: $(To Date)
+      - p: aq:hasParameter
+        o: aq:oos_apa_place_Narela$(To Date)
+
+  # Ammonia
+  gp:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:gp_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:GaseousPollutant
+      - p: aq:ammoniaConcentration
+        o: $(NH3 (ug/m3\))
+  apagp:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:gp_apa_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:AtmosphericParameter
+      - p: aq:measure
+        o: aq:gp_place_Narela$(To Date)
+  ogp:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:ooc_obs_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:Observation
+      - p: aq:atPlace
+        o: aq:place_Narela
+      - p: aq:atTime
+        o: $(To Date)
+      - p: aq:hasParameter
+        o: aq:gp_apa_place_Narela$(To Date)
+
+  # Ozone
+  sp:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:sp_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:SecondaryPollutant
+      - p: aq:ozoneConcentration
+        o: $(Ozone (ug/m3\))
+  apasp:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:sp_apa_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:AtmosphericParameter
+      - p: aq:measure
+        o: aq:sp_place_Narela$(To Date)
+  osp:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:ooc_obs_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:Observation
+      - p: aq:atPlace
+        o: aq:place_Narela
+      - p: aq:atTime
+        o: $(To Date)
+      - p: aq:hasParameter
+        o: aq:sp_apa_place_Narela$(To Date)
+
+  # Hydrocarbon
+  hc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:hc_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:Hydrocarbon
+      - p: aq:benzeneConcentration
+        o: $(Benzene (ug/m3\))
+      - p: aq:tolueneConcentration
+        o: $(Toluene (ug/m3\))
+  apahc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:hc_apa_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:AtmosphericParameter
+      - p: aq:measure
+        o: aq:hc_place_Narela$(To Date)
+  ohc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:ooc_obs_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:Observation
+      - p: aq:atPlace
+        o: aq:place_Narela
+      - p: aq:atTime
+        o: $(To Date)
+      - p: aq:hasParameter
+        o: aq:hc_apa_place_Narela$(To Date)
+
+  # Meterological Characteristics
+  mc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:mc_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:MeteorologicalCharacterstic
+      - p: aq:ambientTemperature
+        o: $(Temp (degree C\))
+      - p: aq:bPressure
+        o: $(BP (mmHg\))
+      - p: aq:precipitation
+        o: $(BP (mmHg\))
+      - p: aq:relativeHumidity
+        o: $(RH (%\))
+      - p: aq:solarRadiation
+        o: $(SR (W/mt2\))
+  apamc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:mc_apa_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:AtmosphericParameter
+      - p: aq:measure
+        o: aq:mc_place_Narela$(To Date)
+  omc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:ooc_obs_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:Observation
+      - p: aq:atPlace
+        o: aq:place_Narela
+      - p: aq:atTime
+        o: $(To Date)
+      - p: aq:hasParameter
+        o: aq:mc_apa_place_Narela$(To Date)
+
+  # Wind Characteristics
+  wc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:wc_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:WindCharacterstic
+      - p: aq:windDirection
+        o: $(WD (degree\))
+      - p: aq:windSpeed
+        o: $(WS (m/s\))
+  apawc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:wc_apa_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:AtmosphericParameter
+      - p: aq:measure
+        o: aq:wc_place_Narela$(To Date)
+  owc:
+    sources:
+      - access: E:\btp\aq-data-scraper\temp\0_csv.csv
+        referenceFormulation: csv
+    s: aq:ooc_obs_place_Narela$(To Date)
+    po:
+      - p: a
+        o: aq:Observation
+      - p: aq:atPlace
+        o: aq:place_Narela
+      - p: aq:atTime
+        o: $(To Date)
+      - p: aq:hasParameter
+        o: aq:wc_apa_place_Narela$(To Date)
+

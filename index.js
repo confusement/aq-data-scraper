@@ -74,6 +74,10 @@ app.get("/", function (req, res, next) {
   res.sendFile(__dirname + "/client/root.html");
 });
 
+app.get("/saqi", function (req, res, next) {
+  res.sendFile(__dirname + "/client/saqi.html");
+});
+
 app.get("/fuseki", function (req, res, next) {
   res.sendFile(
     __dirname + "/RDFstore/apache-jena-fuseki-3.17.0/webapp/index.html"
@@ -124,18 +128,49 @@ async function main1() {
 
 const browser = require("./services/browser");
 const localdb = require("./dals/localdb")
-const scheduler = require("./services/scheduler")
+const scheduler = require("./services/scheduler");
+const { test } = require("./services/cpcb");
+
+function sleep(ms) {
+  return new Promise((resolve) => setTimeout(resolve, ms));
+}
+async function waitTests(code){
+  console.log("wait test start code: " +code.toString());
+  await sleep(2000);
+  console.log("wait emd start code: " +code.toString());
+  if(code%3===0){
+    throw Error("blah");
+  }
+  return code
+}
+
+const eziostat = require("./services/eziostat")
 
 async function main() {
   logger.debug("In main");
-  await localdb.initializeDB();
+
+  // await eziostat.runScript();
+  // await eziostat.combineCSVs();
+  
+
+  // await localdb.initializeDB();
   // await localdb.set("k1",[2,124,124,4]);
   // logger.debug(await localdb.get("k1"));
 
   // await localdb.set("k2",{"jok":[1,2,3],"aa":"bb"});
   // logger.debug(await localdb.get("k2"));
 
-  scheduler.testSystem();
+  // scheduler.testSystem();
+
+  // console.log("queue wait Start");
+  // testAwaitFns = []
+  // for (let i = 0; i < 5; i++) {
+  //   testAwaitFns.push(waitTests(i));
+  // }
+  // results = await Promise.allSettled(testAwaitFns);
+  // console.log("queue wait done");
+  // console.log(results);
+  
   // browser.reloadBrowser();
   // console.log("reloaded");
   // instance = browser.getBrowserInstance();

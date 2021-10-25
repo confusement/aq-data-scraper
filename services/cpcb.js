@@ -298,6 +298,7 @@ async function initializeJobs() {
               State: location.State,
               City: location.City,
               StationName: location.StationName,
+              locationIRI : location.locationIRI
             },
           },
           preprocess: {
@@ -322,10 +323,11 @@ async function initializeJobs() {
 }
 
 async function acquisition(id, data) {
-  logger.debug("acq called");
+  logger.debug("acq called for data:");
+  logger.debug(data);
   try {
     page = await browser.getPage();
-    await page.goto(location.url, {
+    await page.goto(data.url, {
       waitUntil: "domcontentloaded",
       timeout: 60000,
     });
@@ -344,45 +346,152 @@ async function acquisition(id, data) {
       document.querySelector(".pure-checkbox.select-all").click()
     );
     await sleep(1500);
+    // await page.click('.c-btn')
     await sleep(2000);
-
+    //Click Submit
     const [submit] = await page.$x("//button[contains(., 'Submit')]");
     await submit.click();
 
     await page.waitForSelector(".toast.toast-success", { timeout: 60000 });
     console.log("Intmdiate3");
 
-    await page._client.send("Page.setDownloadBehavior", {
-      behavior: "allow",
-      downloadPath: __dirname + "/Data/RawData/cpcb",
-    });
-
     await page.select('select[name="DataTables_Table_0_length"]', "100");
     await page.waitForSelector("thead", { timeout: 60000 });
+
     let element = await page.$("#DataTables_Table_0");
     let value = await page.evaluate((el) => el.innerText, element);
-    let tableString = value.replace(/\t/g, ",");
-    filename = location.IRI.split(" ").join("%20") + "_" + Date.now();
-    await fs.writeFile(
-      __dirname + "/Data/RawData/cpcb/" + filename + ".csv",
-      tableString
-    );
-    page.close();
-    return {
-      result: "Success",
-    };
-  } catch (e) {
-    logger.debug("catch block");
-    return {
-      result: "Failure",
-      error: "error",
-    };
+
+    let tableString = value.replace(/\t/g, ","); //.replaceAll("\t", ","); <- Only works for chrome>85
+    // logger.debug(tableString);
+
+    let csvFileName = path.resolve(__dirname + "/../temp/" + id.toString() +"_csv" + ".csv");
+    localdb.savetoFile(tableString,csvFileName)
+
+    localdb.updateStageInfo(id,"acquisition","S",{
+      csvFile : csvFileName,
+      locationIRI : data.locationIRI
+    })
+    logger.info("acquisition done");
+    logger.info(tableString);
+  }
+  catch(err){
+    logger.error(err);
+    localdb.updateStageInfo(id,"acquisition","F",undefined)
   }
 }
 
-async function preprocess(id, data) {}
+async function preprocess(id, data) {
+  logger.debug("preprocess called for data:");
+  logger.debug(data);
+  try{
+    let specificMapFile = path.resolve(__dirname + "/../temp/" + id.toString() +"_yml" + ".yml");
 
-async function mapOntology(id, data) {}
+    await copyFile(
+      path.resolve(__dirname + "/../"+config.mappingFile),
+      specificMapFile
+    );
+  
+    let LocationIRI = data.locationIRI;
+    const replace_locname = {
+      files: specificMapFile,
+      from: /_locname/g,
+      to: "place_" + LocationIRI,
+    };
+    await replace(replace_locname);
+  
+  
+    const replace_filename = {
+      files: specificMapFile,
+      from: /_filename/g,
+      to: data.csvFile,
+    };
+    await replace(replace_filename);
+  
+  
+    localdb.updateStageInfo(id,"preprocess","S",{
+      csvFile : data.csvFile,
+      locationIRI : data.locationIRI,
+      mappingFile : specificMapFile
+    })
+    logger.info("preprocess done");
+  }
+  catch(err){
+    logger.error(err);
+    localdb.updateStageInfo(id,"preprocess","F",undefined)
+  }
+}
+
+async function mapOntology(id, data) {
+  logger.debug("mapOntology called for data:");
+  logger.debug(data);
+
+
+  let rmlMapFile = path.resolve(
+    __dirname + "/../temp/" + id.toString()+ "map.rml.ttl"
+  );
+  logger.debug(
+    "$yarrrml-parser -i " + '"' + data.mappingFile + '" -o ' + rmlMapFile
+  );
+  const { stdout3, stderr3 } = await exec(
+    "yarrrml-parser -i " + '"' + data.mappingFile + '" -o ' + rmlMapFile,
+    {
+      cwd: __dirname + "/..",
+    }
+  );
+  if (stderr3) {
+    logger.debug(`error: ${stderr}`);
+  }
+
+  //await unlink(yarrmlFileName);
+  let rdfFileName = path.resolve(
+    __dirname + "/../temp/" + id.toString() + "triples" + ".turtle"
+  );
+
+  const { stdout4, stderr4 } = await exec(
+    'java -jar lib/rmlmapper-4.9.3-r349-all.jar -s turtle -m "' +
+      rmlMapFile +
+      '" -o ' +
+      '"' +
+      rdfFileName +
+      '"',
+    {
+      cwd: path.resolve(__dirname + "/.."),
+    }
+  );
+  if (stderr4) {
+    logger.debug(`error: ${stderr}`);
+  }
+
+  logger.debug("Mapped :" + rdfFileName);
+
+  turtleData = await readFile(rdfFileName);
+  logger.debug(turtleData);
+  var options = {
+    method: "POST",
+    url: "http://localhost:3030/aqStore/data?default",
+    headers: {
+      "Content-Type": "text/turtle;charset=utf-8",
+    },
+    formData: {
+      data: {
+        value: turtleData,
+        options: {
+          filename: rdfFileName,
+          contentType: "text/turtle;charset=utf-8",
+        },
+      },
+    },
+  };
+
+  let turtleResponse = await request(options);
+  logger.debug("Response from fuseki : [" + turtleResponse.body + "]");
+  
+  localdb.updateStageInfo(id,"mapOntology","S",{
+    csvFile : data.csvFile,
+    locationIRI : data.locationIRI
+  })
+  logger.info("mapOntology done");
+}
 module.exports = {
   test: test,
   initializeJobs: initializeJobs,

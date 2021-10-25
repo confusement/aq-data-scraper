@@ -1,0 +1,6 @@
+2021/10/24-23:29:15.174 1bb0 Reusing MANIFEST E:\btp\aq-data-scraper\lib\ezio-data\Default\Local Storage\leveldb/MANIFEST-000001
+2021/10/24-23:29:15.175 1bb0 Recovering log #3
+2021/10/24-23:29:15.175 1bb0 Reusing old log E:\btp\aq-data-scraper\lib\ezio-data\Default\Local Storage\leveldb/000003.log 
+2021/10/24-23:44:02.497 545c Level-0 table #5: started
+2021/10/24-23:44:02.512 545c Level-0 table #5: 10348 bytes OK
+2021/10/24-23:44:02.513 545c Delete type=0 #3
