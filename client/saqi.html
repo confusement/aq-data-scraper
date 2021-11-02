@@ -1,73 +1,278 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <meta name="theme-color" content="#000000" />
-    <meta
-      name="Saqi"
-      content="Root page for aqi-scraper"
-    />
-    <title>SAQI</title>
-    
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300&display=swap" rel="stylesheet">
-    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
-    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-    <script src="https://d3js.org/d3.v7.min.js"></script>
-    <script src="/public/saqi.js"></script>
-    <link rel="stylesheet" href="/public/saqi.css">
-  </head>
-  
-  <body>
-    <h2 style="text-align: center;">SAQI Data Visualizations</h2>
-    <br>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="theme-color" content="#000000" />
+  <meta name="Saqi" content="Root page for aqi-scraper" />
+  <title>SAQI</title>
 
-    <h2>Data Availability</h2>
-    <div id="Availability"></div>
-    <br>
-    <br>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300&display=swap" rel="stylesheet">
+  <link href='https://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
+  <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
 
-    <h2>Daily Trends (Average values throught the day) </h2>
-    <h4>Data taken over 10 Oct to 23 Oct, grouped into 2 hour intervals and averaged</h4>
-    
-    <h2>Tekhand 2</h2>
-    <div id="DailyTekhand2"></div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.css"
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <script src="https://d3js.org/d3.v7.min.js"></script>
+  <link rel="stylesheet" href="/public/saqi.css">
 
-    <h2>DTC Bus Terminal</h2>
-    <div id="DailyDTC_bus_terminal"></div>
+</head>
 
-    <h2>Nangli Dairy</h2>
-    <div id="DailyNangli_Dairy"></div>
+<body>
+  <h3 style="text-align: center;">SAQI Data Visualizations</h3>
 
-    <h2>Jharoda Kalan</h2>
-    <div id="DailyJharoda_Kalan"></div>
+  <h5>Data Availability</h5>
+  <blockquote>
+    Heatmap representing number of dataPoints collected over the day, useful for monitoring whether sensors are not
+    uploading.
+    X-axis: Date (Oct 2021), Y-axis : Location name
+  </blockquote>
 
-    <h2>Sanjay Colony 2</h2>
-    <div id="DailySanjay_Colony_2"></div>
+  <div id="Availability"></div>
 
-    <!-- <h2>Shaheen Bagh</h2>
-    <div id="DailyShaheenBagh"></div> -->
-    
-    <h2>Weekly Trend</h2>
-    <h4>Data clustered together in 2 hours intervals based on closeness of time points (in data) to chosen cluster points</h4>
+  <br>
+  <br>
+  <div class="row">
+    <div class="col s12">
+      <ul class="tabs">
+        <li class="tab col s4"><a class="active tabHeader" href="#cpcbvlocal">Local Sensors variation</a></li>
+        <li class="tab col s4"><a class="tabHeader" href="#localvs">CPCB vs Local Variation</a></li>
+        <li class="tab col s4"><a class="tabHeader" href="#stats">Stats</a></li>
+      </ul>
+    </div>
+    <div id="cpcbvlocal" class="col s12">
+      <blockquote>
+        Hover over graph points to get exact value <br>
+        Graph Lines can be toggled from the legend <br>
+        Graph can be zoomed in for observing weekly or daily trends <br>
+      </blockquote>
 
-    <h2>Tekhand 2</h2>
-    <div id="ConcatTekhand2"></div>
+      <blockquote>
+        Graph Representing sensor levels collected by SAQI team. <br>
+        Clustering of values are done to match cpcb and local sensors. Cluster points are manually defined (can be
+        configured, default every 4 hours ~ 6 points per day) <br>
+        Null (unreported) values are set 0 to make the graph readable. <br>
+        Units for the graphs : PM 2.5 (μg/m3), PM 10 (μg/m3), PM 1.5 (μg/m3), Temprature (C), Humid (%)<br>
+      </blockquote>
 
-    <h2>DTC bus terminal</h2>
-    <div id="ConcatDTC_bus_terminal"></div>
+      <br>
+      <h5>PM 2.5 Variation </h5>
+      <div id="g1a"></div>
+      <br>
+      <h6>Zoom level</h6>
+      <p class="range-field">
+        <input type="range" id="g1a_slider" min="1.0" max="10.0" step="0.1" value="1.0" />
+      </p>
 
-    <h2>Nangli Dairy</h2>
-    <div id="ConcatNangli_Dairy"></div>
+      <div id="g1a_table"></div>
 
-    <h2>Jharoda Kalan</h2>
-    <div id="ConcatJharoda_Kalan"></div>
+      <br>
+      <h5>PM 10 Variation </h5>
+      <div id="g1b"></div>
+      <br>
+      <h6>Zoom level</h6>
+      <p class="range-field">
+        <input type="range" id="g1b_slider" min="1.0" max="10.0" step="0.1" value="1.0" />
+      </p>
 
-    <h2>Sanjay Colony 2</h2>
-    <div id="ConcatSanjay_Colony_2"></div>
+      <div id="g1b_table"></div>
 
-  </body>
+      <br>
+      <h5>PM 1.5 Variation </h5>
+      <div id="g1c"></div>
+      <br>
+      <h6>Zoom level</h6>
+      <p class="range-field">
+        <input type="range" id="g1c_slider" min="1.0" max="10.0" step="0.1" value="1.0" />
+      </p>
+
+      <div id="g1c_table"></div>
+
+
+      <br>
+      <h5>Temprature Variation </h5>
+      <div id="g1d"></div>
+      <br>
+      <h6>Zoom level</h6>
+      <p class="range-field">
+        <input type="range" id="g1d_slider" min="1.0" max="10.0" step="0.1" value="1.0" />
+      </p>
+
+      <div id="g1d_table"></div>
+
+      <br>
+      <h5>Humidity Variation </h5>
+      <div id="g1e"></div>
+      <br>
+      <h6>Zoom level</h6>
+      <p class="range-field">
+        <input type="range" id="g1e_slider" min="1.0" max="10.0" step="0.1" value="1.0" />
+      </p>
+
+      <div id="g1e_table"></div>
+
+
+    </div>
+
+
+
+    <div id="localvs" class="col s12">
+
+      <blockquote>
+        Hover over graph points to get exact value <br>
+        Graph Lines can be toggled from the legend <br>
+        Graph can be zoomed in for observing weekly or daily trends <br>
+      </blockquote>
+
+      <blockquote>
+        CPCB and Local values are averaged at cluster points manually defined as before <br>
+        Since one CPCB station is chosen for 3 locations, data is averaged over at points with condition : <br>
+        There exist data for at least one of the 3 location and corresponding cpcb data also must exist. <br>
+        Difference is defined as : localSensorValue - CPCBSensorData
+      </blockquote>
+
+      <br>
+      <h5>PM 2.5 CBCP vs Local averaged value </h5>
+      <div id="g2a"></div>
+      <br>
+      <h6>Zoom level</h6>
+      <p class="range-field">
+        <input type="range" id="g2a_slider" min="1.0" max="10.0" step="0.1" value="1.0" />
+      </p>
+
+      <div id="g2a_table"></div>
+
+
+      <br>
+      <h5>PM 10 CBCP vs Local averaged value </h5>
+      <div id="g2b"></div>
+      <br>
+      <h6>Zoom level</h6>
+      <p class="range-field">
+        <input type="range" id="g2b_slider" min="1.0" max="10.0" step="0.1" value="1.0" />
+      </p>
+
+      <div id="g2b_table"></div>
+    </div>
+
+
+    <div id="stats" class="col s12">
+
+      <blockquote>
+        Mean, Average, Mix, Max over all the data. <br>
+        Summary goes here
+      </blockquote>
+
+      <h5>PM 2.5 Stats</h5>
+      <table class="centered bordered responsive" id="table1">
+        <tr>
+          <th rowspan="2">Time Series</th>
+          <th colspan="5">Week 1 (1 Oct- 7 Oct)</th>
+          <th style="width: 0px;"></th>
+          <th colspan="5">Week 2 (8 Oct- 14 Oct)</th>
+        </tr>
+        <tr>
+          <th>Min</th>
+          <th>Max</th>
+          <th>Avg</th>
+          <th>Med</th>
+          <th>Var</th>
+          <th style="border-left:1px solid black;width: 0px;"></th>
+          <th>Min</th>
+          <th>Max</th>
+          <th>Avg</th>
+          <th>Med</th>
+          <th>Var</th>
+        </tr>
+      </table>
+
+      <br>
+
+      <table class="centered bordered responsive" id="table2">
+        <tr>
+          <th rowspan="2">Time Series</th>
+          <th colspan="5">Week 3 (15 Oct- 21 Oct)</th>
+          <th style="width: 0px;"></th>
+          <th colspan="5">Week 4 (22 Oct- 28 Oct)</th>
+        </tr>
+        <tr>
+          <th>Min</th>
+          <th>Max</th>
+          <th>Avg</th>
+          <th>Med</th>
+          <th>Var</th>
+          <th class="separator"></th>
+          <th>Min</th>
+          <th>Max</th>
+          <th>Avg</th>
+          <th>Med</th>
+          <th>Var</th>
+        </tr>
+      </table>
+
+      <br>
+      <h5>PM 10 Stats</h5>
+      <table class="centered bordered responsive" id="table3">
+        <tr>
+          <th rowspan="2">Time Series</th>
+          <th colspan="5">Week 1 (1 Oct- 7 Oct)</th>
+          <th style="width: 0px;"></th>
+          <th colspan="5">Week 2 (8 Oct- 14 Oct)</th>
+        </tr>
+        <tr>
+          <th>Min</th>
+          <th>Max</th>
+          <th>Avg</th>
+          <th>Med</th>
+          <th>Var</th>
+          <th style="border-left:1px solid black;width: 0px;"></th>
+          <th>Min</th>
+          <th>Max</th>
+          <th>Avg</th>
+          <th>Med</th>
+          <th>Var</th>
+        </tr>
+      </table>
+
+      <br>
+
+      <table class="centered bordered responsive" id="table4">
+        <tr>
+          <th rowspan="2">Time Series</th>
+          <th colspan="5">Week 3 (15 Oct- 21 Oct)</th>
+          <th style="width: 0px;"></th>
+          <th colspan="5">Week 4 (22 Oct- 28 Oct)</th>
+        </tr>
+        <tr>
+          <th>Min</th>
+          <th>Max</th>
+          <th>Avg</th>
+          <th>Med</th>
+          <th>Var</th>
+          <th class="separator"></th>
+          <th>Min</th>
+          <th>Max</th>
+          <th>Avg</th>
+          <th>Med</th>
+          <th>Var</th>
+        </tr>
+      </table>
+
+      <div style="width: 100%;height: 600px;"></div>
+    </div>
+  </div>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/wnumb/1.2.0/wNumb.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.0/nouislider.min.js" crossorigin="anonymous"
+    referrerpolicy="no-referrer"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+  <script src="/public/aqiVis.js"></script>
+</body>
+
 </html>

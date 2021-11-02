@@ -46,7 +46,7 @@ async function combineCSVs(){
         ["day","ShaheenBagh","DTC_bus_terminal","Nangli_Dairy","Jharoda_Kalan","Sanjay_Colony_2","Tekhand2"]
     ];
     dateNows = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15',
-    '16','17','18','19','20','21','22','23']
+                '16','17','18','19','20','21','22','23','24','25','26','27','28']
     for (const datenow of dateNows) {
         densityStats.push([datenow,"0","0","0","0","0","0"])
     }
@@ -89,8 +89,8 @@ async function runScript(){
     let iter = 1;
     locations = [
         {
-            name:"ShaheenBagh",
-            baseURL:"https://eziostat-dev.web.app/devices/04:cc:a8:57:c2:54"
+            name:"Jharoda_Kalan",
+            baseURL:"https://eziostat-dev.web.app/devices/84:cc:a8:36:b0:e4"
         },
         {
             name:"DTC_bus_terminal",
@@ -101,12 +101,12 @@ async function runScript(){
             baseURL:"https://eziostat-dev.web.app/devices/84:cc:a8:36:b0:c4"
         },
         {
-            name:"Jharoda_Kalan",
-            baseURL:"https://eziostat-dev.web.app/devices/84:cc:a8:36:b0:e4"
+            name:"ShaheenBagh",
+            baseURL:"https://eziostat-dev.web.app/devices/84:cc:a8:57:c2:54"
         },
         {
             name:"Sanjay_Colony_2",
-            baseURL:"https://eziostat-dev.web.app/devices/84:cc:a8:57:c2:54"
+            baseURL:"https://eziostat-dev.web.app/devices/c4:4f:33:7b:62:a9"
         },
         {
             name:"Tekhand2",
@@ -114,39 +114,47 @@ async function runScript(){
         },
     ]
     dateNows = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15',
-                '16','17','18','19','20','21','22','23']
+                '16','17','18','19','20','21','22','23','24','25','26','27','28']
+    const WAIT_TIME = 100;
     try{
         for (const location of locations) {
             await page.goto(location.baseURL,{ waitUntil: 'domcontentloaded' , timeout:60000});
             await page.waitForSelector('.MuiInputBase-input');
-            await sleep(15000);
+            await sleep(25000);
 
-            await page.evaluate(() => {
-                var clickEvent = document.createEvent('MouseEvents');
-                clickEvent.initEvent("mousedown", true, true);
-                var selectNode = document.querySelectorAll(".MuiOutlinedInput-input:nth-child(1)")[1];
-                selectNode.dispatchEvent(clickEvent);
-                [...document.querySelectorAll('li')].filter(el => el.innerText == "Custom")[0].click();
-            });
+            // console.log("Time set ended")
+            // await page.evaluate(() => {
+            //     var clickEvent = document.createEvent('MouseEvents');
+            //     clickEvent.initEvent("mousedown", true, true);
+            //     var selectNode = document.querySelectorAll(".MuiOutlinedInput-input:nth-child(1)")[1];
+            //     selectNode.dispatchEvent(clickEvent);
+            //     [...document.querySelectorAll('li')].filter(el => el.innerText == "Custom")[0].click();
+            // });
             
+            console.log("Should be custom now")
             for (const datenow of dateNows) {
                 const fulldate = datenow + "-10-2021";
                 await page.waitForSelector('#date-picker');
-                await sleep(1000);
+                await sleep(WAIT_TIME);
 
-                await page.click('.MuiInputBase-root:nth-child(1)');
+                const DateTimeButtons = await page.$$('.MuiInputBase-root:nth-child(1)');
+
+                await DateTimeButtons[0].click();
 
                 await page.waitForSelector('.MuiPickersBasePicker-container');
-                await sleep(500);
+                await sleep(WAIT_TIME);
 
-                const [dateButton] = await page.$x("//button/span/p[contains(., '"+datenow+"')]");
+                const [dateButton] = await page.$x("//button[@tabindex='0']/span/p[text()='"+datenow+"']");
                 await dateButton.click();
-                await sleep(500);
+                await sleep(WAIT_TIME);
                 
                 const [okButton] = await page.$x("//button/span[contains(., 'OK')]");
                 await okButton.click();
-                await sleep(500);
+                await sleep(WAIT_TIME);
                 
+                // await DateTimeButtons[1].click();
+                // await sleep(3000);
+
                 await page._client.send('Page.setDownloadBehavior', {
                     behavior: 'allow',
                     downloadPath: path.resolve(__dirname + "/../eziodata/temp") 
@@ -163,7 +171,7 @@ async function runScript(){
                         path.resolve(__dirname + "/../eziodata/temp/"+downloadedFile),
                         path.resolve(__dirname + "/../eziodata/"+location.name+" "+fulldate)
                     );
-                    await sleep(500);
+                    await sleep(WAIT_TIME);
                 }
                 catch(err){
                     console.log("Failed at: "+location.name +" date: "+fulldate);

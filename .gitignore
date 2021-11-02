@@ -112,3 +112,5 @@ sources/Data/
 lib/chrome-linux
 
 lib/chrome-win
+
+lib/ezio-data

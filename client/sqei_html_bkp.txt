@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#000000" />
+    <meta
+      name="Saqi"
+      content="Root page for aqi-scraper"
+    />
+    <title>SAQI</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@200;300&display=swap" rel="stylesheet">
+    <link href='https://fonts.googleapis.com/css?family=Roboto:100,300' rel='stylesheet' type='text/css'>
+    <link href="https://fonts.googleapis.com/css?family=Raleway" rel="stylesheet">
+
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <script src="/public/saqi.js"></script>
+    <link rel="stylesheet" href="/public/saqi.css">
+  </head>
+  
+  <body>
+    <h2 style="text-align: center;">SAQI Data Visualizations</h2>
+    <br>
+
+    <h2>Data Availability</h2>
+    <div id="Availability"></div>
+    <br>
+    <br>
+
+    <h2>Daily Trends (Average values throught the day) </h2>
+    <h4>Data taken over 10 Oct to 23 Oct, grouped into 2 hour intervals and averaged</h4>
+    
+    <h2>Tekhand 2</h2>
+    <div id="DailyTekhand2"></div>
+
+    <h2>DTC Bus Terminal</h2>
+    <div id="DailyDTC_bus_terminal"></div>
+
+    <h2>Nangli Dairy</h2>
+    <div id="DailyNangli_Dairy"></div>
+
+    <h2>Jharoda Kalan</h2>
+    <div id="DailyJharoda_Kalan"></div>
+
+    <h2>Sanjay Colony 2</h2>
+    <div id="DailySanjay_Colony_2"></div>
+
+    <!-- <h2>Shaheen Bagh</h2>
+    <div id="DailyShaheenBagh"></div> -->
+    
+    <h2>Weekly Trend</h2>
+    <h4>Data clustered together in 2 hours intervals based on closeness of time points (in data) to chosen cluster points</h4>
+
+    <h2>Tekhand 2</h2>
+    <div id="ConcatTekhand2"></div>
+
+    <h2>DTC bus terminal</h2>
+    <div id="ConcatDTC_bus_terminal"></div>
+
+    <h2>Nangli Dairy</h2>
+    <div id="ConcatNangli_Dairy"></div>
+
+    <h2>Jharoda Kalan</h2>
+    <div id="ConcatJharoda_Kalan"></div>
+
+    <h2>Sanjay Colony 2</h2>
+    <div id="ConcatSanjay_Colony_2"></div>
+
+  </body>
+</html>

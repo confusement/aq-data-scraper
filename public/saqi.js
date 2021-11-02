@@ -38,8 +38,8 @@ d3.csv("/public/data/densityStats.csv").then(function(data){
         .domain([d3.max(dataRows, d=>d.value),d3.min(dataRows, d=>d.value)])
 
     var margin = {top: 40, right: 100, bottom: 30, left: 150},
-    width = 1200 - margin.left - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    width = 2200 - margin.left - margin.right,
+    height = 600 - margin.top - margin.bottom;
   
   // append the svg object to the body of the page
   var svg = d3.select("#Availability")
@@ -50,7 +50,8 @@ d3.csv("/public/data/densityStats.csv").then(function(data){
         .attr("transform",
             "translate(" + margin.left + "," + margin.top + ")");
 
-    var myGroups = ["10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
+    var myGroups = ["1","2","3","4","5","6","7","8","9","10","11","12","13","14","15","16","17","18","19","20",
+                    "21","22","23","24","25","26","27","28"]
     var myVars = ["ShaheenBagh","DTC_bus_terminal","Nangli_Dairy","Jharoda_Kalan","Sanjay_Colony_2","Tekhand2"]
 
     var x = d3.scaleBand()
@@ -493,6 +494,23 @@ d3.csv("/public/data/db.csv").then(function(data){
             .style("font-size", 15)
     
         // Add a legend (interactive)
+        units = function(name){
+            if(name=="pm1_0"){
+                return "PM 1.0 (μg/m3)"
+            }
+            else if(name=="pm2_5"){
+                return "PM 2.5 (μg/m3)"
+            }
+            else if(name=="pm10"){
+                return "PM 10 (μg/m3)"
+            }
+            else if(name=="temp"){
+                return "Temprature (C)"
+            }
+            else if(name=="Humidity"){
+                return "Humidity"
+            }
+        }
         svg1
             .selectAll("myLegend")
             .data(dataReady)
