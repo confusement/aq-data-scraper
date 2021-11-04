@@ -43,12 +43,20 @@ async function combineCSVs(){
         ["pm1_0","pm2_5","pm10","temp","humid","date","location","timestamp"]
     ]
     densityStats = [
-        ["day","ShaheenBagh","DTC_bus_terminal","Nangli_Dairy","Jharoda_Kalan","Sanjay_Colony_2","Tekhand2"]
+        ["day","month","ShaheenBagh","DTC_bus_terminal","Nangli_Dairy","Jharoda_Kalan","Sanjay_Colony_2","Tekhand2"]
     ];
-    dateNows = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15',
-                '16','17','18','19','20','21','22','23','24','25','26','27','28']
+    // dateNows = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15',
+                // '16','17','18','19','20','21','22','23','24','25','26','27','28']
+    currentMonth = 11;
+    dateNows = []
+    for(let day=1;day<=31;day++){
+        dateNows.push([day.toString(),-1]);
+    }
+    for(let day=1;day<=4;day++){
+        dateNows.push([day.toString(),0]);
+    }
     for (const datenow of dateNows) {
-        densityStats.push([datenow,"0","0","0","0","0","0"])
+        densityStats.push([datenow[0]+"-"+(datenow[1]+currentMonth).toString(),"0","0","0","0","0","0"])
     }
     locationMap ={
         "ShaheenBagh":1,
@@ -66,10 +74,12 @@ async function combineCSVs(){
         let location = file.split(" ")[0];
         let date = file.split(" ")[1];
         let day = date.split("-")[0];
+        let month = date.split("-")[1];
         [tableCSV,numRows,numCols] = await loadCSV(path.resolve(__dirname + "/../eziodata/"+file))
         let it = 0;
         
-        densityStats[parseInt(day)][locationMap[location]] = numRows.toString();
+        let ndex = (month==10)?(parseInt(day)):(31+parseInt(day));
+        densityStats[ndex][locationMap[location]] = numRows.toString();
         for(const row of tableCSV){
             if(it!=0){
                 newRow = [row[0],row[1],row[2],row[3],row[4],date,location,row[6]]
@@ -113,8 +123,19 @@ async function runScript(){
             baseURL:"https://eziostat-dev.web.app/devices/9c:9c:1f:ef:ba:84"
         },
     ]
-    dateNows = ['1','2','3','4','5','6','7','8','9','10','11','12','13','14','15',
-                '16','17','18','19','20','21','22','23','24','25','26','27','28']
+    currentMonth = 11;
+    dateNows = [
+        ["1",-1],
+        ["1",0]
+    ]
+    for(let day=2;day<=31;day++){
+        dateNows.push([day.toString(),-1]);
+    }
+    for(let day=2;day<=4;day++){
+        dateNows.push([day.toString(),0]);
+    }
+    // console.log(dateNows)
+    // return;
     const WAIT_TIME = 100;
     try{
         for (const location of locations) {
@@ -132,8 +153,12 @@ async function runScript(){
             // });
             
             console.log("Should be custom now")
+            let curMonthDiff = 0;
             for (const datenow of dateNows) {
-                const fulldate = datenow + "-10-2021";
+                // console.log("fir",datenow[0]);
+                // console.log("sec",datenow[1]);
+
+                const fulldate = datenow[0]+ "-" + (currentMonth+datenow[1]).toString() + "-2021";
                 await page.waitForSelector('#date-picker');
                 await sleep(WAIT_TIME);
 
@@ -142,9 +167,27 @@ async function runScript(){
                 await DateTimeButtons[0].click();
 
                 await page.waitForSelector('.MuiPickersBasePicker-container');
+                await page.waitForSelector('.MuiIconButton-root:nth-child(1)');
                 await sleep(WAIT_TIME);
+  
+                const backMonthButton = await page.$$('.MuiIconButton-root:nth-child(1)');
+                const forwardMonthButton = await page.$$('.MuiIconButton-root:nth-child(3)');
 
-                const [dateButton] = await page.$x("//button[@tabindex='0']/span/p[text()='"+datenow+"']");
+                console.log(datenow[1],curMonthDiff,"bef")
+                while(datenow[1]>curMonthDiff){
+                    await forwardMonthButton[0].click();
+                    curMonthDiff++;
+                    await sleep(2000);
+                }
+                console.log(datenow[1],curMonthDiff,"mid")
+                while(datenow[1]<curMonthDiff){
+                    await backMonthButton[0].click();
+                    curMonthDiff--;
+                    await sleep(2000);
+                }
+                console.log(datenow[1],curMonthDiff,"aft")
+
+                const [dateButton] = await page.$x("//button[@tabindex='0']/span/p[text()='"+datenow[0]+"']");
                 await dateButton.click();
                 await sleep(WAIT_TIME);
                 
@@ -159,12 +202,12 @@ async function runScript(){
                     behavior: 'allow',
                     downloadPath: path.resolve(__dirname + "/../eziodata/temp") 
                 });
-                await sleep(2000);
+                await sleep(3000);
 
                 try{
                     await page.click('.MuiFab-primary');
                 
-                    await sleep(2000);
+                    await sleep(3000);
             
                     downloadedFile = (await fs.readdir(path.resolve(__dirname + "/../eziodata/temp")))[0];
                     await fs.rename(

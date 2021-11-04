@@ -150,7 +150,7 @@ async function main() {
   logger.debug("In main");
 
   // await eziostat.runScript();
-  // await eziostat.combineCSVs();
+  await eziostat.combineCSVs();
   
 
   // await localdb.initializeDB();
