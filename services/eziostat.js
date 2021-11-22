@@ -47,7 +47,7 @@ async function combineCSVs(){
             continue;
         if(file==="combined")
             continue;
-        let location = file;
+        let location = file.split(".")[0];
         [tableCSV,numRows,numCols] = await loadCSV(path.resolve(__dirname + "/../eziodata/"+file))
         let it = 0;
         for(const row of tableCSV){
