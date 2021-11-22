@@ -114,3 +114,5 @@ lib/chrome-linux
 lib/chrome-win
 
 lib/ezio-data
+
+lib/ezio-data/

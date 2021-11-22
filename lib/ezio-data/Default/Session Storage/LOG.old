@@ -1,3 +1,8 @@
-2021/10/28-18:24:54.543 4830 Reusing MANIFEST E:\btp\aq-data-scraper\lib\ezio-data\Default\Session Storage/MANIFEST-000001
-2021/10/28-18:24:54.543 4830 Recovering log #3
-2021/10/28-18:24:54.544 4830 Reusing old log E:\btp\aq-data-scraper\lib\ezio-data\Default\Session Storage/000003.log 
+2021/11/22-20:48:35.141 3a48 Reusing MANIFEST E:\btp\aq-data-scraper\lib\ezio-data\Default\Session Storage/MANIFEST-000001
+2021/11/22-20:48:35.142 3a48 Recovering log #3
+2021/11/22-20:48:35.142 3a48 Level-0 table #3: started
+2021/11/22-20:48:35.145 3a48 Level-0 table #3: 16692 bytes OK
+2021/11/22-20:48:35.145 3a48 Recovering log #4
+2021/11/22-20:48:35.145 3a48 Reusing old log E:\btp\aq-data-scraper\lib\ezio-data\Default\Session Storage/000004.log 
+2021/11/22-20:48:35.147 3a48 Delete type=0 #3
+2021/11/22-20:48:35.147 3a48 Delete type=2 #5
