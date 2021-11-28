@@ -150,6 +150,8 @@ async function main() {
   logger.debug("In main");
 
   // await eziostat.runScript();
+  
+  // await eziostat.combineManualCSVs("TekhandMissingNovWeek3","Tekhand2");
   await eziostat.combineCSVs();
   
 

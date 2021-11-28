@@ -37,18 +37,47 @@ async function saveCSV(tableCSV,filename){
     rawData = tableCSV.map((row) => row.join(",")).join("\n");
     await fs.writeFile(filename,rawData.toString())
 }
-async function combineCSVs(){
-    allcsv = await fs.readdir(path.resolve(__dirname + "/../eziodata"));
+async function combineManualCSVs(locPath,locationName){
+    allcsv = await fs.readdir(path.resolve(__dirname + "/../eziodata/rawData/" + locPath));
     allDataTable = [
         ["pm1_0","pm2_5","pm10","temp","humid","location","timestamp"]
     ]
     for (const file of allcsv) {
-        if(file==="temp")
-            continue;
-        if(file==="combined")
-            continue;
+        [tableCSV,numRows,numCols] = await loadCSV(path.resolve(__dirname + "/../eziodata/rawData/" + locPath+"/"+file))
+        let it = 0;
+        for(const row of tableCSV){
+            if(it!=0){
+                dateStr = row[0].toString();
+                dateStr = dateStr.replace(/\//g, '-')
+                dateStr = dateStr.replace(/Z/g, '+05:30')
+                parts = dateStr.split("-");
+                if(parts.length<3)
+                    break;
+                // console.log(dateStr)
+                suffix = parts[2].split("T")
+                newDateString = suffix[0]+"-"+parts[1]+"-"+parts[0]+"T"+suffix[1];
+                dateObj = new Date(newDateString);
+                // console.log(dateObj)
+                newRow = [row[1],row[2],row[3],row[4],row[5],locationName,dateObj.getTime()]
+                allDataTable.push(newRow);
+            }
+            it++
+            // break;
+        }
+        // break;
+    }
+    await saveCSV(allDataTable,path.resolve(__dirname + "/../eziodata/combined/db.csv"));
+    console.log("Done")
+}
+
+async function combineCSVs(){
+    allcsv = await fs.readdir(path.resolve(__dirname + "/../eziodata/readDir"));
+    allDataTable = [
+        ["pm1_0","pm2_5","pm10","temp","humid","location","timestamp"]
+    ]
+    for (const file of allcsv) {
         let location = file.split(".")[0];
-        [tableCSV,numRows,numCols] = await loadCSV(path.resolve(__dirname + "/../eziodata/"+file))
+        [tableCSV,numRows,numCols] = await loadCSV(path.resolve(__dirname + "/../eziodata/readDir/"+file))
         let it = 0;
         for(const row of tableCSV){
             if(it!=0){
@@ -197,5 +226,6 @@ async function runScript(){
 }
 module.exports = {
     'runScript': runScript,
-    'combineCSVs':combineCSVs
+    'combineCSVs':combineCSVs,
+    'combineManualCSVs':combineManualCSVs
 }
